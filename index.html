@@ -1,17 +1,19 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Azeem Emporium - Logistics, Construction & Engineering Solutions
-    </title>
+    <title>Azeem Emporium Limited | Logistics, Construction & Engineering</title>
+    <meta
+      name="description"
+      content="Azeem Emporium Limited delivers logistics, construction, civil engineering, project management, consultancy, and ambulance supply solutions in Ghana."
+    />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&family=UnifrakturCook:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=UnifrakturCook:wght@700&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -22,17 +24,19 @@
       }
 
       :root {
+        --forest: #153f2b;
+        --forest-deep: #09251b;
+        --leaf: #2f7d55;
         --gold: #d4af37;
-        --gold-dark: #b58d19;
-        --dark-green: #1b5e3f;
-        --deep-green: #0f3d25;
-        --black: #0a0e27;
+        --gold-soft: #f3e7bf;
+        --charcoal: #111827;
+        --ink: #27313f;
+        --muted: #667085;
+        --line: #e6e2d5;
+        --paper: #fbfaf6;
         --white: #ffffff;
-        --light-gray: #f5f5f5;
-        --soft-gold: #f7f1de;
-        --ink: #1e2530;
-        --muted: #5e6673;
-        --accent-orange: #b8860b;
+        --surface: #f6f4ee;
+        --shadow: 0 24px 70px rgba(17, 24, 39, 0.12);
       }
 
       html {
@@ -40,2014 +44,1540 @@
       }
 
       body {
-        font-family: "Lato", sans-serif;
+        font-family: "Inter", sans-serif;
         color: var(--ink);
-        background: var(--white);
+        background: var(--paper);
         line-height: 1.6;
       }
 
+      body.splash-loading {
+        overflow: hidden;
+      }
+
+      body::selection {
+        background: var(--gold-soft);
+        color: var(--forest-deep);
+      }
+
       img {
+        display: block;
         max-width: 100%;
+      }
+
+      a {
+        color: inherit;
       }
 
       section {
         scroll-margin-top: 96px;
       }
 
-      /* Navigation */
+      .eyebrow {
+        color: var(--gold);
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .section-shell {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .section-heading {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.7fr);
+        gap: clamp(1.5rem, 5vw, 4rem);
+        align-items: end;
+        margin-bottom: 2.2rem;
+      }
+
+      .section-heading h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.3rem, 5vw, 4rem);
+        line-height: 0.98;
+        color: var(--forest);
+        letter-spacing: 0;
+      }
+
+      .section-heading p {
+        color: var(--muted);
+        font-size: 1rem;
+      }
+
       nav {
         position: fixed;
-        top: 0;
-        width: 100%;
-        background: var(--white);
-        border-bottom: 1px solid rgba(212, 175, 55, 0.75);
-        z-index: 1000;
+        inset: 0 0 auto;
+        z-index: 50;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        padding: 0.85rem clamp(1.25rem, 4vw, 3.5rem);
-        box-shadow: 0 8px 24px rgba(10, 14, 39, 0.08);
+        justify-content: space-between;
+        gap: 2rem;
+        padding: 0.62rem clamp(1rem, 4vw, 3rem);
+        background: rgba(255, 255, 255, 0.94);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.32);
+        box-shadow: 0 10px 35px rgba(17, 24, 39, 0.08);
+        backdrop-filter: blur(18px);
+        transition:
+          transform 0.28s ease,
+          background 0.28s ease,
+          box-shadow 0.28s ease;
+      }
+
+      nav.nav-hidden {
+        transform: translateY(-105%);
       }
 
       .logo-nav {
-        min-height: 60px;
         display: flex;
         align-items: center;
-        gap: 0.8rem;
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: var(--dark-green);
-        letter-spacing: 2px;
+        gap: 0.75rem;
+        min-width: 0;
       }
 
       .brand-crest {
-        width: 58px;
-        height: 58px;
+        width: 48px;
+        height: 48px;
         object-fit: contain;
-        flex-shrink: 0;
-        filter: drop-shadow(0 4px 10px rgba(27, 94, 63, 0.18));
+        filter: drop-shadow(0 8px 18px rgba(21, 63, 43, 0.18));
+        flex: 0 0 auto;
       }
 
       .brand-text {
-        display: flex;
-        flex-direction: column;
+        display: grid;
         line-height: 1;
+        min-width: 0;
       }
 
       .brand-wordmark {
         font-family: "UnifrakturCook", "Cormorant Garamond", serif;
-        font-size: 2rem;
-        font-weight: 700;
-        color: var(--dark-green);
-        letter-spacing: 0.5px;
+        color: var(--forest);
+        font-size: clamp(1.45rem, 2.4vw, 1.95rem);
         white-space: nowrap;
       }
 
       .brand-limited {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 0.7rem;
-        letter-spacing: 3px;
-        color: var(--gold);
-        font-weight: 600;
         margin-top: 0.25rem;
+        color: var(--gold);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.32em;
         text-align: center;
-      }
-
-      .showcase-crest {
-        width: 220px;
-        max-width: 65vw;
-        height: auto;
-        margin-bottom: 1.5rem;
-        filter: drop-shadow(0 15px 40px rgba(27, 94, 63, 0.25));
-      }
-
-      .showcase-wordmark {
-        font-family: "UnifrakturCook", "Cormorant Garamond", serif;
-        font-size: 4rem;
-        color: var(--dark-green);
-        letter-spacing: 1px;
-        margin-bottom: 0.3rem;
-        line-height: 1;
       }
 
       .nav-links {
         display: flex;
-        gap: clamp(1rem, 2.5vw, 2rem);
+        align-items: center;
+        gap: clamp(0.85rem, 2vw, 1.65rem);
         list-style: none;
       }
 
       .nav-links a {
-        text-decoration: none;
-        color: var(--black);
-        font-weight: 600;
-        font-size: 0.95rem;
         position: relative;
-        transition: color 0.3s ease;
+        text-decoration: none;
+        color: var(--charcoal);
+        font-size: 0.84rem;
+        font-weight: 700;
       }
 
       .nav-links a::after {
         content: "";
         position: absolute;
-        bottom: -5px;
         left: 0;
-        width: 0;
+        bottom: -0.42rem;
+        width: 100%;
         height: 2px;
         background: var(--gold);
-        transition: width 0.3s ease;
-      }
-
-      .nav-links a:hover {
-        color: var(--dark-green);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.25s ease;
       }
 
       .nav-links a:hover::after {
-        width: 100%;
+        transform: scaleX(1);
+        transform-origin: left;
       }
 
-      /* Hero Section */
+      .nav-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.7rem 1rem;
+        border-radius: 4px;
+        background: var(--forest);
+        color: var(--white) !important;
+        box-shadow: 0 12px 28px rgba(21, 63, 43, 0.22);
+      }
+
+      .nav-cta::after {
+        display: none;
+      }
+
       .hero {
-        margin-top: 84px;
-        min-height: 560px;
-        background:
-          linear-gradient(
-            135deg,
-            rgba(15, 61, 37, 0.95),
-            rgba(10, 35, 25, 0.92)
-          ),
-          url("road-compaction.jpg") center / cover;
+        min-height: 760px;
+        padding: 8rem clamp(1.25rem, 5vw, 4rem) 4.5rem;
+        display: flex;
+        align-items: end;
         color: var(--white);
-        padding: 5.5rem clamp(1.5rem, 5vw, 4rem) 4.5rem;
-        text-align: left;
+        background:
+          linear-gradient(90deg, rgba(9, 37, 27, 0.93), rgba(9, 37, 27, 0.74) 48%, rgba(9, 37, 27, 0.32)),
+          linear-gradient(0deg, rgba(9, 37, 27, 0.42), rgba(9, 37, 27, 0.1)),
+          url("completed-road-surface.jpg") center / cover;
         position: relative;
         overflow: hidden;
-        display: flex;
-        align-items: center;
       }
 
-      .hero::before {
+      .hero::after {
         content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L30 30M0 30L30 30' stroke='%23D4AF37' stroke-width='0.5' opacity='0.1' fill='none'/%3E%3C/svg%3E");
-        opacity: 0.3;
+        inset: auto 0 0;
+        height: 38%;
+        background: linear-gradient(0deg, var(--paper), rgba(251, 250, 246, 0));
+        pointer-events: none;
       }
 
-      .hero-content {
+      .hero-grid {
         position: relative;
-        z-index: 2;
-        max-width: 980px;
-        margin: 0;
-        animation: fadeInUp 0.8s ease;
-      }
-
-      .hero-kicker {
-        color: var(--gold);
-        font-size: 0.85rem;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        margin-bottom: 1rem;
+        z-index: 1;
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.42fr);
+        gap: clamp(2rem, 6vw, 5rem);
+        align-items: end;
       }
 
       .hero h1 {
+        max-width: 850px;
+        margin: 1rem 0 1.25rem;
         font-family: "Cormorant Garamond", serif;
-        font-size: clamp(2.8rem, 5.6vw, 4.9rem);
+        font-size: clamp(3.1rem, 7vw, 5.9rem);
         font-weight: 700;
-        max-width: 900px;
-        margin-bottom: 1.2rem;
-        letter-spacing: 1px;
-        line-height: 1.02;
+        line-height: 0.94;
+        letter-spacing: 0;
       }
 
       .hero h1 span {
         color: var(--gold);
       }
 
-      .hero p {
-        font-size: 1.15rem;
-        max-width: 760px;
-        margin-bottom: 2rem;
-        font-weight: 300;
-        line-height: 1.8;
+      .hero-copy {
+        max-width: 720px;
+        color: rgba(255, 255, 255, 0.86);
+        font-size: clamp(1rem, 1.7vw, 1.2rem);
       }
 
       .hero-actions {
         display: flex;
-        gap: 1rem;
         flex-wrap: wrap;
+        gap: 0.85rem;
+        margin-top: 2rem;
+      }
+
+      .button {
+        display: inline-flex;
         align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        min-height: 48px;
+        padding: 0.85rem 1.15rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 800;
+        transition:
+          transform 0.22s ease,
+          box-shadow 0.22s ease,
+          background 0.22s ease;
       }
 
-      .cta-button {
-        display: inline-block;
-        padding: 1rem 2.5rem;
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .button-primary {
         background: var(--gold);
-        color: var(--black);
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 1rem;
-        border: 2px solid var(--gold);
-        transition: all 0.3s ease;
-        letter-spacing: 1px;
-        cursor: pointer;
-        border-radius: 3px;
+        color: var(--forest-deep);
+        box-shadow: 0 18px 45px rgba(212, 175, 55, 0.24);
       }
 
-      .cta-button:hover {
-        background: transparent;
-        color: var(--gold);
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
-      }
-
-      .secondary-button {
-        display: inline-block;
-        padding: 1rem 2rem;
+      .button-secondary {
+        border: 1px solid rgba(255, 255, 255, 0.4);
         color: var(--white);
-        text-decoration: none;
-        font-weight: 700;
-        border: 1px solid rgba(255, 255, 255, 0.45);
-        border-radius: 3px;
-        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.08);
       }
 
-      .secondary-button:hover {
-        border-color: var(--gold);
+      .hero-panel {
+        padding: 1.35rem;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 8px;
+        background: rgba(9, 37, 27, 0.62);
+        backdrop-filter: blur(18px);
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+      }
+
+      .hero-panel img {
+        width: 72px;
+        height: 72px;
+        object-fit: contain;
+        margin-bottom: 1.1rem;
+        filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.25));
+      }
+
+      .hero-panel strong {
+        display: block;
         color: var(--gold);
-        transform: translateY(-2px);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.38rem;
+        line-height: 1.05;
       }
 
-      .overview-strip {
-        background: var(--white);
-        border-bottom: 1px solid rgba(212, 175, 55, 0.25);
-        padding: 0 clamp(1.5rem, 5vw, 4rem) 3rem;
+      .panel-kicker {
+        margin-bottom: 0.85rem;
+        color: rgba(255, 255, 255, 0.66);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .hero-panel p {
+        margin-top: 0.65rem;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 0.92rem;
+      }
+
+      .adinkra-mini-row {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        margin-top: 1.15rem;
+      }
+
+      .adinkra-mini-row img {
+        width: 22px;
+        height: 22px;
+        object-fit: contain;
+        opacity: 0.82;
+        filter: sepia(1) saturate(1.25) hue-rotate(356deg);
+      }
+
+      .proof-strip {
         position: relative;
-        z-index: 4;
+        z-index: 2;
+        margin-top: 0;
       }
 
-      .overview-grid {
-        max-width: 1180px;
-        margin: -3.5rem auto 0;
+      .proof-grid {
+        width: min(1120px, calc(100% - 40px));
+        margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        background: var(--white);
-        border-radius: 6px;
-        box-shadow: 0 18px 45px rgba(10, 14, 39, 0.14);
         overflow: hidden;
+        border: 1px solid rgba(212, 175, 55, 0.32);
+        border-radius: 8px;
+        background: var(--white);
+        box-shadow: var(--shadow);
       }
 
-      .overview-item {
-        padding: 1.5rem;
-        border-right: 1px solid rgba(212, 175, 55, 0.22);
+      .proof-card {
+        padding: clamp(1rem, 2vw, 1.55rem);
+        border-right: 1px solid var(--line);
       }
 
-      .overview-item:last-child {
+      .proof-card:last-child {
         border-right: 0;
       }
 
-      .overview-item strong {
+      .proof-card strong {
         display: block;
+        color: var(--forest);
         font-family: "Cormorant Garamond", serif;
-        color: var(--dark-green);
-        font-size: 1.35rem;
-        margin-bottom: 0.3rem;
+        font-size: clamp(1.55rem, 3vw, 2.25rem);
+        line-height: 1;
       }
 
-      .overview-item span {
+      .proof-card span {
+        display: block;
+        margin-top: 0.45rem;
         color: var(--muted);
-        font-size: 0.9rem;
+        font-size: 0.86rem;
+        font-weight: 600;
       }
 
-      /* Services Section */
-      .services {
-        padding: 6rem clamp(1.5rem, 5vw, 4rem);
-        background: linear-gradient(180deg, var(--white), #f7f8fa);
+      .executive-brief {
+        padding: 5rem 0 1rem;
+        background: var(--paper);
       }
 
-      .section-title {
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(2.2rem, 4vw, 3rem);
-        text-align: center;
-        color: var(--dark-green);
-        margin-bottom: 3.5rem;
-        letter-spacing: 1px;
+      .brief-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+
+      .brief-card {
         position: relative;
+        min-height: 220px;
+        padding: 1.35rem;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+        box-shadow: 0 16px 38px rgba(17, 24, 39, 0.06);
       }
 
-      .section-title::after {
+      .brief-card::after {
         content: "";
-        display: block;
-        width: 80px;
-        height: 3px;
-        background: var(--gold);
-        margin: 1rem auto 0;
+        position: absolute;
+        right: -34px;
+        bottom: -34px;
+        width: 120px;
+        height: 120px;
+        border-radius: 999px;
+        background: rgba(212, 175, 55, 0.1);
+      }
+
+      .brief-card span {
+        color: var(--gold);
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .brief-card h3 {
+        margin-top: 0.9rem;
+        color: var(--forest);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.75rem;
+        line-height: 1;
+      }
+
+      .brief-card p {
+        margin-top: 0.8rem;
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+
+      .services {
+        padding: 5.5rem 0 5rem;
       }
 
       .services-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-        gap: 1.5rem;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .service-card {
-        background: var(--white);
-        text-align: center;
-        border-top: 4px solid var(--gold);
-        transition: all 0.3s ease;
-        box-shadow: 0 10px 28px rgba(10, 14, 39, 0.08);
-        border-radius: 6px;
-        overflow: hidden;
-      }
-
-      .service-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
-      }
-
-      .service-icon {
-        font-size: 3rem;
-        color: var(--gold);
-        margin-bottom: 1rem;
-      }
-
-      .service-photo {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        display: block;
-      }
-
-      .service-card-content {
-        padding: 1.75rem;
-      }
-
-      .service-icon {
-        font-size: 2.2rem;
-      }
-
-      .service-card h3 {
-        font-family: "Cormorant Garamond", serif;
-        color: var(--dark-green);
-        font-size: 1.5rem;
-        margin-bottom: 0.8rem;
-        letter-spacing: 1px;
-      }
-
-      .service-card p {
-        color: #666;
-        font-size: 0.95rem;
-        line-height: 1.7;
-      }
-
-      .service-gallery {
-        padding: 6rem clamp(1.5rem, 5vw, 4rem);
-        background: var(--white);
-      }
-
-      .gallery-wrap {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .gallery-group {
-        margin-bottom: 3.5rem;
-      }
-
-      .gallery-group h3 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.8rem;
-        color: var(--dark-green);
-        margin-bottom: 1rem;
-        letter-spacing: 1px;
-      }
-
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-template-columns: repeat(5, 1fr);
         gap: 1rem;
       }
 
-      .gallery-item {
-        background: var(--white);
-        border-radius: 6px;
-        overflow: hidden;
-        box-shadow: 0 8px 24px rgba(10, 14, 39, 0.08);
-        border-bottom: 3px solid var(--gold);
-      }
-
-      .gallery-item img {
-        width: 100%;
-        height: 205px;
-        object-fit: cover;
-        display: block;
-      }
-
-      .gallery-item figcaption {
-        padding: 0.85rem 1rem;
-        color: #555;
-        font-size: 0.9rem;
-        line-height: 1.4;
-      }
-
-      /* About Section */
-      .about {
-        padding: 6rem clamp(1.5rem, 5vw, 4rem);
-        background: var(--white);
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        align-items: center;
-      }
-
-      .about-content h2 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 2.5rem;
-        color: var(--dark-green);
-        margin-bottom: 1rem;
-        letter-spacing: 2px;
-      }
-
-      .about-content p {
-        color: #555;
-        margin-bottom: 1rem;
-        line-height: 1.8;
-        font-size: 0.95rem;
-      }
-
-      .about-highlight {
-        background: var(--light-gray);
-        border-left: 4px solid var(--gold);
-        padding: 1.5rem;
-        margin: 2rem 0;
-        border-radius: 2px;
-      }
-
-      .about-highlight strong {
-        color: var(--dark-green);
-      }
-
-      /* Contact Section */
-      .contact {
-        background: var(--dark-green);
-        color: var(--white);
-        padding: 6rem clamp(1.5rem, 5vw, 4rem);
-        text-align: center;
-      }
-
-      .contact h2 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 2.5rem;
-        margin-bottom: 3rem;
-        letter-spacing: 2px;
-      }
-
-      .contact-info {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        max-width: 1000px;
-        margin: 2rem auto;
-      }
-
-      .contact-item {
-        padding: 1.5rem;
-        background: rgba(212, 175, 55, 0.1);
-        border-radius: 4px;
-        border-top: 3px solid var(--gold);
-        transition: transform 0.3s ease;
-      }
-
-      .contact-item:hover {
-        transform: translateY(-5px);
-      }
-
-      .contact-item i {
-        font-size: 2rem;
-        color: var(--gold);
-        margin-bottom: 1rem;
-      }
-
-      .contact-item h4 {
-        font-family: "Cormorant Garamond", serif;
-        color: var(--gold);
-        margin-bottom: 0.5rem;
-        letter-spacing: 1px;
-      }
-
-      .contact-item p {
-        font-size: 0.9rem;
-        line-height: 1.6;
-      }
-
-      .contact-item a {
-        color: var(--gold);
-        text-decoration: none;
-        transition: opacity 0.3s ease;
-      }
-
-      .contact-item a:hover {
-        opacity: 0.8;
-      }
-
-      /* Footer */
-      footer {
-        background: var(--black);
-        color: var(--gold);
-        text-align: center;
-        padding: 2rem;
-        font-size: 0.9rem;
-      }
-
-      footer p {
-        margin: 0.5rem 0;
-      }
-
-      footer a {
-        color: var(--gold);
-        text-decoration: none;
-      }
-
-      footer a:hover {
-        text-decoration: underline;
-      }
-
-      /* Animations */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
       .service-card {
-        animation: fadeInUp 0.6s ease forwards;
-      }
-
-      .service-card:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-      .service-card:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      .service-card:nth-child(3) {
-        animation-delay: 0.3s;
-      }
-      .service-card:nth-child(4) {
-        animation-delay: 0.4s;
-      }
-      .service-card:nth-child(5) {
-        animation-delay: 0.5s;
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        nav {
-          padding: 1rem 1.5rem;
-          flex-direction: column;
-          gap: 1rem;
-        }
-
-        .nav-links {
-          gap: 1rem;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-
-        .hero {
-          min-height: 560px;
-          padding: 4rem 1.5rem;
-          text-align: center;
-        }
-
-        .hero h1 {
-          font-size: 2.2rem;
-        }
-
-        .hero-actions {
-          justify-content: center;
-        }
-
-        .overview-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .overview-item:nth-child(2) {
-          border-right: 0;
-        }
-
-        .overview-item:nth-child(1),
-        .overview-item:nth-child(2) {
-          border-bottom: 1px solid rgba(212, 175, 55, 0.22);
-        }
-
-        .about {
-          grid-template-columns: 1fr;
-        }
-
-        .services,
-        .service-gallery,
-        .service-details,
-        .why-choose,
-        .team,
-        .about,
-        .contact {
-          padding: 3rem 1.5rem;
-        }
-
-        .section-title {
-          font-size: 2rem;
-        }
-      }
-
-      /* Why Choose Us Section */
-      .why-choose {
-        padding: 6rem clamp(1.5rem, 5vw, 4rem);
-        background: var(--white);
-      }
-
-      .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .feature-item {
+        min-height: 380px;
         display: flex;
-        gap: 1.5rem;
-        align-items: flex-start;
-        background: #f9fafb;
-        border-left: 3px solid var(--gold);
-        padding: 1.4rem;
-        border-radius: 6px;
-      }
-
-      .feature-icon {
-        flex-shrink: 0;
-        width: 50px;
-        height: 50px;
-        background: var(--gold);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--black);
-        font-size: 1.5rem;
-        font-weight: bold;
-      }
-
-      .feature-content h3 {
-        color: var(--dark-green);
-        margin-bottom: 0.5rem;
-        font-weight: 700;
-      }
-
-      .feature-content p {
-        color: #666;
-        font-size: 0.9rem;
-        line-height: 1.6;
-      }
-
-      /* Service Detail Section */
-      .service-details {
-        padding: 6rem clamp(1.5rem, 5vw, 4rem);
-        background: #f7f8fa;
-      }
-
-      .detail-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-        margin-top: 2rem;
-        align-items: center;
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .detail-item {
-        margin-bottom: 2rem;
-      }
-
-      .detail-item h3 {
-        font-family: "Cormorant Garamond", serif;
-        color: var(--dark-green);
-        font-size: 1.4rem;
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-      }
-
-      .detail-item::before {
-        content: "";
-        width: 4px;
-        height: 4px;
-        background: var(--gold);
-        border-radius: 50%;
-      }
-
-      .detail-item p {
-        color: #555;
-        line-height: 1.7;
-        padding-left: 1rem;
-      }
-
-      .detail-box {
-        background: linear-gradient(135deg, var(--dark-green) 0%, #0f3d25 100%);
-        color: var(--white);
-        padding: 2rem;
-        border-radius: 6px;
-        margin: 2rem 0;
-        box-shadow: 0 18px 45px rgba(10, 14, 39, 0.16);
-      }
-
-      .detail-box h4 {
-        color: var(--gold);
-        margin-bottom: 1rem;
-        font-size: 1.1rem;
-      }
-
-      .detail-box ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      .detail-box li {
-        padding: 0.5rem 0;
-        padding-left: 1.5rem;
-        position: relative;
-      }
-
-      .detail-box li::before {
-        content: "âœ“";
-        position: absolute;
-        left: 0;
-        color: var(--gold);
-        font-weight: bold;
-      }
-
-      /* Team Section */
-      .team {
-        padding: 6rem clamp(1.5rem, 5vw, 4rem);
-        background: #f7f8fa;
-      }
-
-      .team-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .team-card {
-        background: var(--white);
-        border-radius: 6px;
-        overflow: hidden;
-        box-shadow: 0 10px 28px rgba(10, 14, 39, 0.08);
-        transition: transform 0.3s ease;
-      }
-
-      .team-card:hover {
-        transform: translateY(-5px);
-      }
-
-      .team-header {
-        background: linear-gradient(
-          135deg,
-          var(--dark-green) 0%,
-          var(--accent-orange) 100%
-        );
-        color: var(--white);
-        padding: 2rem 1.5rem;
-        text-align: center;
-      }
-
-      .team-card h3 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.4rem;
-        margin-bottom: 0.3rem;
-        letter-spacing: 1px;
-      }
-
-      .team-card .position {
-        color: var(--gold);
-        font-weight: 600;
-        font-size: 0.9rem;
-      }
-
-      .team-body {
-        padding: 1.5rem;
-      }
-
-      .team-body p {
-        color: #666;
-        font-size: 0.9rem;
-        line-height: 1.6;
-        margin-bottom: 1rem;
-      }
-
-      /* Adinkra Symbols Section */
-      .adinkra-section {
-        padding: 5rem 3rem;
-        scroll-margin-top: 95px;
-        background:
-          linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.96)),
-          repeating-linear-gradient(
-            45deg,
-            rgba(212, 175, 55, 0.12) 0 2px,
-            transparent 2px 18px
-          ),
-          repeating-linear-gradient(
-            -45deg,
-            rgba(27, 94, 63, 0.08) 0 2px,
-            transparent 2px 22px
-          );
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .adinkra-section h2 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 2.5rem;
-        color: var(--dark-green);
-        margin-bottom: 1rem;
-        letter-spacing: 2px;
-      }
-
-      .adinkra-section p {
-        color: #666;
-        font-size: 1rem;
-        margin-bottom: 3rem;
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .adinkra-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 1.5rem;
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-
-      .adinkra-symbol {
-        min-height: 210px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         flex-direction: column;
-        gap: 0.8rem;
-        padding: 1.25rem 1rem;
-        background:
-          radial-gradient(
-            circle at 50% 22%,
-            rgba(212, 175, 55, 0.18),
-            transparent 45%
-          ),
-          var(--white);
-        border: 1px solid rgba(212, 175, 55, 0.35);
-        border-bottom: 4px solid var(--gold);
-        border-radius: 6px;
-        box-shadow: 0 12px 28px rgba(10, 14, 39, 0.08);
+        overflow: hidden;
+        border-radius: 8px;
+        background: var(--white);
+        border: 1px solid rgba(230, 226, 213, 0.95);
+        box-shadow: 0 12px 32px rgba(17, 24, 39, 0.08);
         transition:
-          transform 0.3s ease,
-          box-shadow 0.3s ease;
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
       }
 
-      .adinkra-symbol:hover {
+      .service-card:hover {
         transform: translateY(-6px);
-        box-shadow: 0 18px 36px rgba(27, 94, 63, 0.16);
+        box-shadow: 0 22px 55px rgba(17, 24, 39, 0.13);
       }
 
-      .adinkra-symbol:nth-child(1) {
-        animation-delay: 0s;
-      }
-      .adinkra-symbol:nth-child(2) {
-        animation-delay: 0.3s;
-      }
-      .adinkra-symbol:nth-child(3) {
-        animation-delay: 0.6s;
-      }
-      .adinkra-symbol:nth-child(4) {
-        animation-delay: 0.9s;
-      }
-      .adinkra-symbol:nth-child(5) {
-        animation-delay: 1.2s;
-      }
-      .adinkra-symbol:nth-child(6) {
-        animation-delay: 1.5s;
-      }
-      .adinkra-symbol:nth-child(7) {
-        animation-delay: 1.8s;
-      }
-      .adinkra-symbol:nth-child(8) {
-        animation-delay: 2.1s;
-      }
-      .adinkra-symbol:nth-child(9) {
-        animation-delay: 2.4s;
+      .service-card > img {
+        width: calc(100% - 1rem);
+        height: clamp(120px, 12vw, 140px);
+        margin: 0.5rem 0.5rem 0;
+        border-radius: 6px;
+        object-fit: cover;
+        flex: 0 0 auto;
       }
 
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-15px);
-        }
+      .service-body {
+        position: relative;
+        padding: 1.15rem;
+        overflow: hidden;
       }
 
-      .adinkra-emblem {
-        width: 112px;
-        height: 112px;
+      .service-card h3 {
+        color: var(--forest);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.45rem;
+        line-height: 1.05;
+      }
+
+      .service-card p {
+        margin-top: 0.65rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .work {
+        padding: 5.5rem 0;
+        background: var(--white);
+      }
+
+      .work-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.75fr);
+        gap: 1rem;
+      }
+
+      .feature-project,
+      .project-tile {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        background: var(--forest-deep);
+      }
+
+      .feature-project {
+        min-height: 580px;
+      }
+
+      .project-stack {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .project-tile {
+        min-height: 282px;
+      }
+
+      .feature-project img,
+      .project-tile img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .feature-project:hover img,
+      .project-tile:hover img {
+        transform: scale(1.045);
+      }
+
+      .project-caption {
+        position: absolute;
+        inset: auto 0 0;
+        padding: 1.4rem;
+        color: var(--white);
+        background: linear-gradient(0deg, rgba(9, 37, 27, 0.9), rgba(9, 37, 27, 0));
+      }
+
+      .project-caption span {
+        color: var(--gold);
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      .project-caption h3 {
+        max-width: 540px;
+        margin-top: 0.45rem;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.8rem, 4vw, 3rem);
+        line-height: 1;
+      }
+
+      .capabilities {
+        padding: 6rem 0;
+      }
+
+      .capability-panel {
+        display: grid;
+        grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1fr);
+        gap: clamp(1.5rem, 4vw, 3rem);
+        align-items: stretch;
+        padding: clamp(1rem, 3vw, 1.5rem);
+        border-radius: 10px;
+        background: var(--forest);
+        box-shadow: var(--shadow);
+      }
+
+      .capability-photo {
+        min-height: 100%;
+        border-radius: 7px;
+        object-fit: cover;
+      }
+
+      .process-list {
+        display: grid;
+        gap: 0.75rem;
+        padding: clamp(1rem, 3vw, 1.5rem);
+      }
+
+      .process-item {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        gap: 1rem;
+        align-items: start;
+        padding: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 7px;
+        background: rgba(255, 255, 255, 0.07);
+      }
+
+      .process-item i {
+        width: 44px;
+        height: 44px;
         display: grid;
         place-items: center;
         border-radius: 50%;
-        background:
-          radial-gradient(
-            circle,
-            #fff 0 48%,
-            rgba(212, 175, 55, 0.2) 49% 53%,
-            var(--dark-green) 54% 58%,
-            transparent 59%
-          ),
-          conic-gradient(
-            from 45deg,
-            rgba(212, 175, 55, 0.22),
-            rgba(27, 94, 63, 0.1),
-            rgba(212, 175, 55, 0.22)
-          );
+        background: rgba(212, 175, 55, 0.16);
+        color: var(--gold);
       }
 
-      .adinkra-emblem svg {
-        width: 86px;
-        height: 86px;
-        overflow: visible;
-      }
-
-      .adinkra-emblem img {
-        width: 74px;
-        height: 74px;
-        object-fit: contain;
-        display: block;
-      }
-
-      .adinkra-emblem .symbol-line {
-        fill: none;
-        stroke: var(--dark-green);
-        stroke-width: 5;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-      }
-
-      .adinkra-emblem .symbol-gold {
-        fill: none;
-        stroke: var(--gold);
-        stroke-width: 4;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-      }
-
-      .adinkra-emblem .symbol-fill {
-        fill: var(--dark-green);
-      }
-
-      .adinkra-emblem .symbol-gold-fill {
-        fill: var(--gold);
-      }
-
-      .adinkra-label {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.05rem;
-        color: var(--dark-green);
-        font-weight: 700;
-        letter-spacing: 1px;
-      }
-
-      .adinkra-meaning {
-        color: #666;
-        font-size: 0.78rem;
-        line-height: 1.4;
-        max-width: 140px;
-      }
-
-      /* Stats Section */
-      .stats {
-        background: linear-gradient(135deg, var(--dark-green) 0%, #0f3d25 100%);
+      .process-item h3 {
         color: var(--white);
-        padding: 4rem clamp(1.5rem, 5vw, 4rem);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.35rem;
+        line-height: 1;
       }
 
-      .stats-grid {
+      .process-item p {
+        margin-top: 0.4rem;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.92rem;
+      }
+
+      .about {
+        padding: 6rem 0;
+        background: var(--white);
+      }
+
+      .about-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 2rem;
-        max-width: 1000px;
-        margin: 0 auto;
+        grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.55fr);
+        gap: clamp(2rem, 5vw, 4rem);
+        align-items: center;
+      }
+
+      .about-copy h2 {
+        margin: 0.8rem 0 1rem;
+        color: var(--forest);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.4rem, 5vw, 4.5rem);
+        line-height: 0.96;
+      }
+
+      .about-copy p {
+        color: var(--muted);
+        margin-bottom: 1rem;
+      }
+
+      .leadership-card {
+        padding: 1.4rem;
+        border-radius: 10px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        box-shadow: 0 18px 45px rgba(17, 24, 39, 0.08);
+      }
+
+      .leadership-card img {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 1.3rem;
+        object-fit: contain;
+        filter: drop-shadow(0 15px 26px rgba(21, 63, 43, 0.18));
+      }
+
+      .leadership-card h3 {
+        color: var(--forest);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.8rem;
+        line-height: 1;
         text-align: center;
       }
 
-      .stat-item h3 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 2.5rem;
+      .leadership-card span {
+        display: block;
+        margin: 0.4rem 0 1rem;
         color: var(--gold);
-        margin-bottom: 0.5rem;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-align: center;
+        text-transform: uppercase;
       }
 
-      .stat-item p {
-        font-size: 1rem;
-        opacity: 0.9;
+      .leadership-card p {
+        color: var(--muted);
+        font-size: 0.92rem;
+        text-align: center;
       }
 
-      @media (max-width: 480px) {
-        .brand-crest {
-          width: 48px;
-          height: 48px;
+      .contact {
+        padding: 6rem 0;
+        color: var(--white);
+        background:
+          linear-gradient(90deg, rgba(9, 37, 27, 0.96), rgba(9, 37, 27, 0.82)),
+          url("ambulance-road-ready.jpg") center / cover;
+      }
+
+      .contact-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.7fr);
+        gap: clamp(2rem, 5vw, 4rem);
+        align-items: start;
+      }
+
+      .contact h2 {
+        margin: 0.8rem 0 1rem;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.6rem, 5vw, 4.8rem);
+        line-height: 0.95;
+      }
+
+      .contact p {
+        color: rgba(255, 255, 255, 0.78);
+        max-width: 620px;
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 0.8rem;
+      }
+
+      .contact-item {
+        display: grid;
+        grid-template-columns: 42px 1fr;
+        gap: 0.9rem;
+        padding: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 7px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+      }
+
+      .contact-item i {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: rgba(212, 175, 55, 0.16);
+        color: var(--gold);
+      }
+
+      .contact-item strong {
+        display: block;
+        color: var(--gold);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.28rem;
+      }
+
+      .contact-item a {
+        color: rgba(255, 255, 255, 0.86);
+        text-decoration: none;
+      }
+
+      .footer-brand {
+        padding: clamp(2rem, 5vw, 3.5rem) clamp(1.25rem, 4vw, 3rem);
+        display: grid;
+        place-items: center;
+        background: var(--white);
+        border-top: 1px solid var(--line);
+      }
+
+      .footer-brand img {
+        width: min(360px, 82vw);
+        height: auto;
+      }
+
+      footer {
+        padding: 2rem clamp(1.25rem, 4vw, 3rem);
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        background: var(--forest-deep);
+        color: rgba(255, 255, 255, 0.68);
+        font-size: 0.86rem;
+      }
+
+      .splash-screen {
+        position: fixed;
+        inset: 0;
+        z-index: 999;
+        display: grid;
+        place-items: center;
+        padding: 2rem;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at center, rgba(212, 175, 55, 0.16), transparent 34%),
+          linear-gradient(135deg, var(--forest-deep), var(--forest));
+        opacity: 1;
+        visibility: visible;
+        transition:
+          opacity 0.28s ease,
+          visibility 0.28s ease;
+      }
+
+      .splash-adinkra-field {
+        position: absolute;
+        inset: -4vh -4vw;
+        pointer-events: none;
+        opacity: 0.84;
+      }
+
+      .splash-adinkra-field img {
+        position: absolute;
+        width: var(--size);
+        left: var(--x);
+        top: var(--y);
+        opacity: var(--alpha);
+        filter:
+          brightness(0)
+          saturate(100%)
+          invert(85%)
+          sepia(32%)
+          saturate(643%)
+          hue-rotate(4deg)
+          brightness(100%)
+          contrast(92%)
+          drop-shadow(0 18px 34px rgba(0, 0, 0, 0.14));
+        mix-blend-mode: soft-light;
+        transform: translate(-50%, -50%) rotate(var(--rotate));
+      }
+
+      .splash-adinkra-field::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at center, rgba(9, 37, 27, 0.16), transparent 34%),
+          linear-gradient(135deg, rgba(9, 37, 27, 0.18), rgba(21, 63, 43, 0.08));
+      }
+
+      .splash-screen.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .splash-brand {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        justify-items: center;
+        gap: 0.85rem;
+        text-align: center;
+      }
+
+      .splash-logo {
+        width: min(230px, 54vw);
+        height: auto;
+        filter: drop-shadow(0 24px 44px rgba(0, 0, 0, 0.3));
+        animation: splashLogoIn 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+
+      .splash-name {
+        display: grid;
+        gap: 0.28rem;
+        color: var(--white);
+        animation: splashNameIn 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+
+      .splash-name strong {
+        color: var(--gold-soft);
+        font-family: "UnifrakturCook", "Cormorant Garamond", serif;
+        font-size: clamp(2.15rem, 6vw, 4rem);
+        font-weight: 700;
+        line-height: 0.95;
+        letter-spacing: 0;
+        text-shadow: 0 18px 34px rgba(0, 0, 0, 0.28);
+      }
+
+      .splash-name span {
+        color: var(--gold);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(0.78rem, 2vw, 1.05rem);
+        font-weight: 700;
+        letter-spacing: 0.34em;
+        text-transform: uppercase;
+      }
+
+      @keyframes splashLogoIn {
+        0% {
+          opacity: 0;
+          transform: translateY(18px) scale(0.86) rotate(-3deg);
         }
 
-        .brand-wordmark {
-          font-size: 1.55rem;
+        34%,
+        74% {
+          opacity: 1;
+          transform: translateY(0) scale(1) rotate(0);
         }
 
-        .brand-limited {
-          font-size: 0.6rem;
-          letter-spacing: 2px;
+        100% {
+          opacity: 0.96;
+          transform: translateY(-8px) scale(1.04) rotate(0);
+        }
+      }
+
+      @keyframes splashNameIn {
+        0%,
+        18% {
+          opacity: 0;
+          transform: translateY(14px);
         }
 
-        .showcase-wordmark {
-          font-size: 2.5rem;
+        45%,
+        80% {
+          opacity: 1;
+          transform: translateY(0);
         }
 
-        .hero h1 {
-          font-size: 1.8rem;
+        100% {
+          opacity: 0.94;
+          transform: translateY(-5px);
+        }
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 1080px) {
+        .services-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+      }
+
+      @media (max-width: 860px) {
+        nav {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 0.75rem;
+          padding: 0.8rem 1rem;
+        }
+
+        .nav-links {
+          width: 100%;
+          overflow-x: auto;
+          padding-bottom: 0.2rem;
+          gap: 1rem;
+        }
+
+        .nav-cta {
+          padding: 0;
+          background: transparent;
+          color: var(--forest) !important;
+          box-shadow: none;
         }
 
         .hero {
-          margin-top: 126px;
-          min-height: 520px;
+          min-height: 820px;
+          padding-top: 11rem;
+          align-items: center;
         }
 
-        .cta-button,
-        .secondary-button {
-          width: 100%;
-          text-align: center;
-        }
-
-        .overview-grid {
+        .hero-grid,
+        .section-heading,
+        .work-layout,
+        .capability-panel,
+        .about-grid,
+        .contact-layout {
           grid-template-columns: 1fr;
-          margin-top: -2rem;
         }
 
-        .overview-item {
+        .proof-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .brief-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .proof-card:nth-child(2) {
           border-right: 0;
-          border-bottom: 1px solid rgba(212, 175, 55, 0.22);
         }
 
-        .overview-item:last-child {
-          border-bottom: 0;
+        .proof-card:nth-child(1),
+        .proof-card:nth-child(2) {
+          border-bottom: 1px solid var(--line);
         }
 
-        .section-title {
-          font-size: 1.5rem;
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .feature-project {
+          min-height: 420px;
+        }
+
+        .capability-photo {
+          max-height: 360px;
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .section-shell {
+          width: min(100% - 28px, 1180px);
+        }
+
+        .brand-crest {
+          width: 44px;
+          height: 44px;
+        }
+
+        .brand-wordmark {
+          font-size: 1.3rem;
+        }
+
+        .brand-limited {
+          font-size: 0.58rem;
+        }
+
+        .hero {
+          min-height: 760px;
+          padding-inline: 1rem;
+        }
+
+        .hero h1 {
+          font-size: clamp(2.45rem, 10.5vw, 3.15rem);
+          line-height: 0.98;
+        }
+
+        .hero-panel {
+          display: none;
         }
 
         .services-grid {
           grid-template-columns: 1fr;
         }
 
-        nav {
-          padding: 0.8rem 1rem;
+        .service-card {
+          min-height: auto;
         }
 
-        .nav-links {
-          gap: 0.5rem;
-          font-size: 0.9rem;
+        .project-tile {
+          min-height: 220px;
         }
 
-        .detail-grid {
+        footer {
+          display: grid;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .proof-grid {
           grid-template-columns: 1fr;
         }
 
-        .adinkra-grid {
-          grid-template-columns: 1fr;
+        .proof-card {
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
         }
 
-        .team-grid {
-          grid-template-columns: 1fr;
+        .proof-card:last-child {
+          border-bottom: 0;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.001ms !important;
+          animation-duration: 0.001ms !important;
+        }
+
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+
+        .splash-logo {
+          animation: none;
+        }
+
+        .splash-name {
+          animation: none;
         }
       }
     </style>
   </head>
-  <body>
-    <!-- Navigation -->
-    <nav>
-      <div class="logo-nav">
+  <body class="splash-loading">
+    <div class="splash-screen" id="splash-screen" aria-label="Azeem Emporium loading">
+      <div class="splash-adinkra-field" aria-hidden="true">
+        <img src="gye-nyame.png" alt="" style="--x: 9%; --y: 15%; --size: 112px; --rotate: -15deg; --alpha: 0.22" />
+        <img src="sankofa.png" alt="" style="--x: 25%; --y: 10%; --size: 78px; --rotate: 12deg; --alpha: 0.18" />
+        <img src="adinkrahene.png" alt="" style="--x: 44%; --y: 13%; --size: 118px; --rotate: 8deg; --alpha: 0.16" />
+        <img src="aya.png" alt="" style="--x: 67%; --y: 11%; --size: 92px; --rotate: -10deg; --alpha: 0.2" />
+        <img src="akoma.png" alt="" style="--x: 88%; --y: 17%; --size: 106px; --rotate: 18deg; --alpha: 0.2" />
+        <img src="ntease.png" alt="" style="--x: 15%; --y: 39%; --size: 88px; --rotate: 20deg; --alpha: 0.18" />
+        <img src="akoben.png" alt="" style="--x: 34%; --y: 34%; --size: 72px; --rotate: -18deg; --alpha: 0.17" />
+        <img src="dwennimmen.png" alt="" style="--x: 61%; --y: 36%; --size: 96px; --rotate: 14deg; --alpha: 0.16" />
+        <img src="fihankra.png" alt="" style="--x: 82%; --y: 42%; --size: 84px; --rotate: -8deg; --alpha: 0.19" />
+        <img src="gye-nyame.png" alt="" style="--x: 6%; --y: 68%; --size: 86px; --rotate: 10deg; --alpha: 0.19" />
+        <img src="adinkrahene.png" alt="" style="--x: 24%; --y: 78%; --size: 104px; --rotate: -12deg; --alpha: 0.17" />
+        <img src="sankofa.png" alt="" style="--x: 48%; --y: 74%; --size: 76px; --rotate: 17deg; --alpha: 0.16" />
+        <img src="aya.png" alt="" style="--x: 69%; --y: 79%; --size: 116px; --rotate: -18deg; --alpha: 0.18" />
+        <img src="akoma.png" alt="" style="--x: 92%; --y: 72%; --size: 82px; --rotate: 9deg; --alpha: 0.2" />
+        <img src="akoben.png" alt="" style="--x: 39%; --y: 58%; --size: 60px; --rotate: -6deg; --alpha: 0.13" />
+        <img src="ntease.png" alt="" style="--x: 58%; --y: 62%; --size: 68px; --rotate: 11deg; --alpha: 0.13" />
+      </div>
+      <div class="splash-brand">
+        <img
+          class="splash-logo"
+          src="azeem-emporium-logo-extracted.png"
+          alt="Azeem Emporium Limited"
+        />
+        <div class="splash-name" aria-hidden="true">
+          <strong>Azeem Emporium</strong>
+          <span>Limited</span>
+        </div>
+      </div>
+    </div>
+
+    <nav aria-label="Primary navigation">
+      <a class="logo-nav" href="#top" aria-label="Azeem Emporium home">
         <img
           class="brand-crest"
           src="azeem-emporium-logo-extracted.png"
           alt="Azeem Emporium crest"
         />
-        <div class="brand-text">
-          <div class="brand-wordmark">Azeem Emporium</div>
-          <div class="brand-limited">L I M I T E D</div>
-        </div>
-      </div>
+        <span class="brand-text">
+          <span class="brand-wordmark">Azeem Emporium</span>
+          <span class="brand-limited">L I M I T E D</span>
+        </span>
+      </a>
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#work">Projects</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="#adinkra">Heritage</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#method">Approach</a></li>
+        <li><a href="#about">Company</a></li>
+        <li>
+          <a class="nav-cta" href="#contact">
+            <i class="fas fa-arrow-right"></i>
+            Contact
+          </a>
+        </li>
       </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <div class="hero-kicker">
-          Integrated Logistics, Construction & Engineering Solutions
-        </div>
-        <h1>
-          Building dependable infrastructure and supply solutions across Ghana.
-        </h1>
-        <p>
-          Azeem Emporium Limited delivers roadworks, civil engineering,
-          construction, project management, ambulance supply, logistics, and
-          business consultancy with disciplined execution and local expertise.
-        </p>
-        <div class="hero-actions">
-          <a href="#contact" class="cta-button">GET IN TOUCH</a>
-          <a href="#work" class="secondary-button">VIEW PROJECTS</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Company Overview -->
-    <section class="overview-strip">
-      <div class="overview-grid">
-        <div class="overview-item">
-          <strong>5 Service Divisions</strong>
-          <span
-            >Logistics, construction, engineering, management, and
-            consultancy.</span
-          >
-        </div>
-        <div class="overview-item">
-          <strong>Ghana-Based Delivery</strong>
-          <span
-            >Local market understanding with professional execution
-            standards.</span
-          >
-        </div>
-        <div class="overview-item">
-          <strong>Infrastructure Focus</strong>
-          <span
-            >Roadworks, drainage, culverts, structural works, and equipment
-            supply.</span
-          >
-        </div>
-        <div class="overview-item">
-          <strong>End-to-End Support</strong>
-          <span
-            >Planning, procurement, site coordination, quality control, and
-            handover.</span
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- Logo Showcase Section -->
-    <section style="display: none">
-      <div style="max-width: 600px; margin: 0 auto">
-        <img
-          class="showcase-crest"
-          src="azeem-emporium-logo-extracted.png"
-          alt="Azeem Emporium crest"
-        />
-
-        <h1 class="showcase-wordmark">Azeem Emporium</h1>
-        <p
-          style="
-            font-family: &quot;Cormorant Garamond&quot;, serif;
-            font-size: 0.9rem;
-            letter-spacing: 3px;
-            color: var(--gold);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-          "
-        >
-          L I M I T E D
-        </p>
-
-        <div
-          style="
-            background: var(--white);
-            border-top: 3px solid var(--gold);
-            border-bottom: 3px solid var(--gold);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-          "
-        >
-          <p
-            style="
-              color: var(--dark-green);
-              font-size: 1.05rem;
-              font-weight: 600;
-              letter-spacing: 0.5px;
-            "
-          >
-            LOGISTICS & SUPPLIES â€¢ CONSTRUCTION â€¢ CIVIL ENGINEERING<br />
-            PROJECT MANAGEMENT â€¢ CONSULTANCY & ADVERTISING
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-      <h2 class="section-title">Our Services</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <img
-            class="service-photo"
-            src="ambulance-interior-supply.jpg"
-            alt="Ambulance medical supply interior"
-          />
-          <div class="service-card-content">
-            <div class="service-icon">
-              <i class="fas fa-truck"></i>
+    <main id="top">
+      <section class="hero">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Integrated project delivery in Ghana</p>
+            <h1>Logistics, construction, and engineering support for serious work.</h1>
+            <p class="hero-copy">
+              Azeem Emporium Limited coordinates procurement, field operations, civil
+              works, emergency vehicle supply, and project management through one
+              accountable operating structure.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#services">
+                <i class="fas fa-layer-group"></i>
+                Explore Services
+              </a>
+              <a class="button button-secondary" href="#work">
+                <i class="fas fa-images"></i>
+                View Work
+              </a>
             </div>
-            <h3>Logistics & Supplies</h3>
-            <p>
-              Comprehensive logistics solutions and supply chain management
-              tailored to meet your business needs with efficiency and
-              reliability.
-            </p>
           </div>
-        </div>
 
-        <div class="service-card">
-          <img
-            class="service-photo"
-            src="construction-formwork.jpg"
-            alt="Concrete construction formwork project"
-          />
-          <div class="service-card-content">
-            <div class="service-icon">
-              <i class="fas fa-hard-hat"></i>
+          <aside class="hero-panel" aria-label="Company promise">
+            <div class="panel-kicker">Operational brief</div>
+            <img src="azeem-emporium-logo-extracted.png" alt="Azeem Emporium crest" />
+            <strong>One partner for planning, sourcing, movement, and delivery.</strong>
+            <p>
+              Practical coordination for organizations that require reliable execution,
+              clear reporting, and disciplined handover.
+            </p>
+            <div class="adinkra-mini-row" aria-hidden="true">
+              <img src="gye-nyame.png" alt="" />
+              <img src="sankofa.png" alt="" />
+              <img src="adinkrahene.png" alt="" />
+              <img src="aya.png" alt="" />
+              <img src="akoma.png" alt="" />
+              <img src="ntease.png" alt="" />
+              <img src="akoben.png" alt="" />
+              <img src="dwennimmen.png" alt="" />
+              <img src="fihankra.png" alt="" />
             </div>
-            <h3>Construction</h3>
-            <p>
-              Expert construction services delivering quality infrastructure
-              projects from conception through completion with precision and
-              excellence.
-            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="proof-strip" aria-label="Company highlights">
+        <div class="proof-grid reveal">
+          <div class="proof-card">
+            <strong>5</strong>
+            <span>Core service divisions</span>
+          </div>
+          <div class="proof-card">
+            <strong>50+</strong>
+            <span>Completed project engagements</span>
+          </div>
+          <div class="proof-card">
+            <strong>100+</strong>
+            <span>Satisfied clients and partners</span>
+          </div>
+          <div class="proof-card">
+            <strong>20+</strong>
+            <span>Industry specialists and operators</span>
           </div>
         </div>
+      </section>
 
-        <div class="service-card">
-          <img
-            class="service-photo"
-            src="civil-double-culvert.jpg"
-            alt="Civil engineering double culvert structure"
-          />
-          <div class="service-card-content">
-            <div class="service-icon">
-              <i class="fas fa-building"></i>
+      <section class="executive-brief" aria-label="Operating standards">
+        <div class="section-shell">
+          <div class="brief-grid">
+            <article class="brief-card reveal">
+              <span>01</span>
+              <h3>Scope discipline</h3>
+              <p>
+                Requirements, vendors, schedules, and site conditions are clarified before
+                work begins so execution starts with fewer surprises.
+              </p>
+            </article>
+            <article class="brief-card reveal">
+              <span>02</span>
+              <h3>Single-point coordination</h3>
+              <p>
+                Procurement, transport, field teams, documentation, and reporting are
+                organized around a clear point of accountability.
+              </p>
+            </article>
+            <article class="brief-card reveal">
+              <span>03</span>
+              <h3>Visible handover</h3>
+              <p>
+                Progress is tracked against the brief, with practical evidence,
+                completion checks, and client-facing communication.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="services" id="services">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <div>
+              <p class="eyebrow">Core capabilities</p>
+              <h2>Services structured around accountable delivery.</h2>
             </div>
-            <h3>Civil Engineering</h3>
             <p>
-              Professional civil engineering expertise ensuring structural
-              integrity and sustainable development for all your infrastructure
-              requirements.
+              Each service line supports the same operating promise: clear planning,
+              dependable coordination, practical execution, and professional handover.
             </p>
           </div>
-        </div>
 
-        <div class="service-card">
-          <img
-            class="service-photo"
-            src="road-compaction.jpg"
-            alt="Road construction coordination and compaction work"
-          />
-          <div class="service-card-content">
-            <div class="service-icon">
-              <i class="fas fa-chart-line"></i>
+          <div class="services-grid">
+            <article class="service-card reveal">
+              <img src="ambulance-side.jpg" alt="Ambulance supply vehicle" />
+              <div class="service-body">
+                <h3>Logistics & Supplies</h3>
+                <p>
+                  Fleet coordination, sourcing, warehousing, inventory movement, and
+                  operational delivery for time-sensitive requirements.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-card reveal">
+              <img src="construction-formwork.jpg" alt="Construction formwork" />
+              <div class="service-body">
+                <h3>Construction</h3>
+                <p>
+                  Coordinated construction support, contractor management, quality
+                  control, and site execution for residential and commercial work.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-card reveal">
+              <img src="civil-double-culvert.jpg" alt="Civil engineering culvert work" />
+              <div class="service-body">
+                <h3>Civil Engineering</h3>
+                <p>
+                  Drainage, roadworks, structural support, infrastructure planning, and
+                  practical engineering oversight.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-card reveal">
+              <img src="road-surfacing-team.jpg" alt="Road surfacing team" />
+              <div class="service-body">
+                <h3>Project Management</h3>
+                <p>
+                  Scope control, schedules, budgets, vendor coordination, risk tracking,
+                  and clear reporting from start to finish.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-card reveal">
+              <img src="ambulance-medical-bay.jpg" alt="Ambulance medical bay" />
+              <div class="service-body">
+                <h3>Consultancy</h3>
+                <p>
+                  Business advisory, procurement support, advertising coordination, and
+                  practical planning for growing organizations.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="work" id="work">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <div>
+              <p class="eyebrow">Project evidence</p>
+              <h2>Field work shown with clarity and restraint.</h2>
             </div>
-            <h3>Project Management</h3>
             <p>
-              Strategic project management services ensuring timely delivery,
-              budget compliance, and successful execution of complex
-              initiatives.
+              Roadworks, drainage structures, medical vehicle interiors, and site
+              delivery images provide a practical view of the company’s range.
             </p>
           </div>
-        </div>
 
-        <div class="service-card">
-          <img
-            class="service-photo"
-            src="finished-roadway.jpg"
-            alt="Completed roadway project for advisory and delivery services"
-          />
-          <div class="service-card-content">
-            <div class="service-icon">
-              <i class="fas fa-bullhorn"></i>
+          <div class="work-layout">
+            <article class="feature-project reveal">
+              <img src="finished-roadway.jpg" alt="Finished roadway project" />
+              <div class="project-caption">
+                <span>Roadworks</span>
+                <h3>Surface delivery for commercial corridors and public access routes.</h3>
+              </div>
+            </article>
+
+            <div class="project-stack">
+              <article class="project-tile reveal">
+                <img src="drainage-channel.jpg" alt="Concrete drainage channel" />
+                <div class="project-caption">
+                  <span>Civil Works</span>
+                  <h3>Drainage and culvert structures.</h3>
+                </div>
+              </article>
+              <article class="project-tile reveal">
+                <img src="ambulance-open-rear.jpg" alt="Open rear ambulance interior" />
+                <div class="project-caption">
+                  <span>Supply</span>
+                  <h3>Emergency vehicle fit-out and deployment readiness.</h3>
+                </div>
+              </article>
             </div>
-            <h3>Consultancy & Advertising</h3>
+          </div>
+        </div>
+      </section>
+
+      <section class="capabilities" id="method">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <div>
+              <p class="eyebrow">Approach</p>
+              <h2>A calm operating method for complex delivery.</h2>
+            </div>
             <p>
-              Professional business consultancy and strategic advertising
-              solutions to elevate your brand and drive sustainable business
-              growth.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Project Gallery Section -->
-    <section class="service-gallery" id="work">
-      <h2 class="section-title">Project & Service Gallery</h2>
-      <div class="gallery-wrap">
-        <div class="gallery-group">
-          <h3>Construction & Civil Engineering</h3>
-          <div class="gallery-grid">
-            <figure class="gallery-item">
-              <img
-                src="construction-formwork.jpg"
-                alt="Concrete formwork and structural construction"
-              />
-              <figcaption>
-                Concrete formwork and structural construction works.
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="civil-double-culvert.jpg"
-                alt="Double culvert drainage project"
-              />
-              <figcaption>
-                Double culvert drainage structure for civil infrastructure.
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="civil-culvert-headwall.jpg"
-                alt="Culvert headwall construction"
-              />
-              <figcaption>
-                Culvert headwall and earthworks installation.
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="drainage-channel.jpg"
-                alt="Roadside drainage channel construction"
-              />
-              <figcaption>
-                Roadside drainage channel works and stormwater control.
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="civil-culvert-apron.jpg"
-                alt="Culvert apron and wing wall construction"
-              />
-              <figcaption>
-                Culvert apron, wing walls, and water-flow protection.
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-
-        <div class="gallery-group">
-          <h3>Roadworks & Project Management</h3>
-          <div class="gallery-grid">
-            <figure class="gallery-item">
-              <img
-                src="road-grader.jpg"
-                alt="Motor grader preparing road surface"
-              />
-              <figcaption>Road grading and surface preparation.</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="asphalt-application.jpg"
-                alt="Asphalt application on active roadway"
-              />
-              <figcaption>
-                Asphalt application and active site coordination.
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="road-surfacing-team.jpg"
-                alt="Road surfacing team checking asphalt work"
-              />
-              <figcaption>
-                Road surfacing supervision and quality control.
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="road-compaction.jpg"
-                alt="Road compaction machinery and project team"
-              />
-              <figcaption>
-                Road compaction, machinery coordination, and delivery control.
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="completed-road-surface.jpg"
-                alt="Completed road surface"
-              />
-              <figcaption>
-                Completed road surface ready for community use.
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="finished-roadway.jpg"
-                alt="Finished roadway through commercial area"
-              />
-              <figcaption>
-                Finished roadway delivery through a commercial corridor.
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-
-        <div class="gallery-group">
-          <h3>Logistics, Ambulance Supply & Equipment</h3>
-          <div class="gallery-grid">
-            <figure class="gallery-item">
-              <img
-                src="ambulance-road-ready.jpg"
-                alt="Ambulance vehicle ready for deployment"
-              />
-              <figcaption>
-                Ambulance vehicle supply and deployment readiness.
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="ambulance-side.jpg"
-                alt="Side view of ambulance vehicle"
-              />
-              <figcaption>
-                Fleet supply for emergency response operations.
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="ambulance-front.jpg"
-                alt="Front view of ambulance vehicle"
-              />
-              <figcaption>
-                Emergency vehicle procurement and logistics support.
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="ambulance-rear-layout.jpg"
-                alt="Ambulance rear interior layout"
-              />
-              <figcaption>
-                Ambulance interior layout and medical bay configuration.
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="ambulance-stretcher-system.jpg"
-                alt="Ambulance stretcher system"
-              />
-              <figcaption>
-                Stretcher system and emergency transport equipment.
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="ambulance-oxygen-system.jpg"
-                alt="Ambulance oxygen system"
-              />
-              <figcaption>
-                Oxygen systems and clinical equipment supply.
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="ambulance-gas-cylinders.jpg"
-                alt="Ambulance gas cylinders and gauges"
-              />
-              <figcaption>
-                Medical gas cylinder storage and monitoring systems.
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="ambulance-medical-bay.jpg"
-                alt="Ambulance medical bay"
-              />
-              <figcaption>
-                Medical bay setup for emergency service vehicles.
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="ambulance-clinical-interior.jpg"
-                alt="Clinical interior of ambulance"
-              />
-              <figcaption>
-                Clinical interiors with storage, seating, and patient handling.
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="ambulance-pressure-gauge.jpg"
-                alt="Ambulance pressure gauge equipment"
-              />
-              <figcaption>
-                Medical pressure gauge and onboard equipment detail.
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="ambulance-interior-supply.jpg"
-                alt="Ambulance interior supply equipment"
-              />
-              <figcaption>
-                Integrated emergency supply and transport equipment.
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="ambulance-open-rear.jpg"
-                alt="Open rear ambulance interior"
-              />
-              <figcaption>
-                Open rear access for ambulance loading and patient transfer.
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Service Details Section -->
-    <section class="service-details">
-      <h2 class="section-title">Detailed Service Offerings</h2>
-
-      <div class="detail-grid">
-        <div>
-          <div class="detail-item">
-            <h3>Logistics & Supplies Management</h3>
-            <p>
-              Our logistics division specializes in end-to-end supply chain
-              solutions, warehouse management, and distribution networks that
-              optimize your operations.
-            </p>
-            <p>
-              <strong>Key Services:</strong> Fleet management, inventory
-              optimization, procurement, and real-time tracking systems.
+              Azeem Emporium works through defined requirements, coordinated operations,
+              regular visibility, and documented completion.
             </p>
           </div>
 
-          <div class="detail-item">
-            <h3>Construction Excellence</h3>
+          <div class="capability-panel reveal">
+            <img
+              class="capability-photo"
+              src="road-grader.jpg"
+              alt="Road grading equipment on site"
+            />
+            <div class="process-list">
+              <article class="process-item">
+                <i class="fas fa-magnifying-glass-chart"></i>
+                <div>
+                  <h3>Clarify the mission</h3>
+                  <p>
+                    Define scope, site realities, supply requirements, timelines, and
+                    accountable decision points before mobilization.
+                  </p>
+                </div>
+              </article>
+              <article class="process-item">
+                <i class="fas fa-people-carry-box"></i>
+                <div>
+                  <h3>Coordinate the moving parts</h3>
+                  <p>
+                    Align vendors, operators, logistics, documentation, and quality
+                    standards through one practical command structure.
+                  </p>
+                </div>
+              </article>
+              <article class="process-item">
+                <i class="fas fa-clipboard-check"></i>
+                <div>
+                  <h3>Deliver with evidence</h3>
+                  <p>
+                    Track progress, resolve issues early, and close with visible outputs
+                    that match the original commitment.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="section-shell about-grid">
+          <div class="about-copy reveal">
+            <p class="eyebrow">Company</p>
+            <h2>A trusted partner for practical growth and serious delivery.</h2>
             <p>
-              From residential to commercial projects, we deliver construction
-              services with meticulous attention to quality, safety, and
-              timeline adherence.
+              Azeem Emporium Limited provides integrated solutions across logistics,
+              construction, civil engineering, project management, consultancy, and
+              advertising. The company is built for clients who need a responsive partner
+              with the discipline to manage real-world complexity.
             </p>
             <p>
-              <strong>Key Services:</strong> Project oversight, quality
-              assurance, site management, and subcontractor coordination.
+              From emergency vehicle supply to civil infrastructure support, the business
+              combines local market understanding with international standards of
+              documentation, accountability, safety, and client service.
             </p>
           </div>
 
-          <div class="detail-item">
-            <h3>Civil Engineering Innovation</h3>
-            <p>
-              Our civil engineers bring expertise in infrastructure development,
-              structural design, and sustainable building practices to every
-              project.
-            </p>
-            <p>
-              <strong>Key Services:</strong> Design engineering, feasibility
-              studies, soil analysis, and regulatory compliance.
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <div class="detail-box">
-            <h4>Why Partner With Us?</h4>
-            <ul>
-              <li>20+ years of combined industry experience</li>
-              <li>Proven track record of successful projects</li>
-              <li>Certified professionals and engineers</li>
-              <li>State-of-the-art equipment and technology</li>
-              <li>Commitment to safety and sustainability</li>
-              <li>Competitive pricing and transparent costing</li>
-              <li>Client-centric approach and support</li>
-              <li>Full compliance with local and international standards</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section class="why-choose">
-      <h2 class="section-title">Why Choose Azeem Emporium?</h2>
-      <div class="features-grid">
-        <div class="feature-item">
-          <div class="feature-icon">
-            <i class="fas fa-check"></i>
-          </div>
-          <div class="feature-content">
-            <h3>Expertise</h3>
-            <p>
-              Years of experience across multiple sectors and industries give us
-              the insight to deliver exceptional results.
-            </p>
-          </div>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <div class="feature-content">
-            <h3>Reliability</h3>
-            <p>
-              You can count on us to deliver on our commitments with
-              professionalism and integrity at every step.
-            </p>
-          </div>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon">
-            <i class="fas fa-bolt"></i>
-          </div>
-          <div class="feature-content">
-            <h3>Efficiency</h3>
-            <p>
-              We optimize processes to save you time and money while maintaining
-              the highest quality standards.
-            </p>
-          </div>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon">
-            <i class="fas fa-star"></i>
-          </div>
-          <div class="feature-content">
-            <h3>Innovation</h3>
-            <p>
-              We leverage the latest technologies and methodologies to keep your
-              business ahead of the curve.
-            </p>
-          </div>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon">
-            <i class="fas fa-hands-helping"></i>
-          </div>
-          <div class="feature-content">
-            <h3>Support</h3>
-            <p>
-              Our team is committed to your success with responsive
-              communication and dedicated support throughout every project.
-            </p>
-          </div>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon">
-            <i class="fas fa-globe"></i>
-          </div>
-          <div class="feature-content">
-            <h3>Local Excellence</h3>
-            <p>
-              Based in Ghana, we understand the local market while maintaining
-              international standards and best practices.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Statistics Section -->
-    <section class="stats">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <h3>50+</h3>
-          <p>Completed Projects</p>
-        </div>
-        <div class="stat-item">
-          <h3>100+</h3>
-          <p>Satisfied Clients</p>
-        </div>
-        <div class="stat-item">
-          <h3>20+</h3>
-          <p>Industry Experts</p>
-        </div>
-        <div class="stat-item">
-          <h3>5</h3>
-          <p>Service Divisions</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="team" id="team">
-      <h2 class="section-title">Leadership & Team</h2>
-      <div class="team-grid">
-        <div class="team-card">
-          <div class="team-header">
+          <aside class="leadership-card reveal">
+            <img src="azeem-emporium-logo-extracted.png" alt="Azeem Emporium crest" />
             <h3>Mukaila Ahmed Akuamoah</h3>
-            <p class="position">Chief Executive Officer</p>
-          </div>
-          <div class="team-body">
+            <span>Chief Executive Officer</span>
             <p>
-              With extensive experience in business development and strategic
-              leadership, Mukaila drives Azeem Emporium's vision and ensures
-              excellence across all divisions. His commitment to innovation and
-              client satisfaction has established the company as a market leader
-              in Ghana's business sector.
+              Strategic leadership focused on dependable partnerships, client confidence,
+              operational discipline, and long-term value creation.
             </p>
-          </div>
+          </aside>
         </div>
+      </section>
 
-        <div class="team-card">
-          <div class="team-header">
-            <h3>Professional Team</h3>
-            <p class="position">Expert Division Heads</p>
-          </div>
-          <div class="team-body">
+      <section class="contact" id="contact">
+        <div class="section-shell contact-layout">
+          <div class="reveal">
+            <p class="eyebrow">Start the conversation</p>
+            <h2>Bring us the brief. We will bring the structure.</h2>
             <p>
-              Our experienced division heads bring specialized expertise in
-              logistics, construction, civil engineering, project management,
-              and business consultancy. Each team member is certified and
-              committed to delivering exceptional results for every client
-              engagement.
+              Whether you need supply coordination, construction support, roadworks,
+              ambulance procurement, or full project management, Azeem Emporium is ready
+              to help shape the next move.
             </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="tel:+233244206000">
+                <i class="fas fa-phone"></i>
+                Call Now
+              </a>
+              <a class="button button-secondary" href="mailto:info@azeememporium.com">
+                <i class="fas fa-envelope"></i>
+                Email Us
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-list reveal">
+            <div class="contact-item">
+              <i class="fas fa-location-dot"></i>
+              <div>
+                <strong>Location</strong>
+                <p>No. 47 Paradise Estate<br />Dome P.2, Accra, Ghana</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Email</strong>
+                <p>
+                  <a href="mailto:Ammar@azeememporium.com">Ammar@azeememporium.com</a><br />
+                  <a href="mailto:Ibra@azeememporium.com">Ibra@azeememporium.com</a><br />
+                  <a href="mailto:mira@azeememporium.com">mira@azeememporium.com</a><br />
+                  <a href="mailto:info@azeememporium.com">info@azeememporium.com</a>
+                </p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <strong>Phone</strong>
+                <p><a href="tel:+233244206000">+233 244 206 000</a></p>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
+      <section class="footer-brand" aria-label="Azeem Emporium Limited logo">
+        <img src="azeem-page-two-clean-logo.png" alt="Azeem Emporium Limited" />
+      </section>
+    </main>
 
-        <div class="team-card">
-          <div class="team-header">
-            <h3>Support Staff</h3>
-            <p class="position">Dedicated Professionals</p>
-          </div>
-          <div class="team-body">
-            <p>
-              Our support teams across all departments work tirelessly to ensure
-              smooth operations, excellent client communication, and seamless
-              project execution. We invest in continuous training to maintain
-              the highest professional standards.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Adinkra Symbols Section -->
-    <section class="adinkra-section" id="adinkra">
-      <h2>Adinkra Symbols - Ghanaian Heritage</h2>
-      <p>
-        Our commitment to excellence is rooted in Ghanaian values. These
-        traditional Adinkra symbols represent wisdom, unity, and strength that
-        guide our business philosophy.
-      </p>
-
-      <div class="adinkra-grid">
-        <!-- Gye Nyame -->
-        <div class="adinkra-symbol">
-          <div class="adinkra-emblem">
-            <img
-              src="gye-nyame.png"
-              alt="Gye Nyame Adinkra symbol"
-            />
-          </div>
-          <div class="adinkra-label">Gye Nyame</div>
-          <div class="adinkra-meaning">Supremacy and guidance</div>
-        </div>
-
-        <!-- Sankofa -->
-        <div class="adinkra-symbol">
-          <div class="adinkra-emblem">
-            <img
-              src="sankofa.png"
-              alt="Sankofa Adinkra symbol"
-            />
-          </div>
-          <div class="adinkra-label">Sankofa</div>
-          <div class="adinkra-meaning">Learning from the past</div>
-        </div>
-
-        <!-- Adinkrahene -->
-        <div class="adinkra-symbol">
-          <div class="adinkra-emblem">
-            <img
-              src="adinkrahene.png"
-              alt="Adinkrahene Adinkra symbol"
-            />
-          </div>
-          <div class="adinkra-label">Adinkrahene</div>
-          <div class="adinkra-meaning">Leadership and greatness</div>
-        </div>
-
-        <!-- Aya -->
-        <div class="adinkra-symbol">
-          <div class="adinkra-emblem">
-            <img
-              src="aya.png"
-              alt="Aya Adinkra symbol"
-            />
-          </div>
-          <div class="adinkra-label">Aya</div>
-          <div class="adinkra-meaning">Endurance and resilience</div>
-        </div>
-
-        <!-- Akoma -->
-        <div class="adinkra-symbol">
-          <div class="adinkra-emblem">
-            <img
-              src="akoma.png"
-              alt="Akoma Adinkra symbol"
-            />
-          </div>
-          <div class="adinkra-label">Akoma</div>
-          <div class="adinkra-meaning">Patience and goodwill</div>
-        </div>
-
-        <!-- Ntease -->
-        <div class="adinkra-symbol">
-          <div class="adinkra-emblem">
-            <img
-              src="ntease.png"
-              alt="Ntease Adinkra symbol"
-            />
-          </div>
-          <div class="adinkra-label">Ntease</div>
-          <div class="adinkra-meaning">Understanding and agreement</div>
-        </div>
-
-        <!-- Dwennimmen -->
-        <div class="adinkra-symbol">
-          <div class="adinkra-emblem">
-            <img
-              src="dwennimmen.png"
-              alt="Dwennimmen Adinkra symbol"
-            />
-          </div>
-          <div class="adinkra-label">Dwennimmen</div>
-          <div class="adinkra-meaning">Strength with humility</div>
-        </div>
-
-        <!-- Akoben -->
-        <div class="adinkra-symbol">
-          <div class="adinkra-emblem">
-            <img
-              src="akoben.png"
-              alt="Akoben Adinkra symbol"
-            />
-          </div>
-          <div class="adinkra-label">Akoben</div>
-          <div class="adinkra-meaning">Readiness and vigilance</div>
-        </div>
-
-        <!-- Fihankra -->
-        <div class="adinkra-symbol">
-          <div class="adinkra-emblem">
-            <img
-              src="fihankra.png"
-              alt="Fihankra Adinkra symbol"
-            />
-          </div>
-          <div class="adinkra-label">Fihankra</div>
-          <div class="adinkra-meaning">Security and community</div>
-        </div>
-      </div>
-
-      <p style="margin-top: 2rem; color: #666; font-size: 0.95rem">
-        These symbols embody the wisdom of our ancestors and inspire our
-        commitment to excellence, integrity, and community.
-      </p>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-      <div class="about-content">
-        <h2>About Azeem Emporium</h2>
-        <p>
-          Azeem Emporium Limited stands as a beacon of excellence in Ghana's
-          business landscape, providing integrated solutions across logistics,
-          construction, civil engineering, project management, and business
-          consultancy.
-        </p>
-
-        <div class="about-highlight">
-          <strong>Our Vision:</strong> To be the trusted partner of choice for
-          businesses seeking comprehensive, innovative solutions that drive
-          growth and sustainability.
-        </div>
-
-        <p>
-          With a dedicated team of professionals and a commitment to quality, we
-          deliver projects on time, within budget, and exceeding client
-          expectations. Our track record speaks to our dedication to excellence.
-        </p>
-
-        <p>
-          Founded under the leadership of CEO Mukaila Ahmed Akuamoah, we combine
-          decades of industry experience with modern best practices to serve
-          businesses of all sizes.
-        </p>
-      </div>
-
-      <div style="display: flex; align-items: center; justify-content: center">
-        <img
-          src="azeem-emporium-logo-extracted.png"
-          alt="Azeem Emporium crest"
-          style="
-            width: 280px;
-            max-width: 80vw;
-            height: auto;
-            filter: drop-shadow(0 10px 30px rgba(27, 94, 63, 0.2));
-          "
-        />
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-      <h2>Get In Touch</h2>
-      <p style="font-size: 1.1rem; margin-bottom: 2rem">
-        We're ready to discuss how we can help your business succeed
-      </p>
-
-      <div class="contact-info">
-        <div class="contact-item">
-          <i class="fas fa-map-marker-alt"></i>
-          <h4>Location</h4>
-          <p>No. 47 Paradise Estate<br />Dome P.2, Accra, Ghana</p>
-        </div>
-
-        <div class="contact-item">
-          <i class="fas fa-envelope"></i>
-          <h4>Email</h4>
-          <p>
-            <a href="mailto:Ammar@azeememporium.com">Ammar@azeememporium.com</a
-            ><br />
-            <a href="mailto:Ibra@azeememporium.com">Ibra@azeememporium.com</a
-            ><br />
-            <a href="mailto:mira@azeememporium.com">mira@azeememporium.com</a
-            ><br />
-            <a href="mailto:info@azeememporium.com">info@azeememporium.com</a>
-          </p>
-        </div>
-
-        <div class="contact-item">
-          <i class="fas fa-phone"></i>
-          <h4>Phone</h4>
-          <p><a href="tel:+233244206000">+233 244 206 000</a></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-      <p>&copy; 2024 Azeem Emporium Limited. All rights reserved.</p>
-      <p>
-        Logistics â€¢ Construction â€¢ Civil Engineering â€¢ Project Management â€¢
-        Consultancy & Advertising
-      </p>
-      <p>Led by CEO <strong>Mukaila Ahmed Akuamoah</strong></p>
+      <p>&copy; 2026 Azeem Emporium Limited. All rights reserved.</p>
+      <p>Logistics &middot; Construction &middot; Civil Engineering &middot; Project Management &middot; Consultancy</p>
     </footer>
+
+    <script>
+      const splashScreen = document.querySelector("#splash-screen");
+
+      if (splashScreen) {
+        window.setTimeout(() => {
+          splashScreen.classList.add("is-hidden");
+          document.body.classList.remove("splash-loading");
+        }, 1000);
+      }
+
+      const nav = document.querySelector("nav");
+      let lastScrollY = window.scrollY;
+      const retractAfter = 120;
+
+      const handleScroll = () => {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > lastScrollY && currentScrollY > retractAfter) {
+          nav.classList.add("nav-hidden");
+        } else {
+          nav.classList.remove("nav-hidden");
+        }
+
+        lastScrollY = Math.max(currentScrollY, 0);
+      };
+
+      window.addEventListener("scroll", handleScroll, { passive: true });
+
+      const revealItems = document.querySelectorAll(".reveal");
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      revealItems.forEach((item) => revealObserver.observe(item));
+    </script>
   </body>
 </html>
