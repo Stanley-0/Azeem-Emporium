@@ -779,19 +779,6 @@
         text-decoration: none;
       }
 
-      .footer-brand {
-        padding: clamp(2rem, 5vw, 3.5rem) clamp(1.25rem, 4vw, 3rem);
-        display: grid;
-        place-items: center;
-        background: var(--white);
-        border-top: 1px solid var(--line);
-      }
-
-      .footer-brand img {
-        width: min(360px, 82vw);
-        height: auto;
-      }
-
       footer {
         padding: 2rem clamp(1.25rem, 4vw, 3rem);
         display: flex;
@@ -826,6 +813,7 @@
         inset: -4vh -4vw;
         pointer-events: none;
         opacity: 0.84;
+        animation: splashFieldDrift 1.5s ease-out both;
       }
 
       .splash-adinkra-field img {
@@ -876,14 +864,17 @@
         width: min(230px, 54vw);
         height: auto;
         filter: drop-shadow(0 24px 44px rgba(0, 0, 0, 0.3));
-        animation: splashLogoIn 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+        transform-origin: center;
+        will-change: opacity, transform, filter;
+        animation: splashLogoIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) both;
       }
 
       .splash-name {
         display: grid;
         gap: 0.28rem;
         color: var(--white);
-        animation: splashNameIn 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+        will-change: opacity, transform;
+        animation: splashNameIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) both;
       }
 
       .splash-name strong {
@@ -908,30 +899,43 @@
       @keyframes splashLogoIn {
         0% {
           opacity: 0;
-          transform: translateY(18px) scale(0.86) rotate(-3deg);
+          filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.18));
+          transform: translateY(22px) scale(0.82) rotate(-4deg);
         }
 
-        34%,
-        74% {
+        28% {
           opacity: 1;
+          filter: drop-shadow(0 28px 52px rgba(0, 0, 0, 0.32));
+          transform: translateY(-4px) scale(1.05) rotate(1deg);
+        }
+
+        62% {
+          opacity: 1;
+          filter: drop-shadow(0 24px 44px rgba(0, 0, 0, 0.3));
           transform: translateY(0) scale(1) rotate(0);
+        }
+
+        84% {
+          opacity: 1;
+          transform: translateY(-2px) scale(1.018) rotate(0);
         }
 
         100% {
           opacity: 0.96;
-          transform: translateY(-8px) scale(1.04) rotate(0);
+          filter: drop-shadow(0 30px 56px rgba(0, 0, 0, 0.32));
+          transform: translateY(-10px) scale(1.035) rotate(0);
         }
       }
 
       @keyframes splashNameIn {
         0%,
-        18% {
+        14% {
           opacity: 0;
-          transform: translateY(14px);
+          transform: translateY(16px);
         }
 
-        45%,
-        80% {
+        42%,
+        76% {
           opacity: 1;
           transform: translateY(0);
         }
@@ -939,6 +943,22 @@
         100% {
           opacity: 0.94;
           transform: translateY(-5px);
+        }
+      }
+
+      @keyframes splashFieldDrift {
+        0% {
+          opacity: 0;
+          transform: scale(1.04) rotate(-1deg);
+        }
+
+        34% {
+          opacity: 0.84;
+        }
+
+        100% {
+          opacity: 0.78;
+          transform: scale(1) rotate(0);
         }
       }
 
@@ -1526,9 +1546,6 @@
           </div>
         </div>
       </section>
-      <section class="footer-brand" aria-label="Azeem Emporium Limited logo">
-        <img src="azeem-page-two-clean-logo.png" alt="Azeem Emporium Limited" />
-      </section>
     </main>
 
     <footer>
@@ -1543,7 +1560,7 @@
         window.setTimeout(() => {
           splashScreen.classList.add("is-hidden");
           document.body.classList.remove("splash-loading");
-        }, 1000);
+        }, 1500);
       }
 
       const nav = document.querySelector("nav");
