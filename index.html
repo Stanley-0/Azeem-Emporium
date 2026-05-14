@@ -17,6 +17,13 @@
       rel="stylesheet"
     />
     <style>
+      @font-face {
+        font-family: 'OPTIEngraversOldEnglish';
+        src: url('https://fonts.adobe.com/fonts/engravers-old-english') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -151,7 +158,7 @@
       }
 
       .brand-wordmark {
-        font-family: "UnifrakturCook", "Cormorant Garamond", serif;
+        font-family: 'OPTIEngraversOldEnglish', "Cormorant Garamond", serif;
         color: var(--forest);
         font-size: clamp(1.45rem, 2.4vw, 1.95rem);
         white-space: nowrap;
@@ -879,7 +886,7 @@
 
       .splash-name strong {
         color: var(--gold-soft);
-        font-family: "UnifrakturCook", "Cormorant Garamond", serif;
+        font-family: 'OPTIEngraversOldEnglish', "Cormorant Garamond", serif;
         font-size: clamp(2.15rem, 6vw, 4rem);
         font-weight: 700;
         line-height: 0.95;
@@ -998,603 +1005,439 @@
         }
 
         .nav-cta {
-          padding: 0;
-          background: transparent;
-          color: var(--forest) !important;
-          box-shadow: none;
+          width: 100%;
+          justify-content: center;
         }
 
         .hero {
-          min-height: 820px;
-          padding-top: 11rem;
-          align-items: center;
+          min-height: auto;
+          padding: 6rem 1rem 2rem;
         }
 
-        .hero-grid,
-        .section-heading,
-        .work-layout,
-        .capability-panel,
-        .about-grid,
-        .contact-layout {
+        .hero-grid {
           grid-template-columns: 1fr;
+        }
+
+        .hero h1 {
+          max-width: none;
         }
 
         .proof-grid {
           grid-template-columns: repeat(2, 1fr);
+          gap: 1rem;
+          border: none;
+          box-shadow: none;
+          background: transparent;
+        }
+
+        .proof-card {
+          border: 1px solid var(--line);
+          border-radius: 8px;
+          background: var(--white);
+          box-shadow: 0 12px 32px rgba(17, 24, 39, 0.08);
+          border-right: 1px solid var(--line) !important;
+        }
+
+        .section-heading {
+          grid-template-columns: 1fr;
+          gap: 1rem;
         }
 
         .brief-grid {
           grid-template-columns: 1fr;
         }
 
-        .proof-card:nth-child(2) {
-          border-right: 0;
-        }
-
-        .proof-card:nth-child(1),
-        .proof-card:nth-child(2) {
-          border-bottom: 1px solid var(--line);
-        }
-
         .services-grid {
           grid-template-columns: repeat(2, 1fr);
         }
 
-        .feature-project {
-          min-height: 420px;
+        .work-layout {
+          grid-template-columns: 1fr;
         }
 
-        .capability-photo {
-          max-height: 360px;
-          width: 100%;
+        .capability-panel {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .about-grid {
+          grid-template-columns: 1fr;
         }
       }
 
-      @media (max-width: 620px) {
-        .section-shell {
-          width: min(100% - 28px, 1180px);
-        }
-
-        .brand-crest {
-          width: 44px;
-          height: 44px;
+      @media (max-width: 640px) {
+        nav {
+          gap: 0.5rem;
+          padding: 0.6rem 0.75rem;
         }
 
         .brand-wordmark {
-          font-size: 1.3rem;
-        }
-
-        .brand-limited {
-          font-size: 0.58rem;
-        }
-
-        .hero {
-          min-height: 760px;
-          padding-inline: 1rem;
-        }
-
-        .hero h1 {
-          font-size: clamp(2.45rem, 10.5vw, 3.15rem);
-          line-height: 0.98;
-        }
-
-        .hero-panel {
-          display: none;
+          font-size: 1rem;
         }
 
         .services-grid {
           grid-template-columns: 1fr;
         }
 
-        .service-card {
-          min-height: auto;
-        }
-
-        .project-tile {
-          min-height: 220px;
-        }
-
-        footer {
-          display: grid;
-        }
-      }
-
-      @media (max-width: 480px) {
         .proof-grid {
           grid-template-columns: 1fr;
         }
 
-        .proof-card {
-          border-right: 0;
-          border-bottom: 1px solid var(--line);
-        }
-
-        .proof-card:last-child {
-          border-bottom: 0;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-          scroll-behavior: auto !important;
-          transition-duration: 0.001ms !important;
-          animation-duration: 0.001ms !important;
-        }
-
-        .reveal {
-          opacity: 1;
-          transform: none;
-        }
-
-        .splash-logo {
-          animation: none;
-        }
-
-        .splash-name {
-          animation: none;
+        footer {
+          flex-direction: column;
+          text-align: center;
         }
       }
     </style>
   </head>
-  <body class="splash-loading">
-    <div class="splash-screen" id="splash-screen" aria-label="Azeem Emporium loading">
-      <div class="splash-adinkra-field" aria-hidden="true">
-        <img src="gye-nyame.png" alt="" style="--x: 9%; --y: 15%; --size: 112px; --rotate: -15deg; --alpha: 0.22" />
-        <img src="sankofa.png" alt="" style="--x: 25%; --y: 10%; --size: 78px; --rotate: 12deg; --alpha: 0.18" />
-        <img src="adinkrahene.png" alt="" style="--x: 44%; --y: 13%; --size: 118px; --rotate: 8deg; --alpha: 0.16" />
-        <img src="aya.png" alt="" style="--x: 67%; --y: 11%; --size: 92px; --rotate: -10deg; --alpha: 0.2" />
-        <img src="akoma.png" alt="" style="--x: 88%; --y: 17%; --size: 106px; --rotate: 18deg; --alpha: 0.2" />
-        <img src="ntease.png" alt="" style="--x: 15%; --y: 39%; --size: 88px; --rotate: 20deg; --alpha: 0.18" />
-        <img src="akoben.png" alt="" style="--x: 34%; --y: 34%; --size: 72px; --rotate: -18deg; --alpha: 0.17" />
-        <img src="dwennimmen.png" alt="" style="--x: 61%; --y: 36%; --size: 96px; --rotate: 14deg; --alpha: 0.16" />
-        <img src="fihankra.png" alt="" style="--x: 82%; --y: 42%; --size: 84px; --rotate: -8deg; --alpha: 0.19" />
-        <img src="gye-nyame.png" alt="" style="--x: 6%; --y: 68%; --size: 86px; --rotate: 10deg; --alpha: 0.19" />
-        <img src="adinkrahene.png" alt="" style="--x: 24%; --y: 78%; --size: 104px; --rotate: -12deg; --alpha: 0.17" />
-        <img src="sankofa.png" alt="" style="--x: 48%; --y: 74%; --size: 76px; --rotate: 17deg; --alpha: 0.16" />
-        <img src="aya.png" alt="" style="--x: 69%; --y: 79%; --size: 116px; --rotate: -18deg; --alpha: 0.18" />
-        <img src="akoma.png" alt="" style="--x: 92%; --y: 72%; --size: 82px; --rotate: 9deg; --alpha: 0.2" />
-        <img src="akoben.png" alt="" style="--x: 39%; --y: 58%; --size: 60px; --rotate: -6deg; --alpha: 0.13" />
-        <img src="ntease.png" alt="" style="--x: 58%; --y: 62%; --size: 68px; --rotate: 11deg; --alpha: 0.13" />
-      </div>
-      <div class="splash-brand">
-        <img
-          class="splash-logo"
-          src="azeem-emporium-logo-extracted.png"
-          alt="Azeem Emporium Limited"
-        />
-        <div class="splash-name" aria-hidden="true">
-          <strong>Azeem Emporium</strong>
-          <span>Limited</span>
+  <body>
+    <nav class="nav-full">
+      <div class="logo-nav">
+        <img src="azeem_emblem_1.png" alt="Azeem Emporium Logo" class="brand-crest" />
+        <div class="brand-text">
+          <div class="brand-wordmark">Azeem Emporium</div>
+          <div class="brand-limited">LIMITED</div>
         </div>
       </div>
-    </div>
-
-    <nav aria-label="Primary navigation">
-      <a class="logo-nav" href="#top" aria-label="Azeem Emporium home">
-        <img
-          class="brand-crest"
-          src="azeem-emporium-logo-extracted.png"
-          alt="Azeem Emporium crest"
-        />
-        <span class="brand-text">
-          <span class="brand-wordmark">Azeem Emporium</span>
-          <span class="brand-limited">L I M I T E D</span>
-        </span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#work">Projects</a></li>
-        <li><a href="#method">Approach</a></li>
-        <li><a href="#about">Company</a></li>
-        <li>
-          <a class="nav-cta" href="#contact">
-            <i class="fas fa-arrow-right"></i>
-            Contact
-          </a>
-        </li>
-      </ul>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="nav-cta">Let's Talk</a>
+      </div>
     </nav>
 
-    <main id="top">
-      <section class="hero">
-        <div class="hero-grid">
-          <div>
-            <p class="eyebrow">Integrated project delivery in Ghana</p>
-            <h1>Logistics, construction, and engineering support for serious work.</h1>
-            <p class="hero-copy">
-              Azeem Emporium Limited coordinates procurement, field operations, civil
-              works, emergency vehicle supply, and project management through one
-              accountable operating structure.
-            </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#services">
-                <i class="fas fa-layer-group"></i>
-                Explore Services
-              </a>
-              <a class="button button-secondary" href="#work">
-                <i class="fas fa-images"></i>
-                View Work
-              </a>
-            </div>
-          </div>
-
-          <aside class="hero-panel" aria-label="Company promise">
-            <div class="panel-kicker">Operational brief</div>
-            <img src="azeem-emporium-logo-extracted.png" alt="Azeem Emporium crest" />
-            <strong>One partner for planning, sourcing, movement, and delivery.</strong>
-            <p>
-              Practical coordination for organizations that require reliable execution,
-              clear reporting, and disciplined handover.
-            </p>
-            <div class="adinkra-mini-row" aria-hidden="true">
-              <img src="gye-nyame.png" alt="" />
-              <img src="sankofa.png" alt="" />
-              <img src="adinkrahene.png" alt="" />
-              <img src="aya.png" alt="" />
-              <img src="akoma.png" alt="" />
-              <img src="ntease.png" alt="" />
-              <img src="akoben.png" alt="" />
-              <img src="dwennimmen.png" alt="" />
-              <img src="fihankra.png" alt="" />
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="proof-strip" aria-label="Company highlights">
-        <div class="proof-grid reveal">
-          <div class="proof-card">
-            <strong>5</strong>
-            <span>Core service divisions</span>
-          </div>
-          <div class="proof-card">
-            <strong>50+</strong>
-            <span>Completed project engagements</span>
-          </div>
-          <div class="proof-card">
-            <strong>100+</strong>
-            <span>Satisfied clients and partners</span>
-          </div>
-          <div class="proof-card">
-            <strong>20+</strong>
-            <span>Industry specialists and operators</span>
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>Powering Progress in <span>Ghana</span></h1>
+          <p class="hero-copy">From logistics to engineering, we deliver excellence across construction, ambulance supply, and consultancy services.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="button button-primary">Start Your Project</a>
+            <a href="#services" class="button button-secondary">Explore Services</a>
           </div>
         </div>
-      </section>
-
-      <section class="executive-brief" aria-label="Operating standards">
-        <div class="section-shell">
-          <div class="brief-grid">
-            <article class="brief-card reveal">
-              <span>01</span>
-              <h3>Scope discipline</h3>
-              <p>
-                Requirements, vendors, schedules, and site conditions are clarified before
-                work begins so execution starts with fewer surprises.
-              </p>
-            </article>
-            <article class="brief-card reveal">
-              <span>02</span>
-              <h3>Single-point coordination</h3>
-              <p>
-                Procurement, transport, field teams, documentation, and reporting are
-                organized around a clear point of accountability.
-              </p>
-            </article>
-            <article class="brief-card reveal">
-              <span>03</span>
-              <h3>Visible handover</h3>
-              <p>
-                Progress is tracked against the brief, with practical evidence,
-                completion checks, and client-facing communication.
-              </p>
-            </article>
+        <div class="hero-panel">
+          <p class="panel-kicker">Why Choose Us</p>
+          <img src="azeem_emblem.png" alt="Emblem" />
+          <strong>Trusted Excellence</strong>
+          <p>We combine expertise, reliability, and innovative solutions to deliver results that exceed expectations across every project.</p>
+          <div class="adinkra-mini-row">
+            <img src="gye-nyame.png" alt="Adinkra Symbol" />
+            <img src="sankofa.png" alt="Adinkra Symbol" />
+            <img src="dwennimmen.png" alt="Adinkra Symbol" />
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="services" id="services">
-        <div class="section-shell">
-          <div class="section-heading reveal">
-            <div>
-              <p class="eyebrow">Core capabilities</p>
-              <h2>Services structured around accountable delivery.</h2>
-            </div>
-            <p>
-              Each service line supports the same operating promise: clear planning,
-              dependable coordination, practical execution, and professional handover.
-            </p>
+    <section class="proof-strip">
+      <div class="proof-grid">
+        <div class="proof-card">
+          <strong>250+</strong>
+          <span>Projects Completed</span>
+        </div>
+        <div class="proof-card">
+          <strong>15+</strong>
+          <span>Years Experience</span>
+        </div>
+        <div class="proof-card">
+          <strong>98%</strong>
+          <span>Client Satisfaction</span>
+        </div>
+        <div class="proof-card">
+          <strong>500+</strong>
+          <span>Team Members</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="executive-brief">
+      <div class="section-shell">
+        <div class="section-heading">
+          <h2>Services</h2>
+          <p>Comprehensive solutions tailored to your needs</p>
+        </div>
+        <div class="brief-grid">
+          <div class="brief-card">
+            <span>Logistics</span>
+            <h3>Supply Chain Solutions</h3>
+            <p>End-to-end logistics services including transportation, warehousing, and distribution across Ghana.</p>
           </div>
-
-          <div class="services-grid">
-            <article class="service-card reveal">
-              <img src="ambulance-side.jpg" alt="Ambulance supply vehicle" />
-              <div class="service-body">
-                <h3>Logistics & Supplies</h3>
-                <p>
-                  Fleet coordination, sourcing, warehousing, inventory movement, and
-                  operational delivery for time-sensitive requirements.
-                </p>
-              </div>
-            </article>
-
-            <article class="service-card reveal">
-              <img src="construction-formwork.jpg" alt="Construction formwork" />
-              <div class="service-body">
-                <h3>Construction</h3>
-                <p>
-                  Coordinated construction support, contractor management, quality
-                  control, and site execution for residential and commercial work.
-                </p>
-              </div>
-            </article>
-
-            <article class="service-card reveal">
-              <img src="civil-double-culvert.jpg" alt="Civil engineering culvert work" />
-              <div class="service-body">
-                <h3>Civil Engineering</h3>
-                <p>
-                  Drainage, roadworks, structural support, infrastructure planning, and
-                  practical engineering oversight.
-                </p>
-              </div>
-            </article>
-
-            <article class="service-card reveal">
-              <img src="road-surfacing-team.jpg" alt="Road surfacing team" />
-              <div class="service-body">
-                <h3>Project Management</h3>
-                <p>
-                  Scope control, schedules, budgets, vendor coordination, risk tracking,
-                  and clear reporting from start to finish.
-                </p>
-              </div>
-            </article>
-
-            <article class="service-card reveal">
-              <img src="ambulance-medical-bay.jpg" alt="Ambulance medical bay" />
-              <div class="service-body">
-                <h3>Consultancy</h3>
-                <p>
-                  Business advisory, procurement support, advertising coordination, and
-                  practical planning for growing organizations.
-                </p>
-              </div>
-            </article>
+          <div class="brief-card">
+            <span>Construction</span>
+            <h3>Building Excellence</h3>
+            <p>Comprehensive construction services from planning to completion, delivering quality infrastructure.</p>
+          </div>
+          <div class="brief-card">
+            <span>Engineering</span>
+            <h3>Civil Works</h3>
+            <p>Expert civil engineering services for roads, bridges, and infrastructure development projects.</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="work" id="work">
-        <div class="section-shell">
-          <div class="section-heading reveal">
-            <div>
-              <p class="eyebrow">Project evidence</p>
-              <h2>Field work shown with clarity and restraint.</h2>
+    <section class="services" id="services">
+      <div class="section-shell">
+        <div class="section-heading">
+          <h2>Our Expertise</h2>
+          <p>Specialized services across multiple sectors</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <img src="road-surfacing-team.jpg" alt="Road Surfacing" />
+            <div class="service-body">
+              <h3>Road Construction</h3>
+              <p>Complete road infrastructure development with modern asphalt and concrete solutions.</p>
             </div>
-            <p>
-              Roadworks, drainage structures, medical vehicle interiors, and site
-              delivery images provide a practical view of the company’s range.
-            </p>
           </div>
+          <div class="service-card">
+            <img src="ambulance-front.jpg" alt="Ambulance Services" />
+            <div class="service-body">
+              <h3>Medical Ambulance Supply</h3>
+              <p>Full-service ambulance supply and maintenance for healthcare providers across Ghana.</p>
+            </div>
+          </div>
+          <div class="service-card">
+            <img src="construction-formwork.jpg" alt="Construction" />
+            <div class="service-body">
+              <h3>General Construction</h3>
+              <p>Building and infrastructure construction with adherence to safety and quality standards.</p>
+            </div>
+          </div>
+          <div class="service-card">
+            <img src="drainage-channel.jpg" alt="Civil Engineering" />
+            <div class="service-body">
+              <h3>Civil Engineering</h3>
+              <p>Structural and drainage solutions designed for durability and environmental sustainability.</p>
+            </div>
+          </div>
+          <div class="service-card">
+            <img src="asphalt-application.jpg" alt="Surfacing" />
+            <div class="service-body">
+              <h3>Asphalt Solutions</h3>
+              <p>Professional asphalt application and road maintenance services for long-lasting surfaces.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="work-layout">
-            <article class="feature-project reveal">
-              <img src="finished-roadway.jpg" alt="Finished roadway project" />
+    <section class="work" id="work">
+      <div class="section-shell">
+        <div class="section-heading">
+          <h2>Recent Work</h2>
+          <p>Showcasing our successful projects</p>
+        </div>
+        <div class="work-layout">
+          <div class="feature-project">
+            <img src="finished-roadway.jpg" alt="Completed Roadway" />
+            <div class="project-caption">
+              <span>Road Infrastructure</span>
+              <h3>Urban Highway Expansion</h3>
+            </div>
+          </div>
+          <div class="project-stack">
+            <div class="project-tile">
+              <img src="ambulance-clinical-interior.jpg" alt="Ambulance Interior" />
               <div class="project-caption">
-                <span>Roadworks</span>
-                <h3>Surface delivery for commercial corridors and public access routes.</h3>
+                <span>Medical Services</span>
+                <h3>Emergency Fleet Setup</h3>
               </div>
-            </article>
-
-            <div class="project-stack">
-              <article class="project-tile reveal">
-                <img src="drainage-channel.jpg" alt="Concrete drainage channel" />
-                <div class="project-caption">
-                  <span>Civil Works</span>
-                  <h3>Drainage and culvert structures.</h3>
-                </div>
-              </article>
-              <article class="project-tile reveal">
-                <img src="ambulance-open-rear.jpg" alt="Open rear ambulance interior" />
-                <div class="project-caption">
-                  <span>Supply</span>
-                  <h3>Emergency vehicle fit-out and deployment readiness.</h3>
-                </div>
-              </article>
+            </div>
+            <div class="project-tile">
+              <img src="construction-formwork.jpg" alt="Construction" />
+              <div class="project-caption">
+                <span>Construction</span>
+                <h3>Commercial Complex</h3>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="capabilities" id="method">
-        <div class="section-shell">
-          <div class="section-heading reveal">
-            <div>
-              <p class="eyebrow">Approach</p>
-              <h2>A calm operating method for complex delivery.</h2>
+    <section class="capabilities">
+      <div class="section-shell">
+        <div class="capability-panel">
+          <img src="road-compaction.jpg" alt="Road Compaction Equipment" class="capability-photo" />
+          <div class="process-list">
+            <div class="section-heading" style="margin-bottom: 2rem; grid-template-columns: 1fr;">
+              <h2>Our Process</h2>
             </div>
-            <p>
-              Azeem Emporium works through defined requirements, coordinated operations,
-              regular visibility, and documented completion.
-            </p>
-          </div>
-
-          <div class="capability-panel reveal">
-            <img
-              class="capability-photo"
-              src="road-grader.jpg"
-              alt="Road grading equipment on site"
-            />
-            <div class="process-list">
-              <article class="process-item">
-                <i class="fas fa-magnifying-glass-chart"></i>
-                <div>
-                  <h3>Clarify the mission</h3>
-                  <p>
-                    Define scope, site realities, supply requirements, timelines, and
-                    accountable decision points before mobilization.
-                  </p>
-                </div>
-              </article>
-              <article class="process-item">
-                <i class="fas fa-people-carry-box"></i>
-                <div>
-                  <h3>Coordinate the moving parts</h3>
-                  <p>
-                    Align vendors, operators, logistics, documentation, and quality
-                    standards through one practical command structure.
-                  </p>
-                </div>
-              </article>
-              <article class="process-item">
-                <i class="fas fa-clipboard-check"></i>
-                <div>
-                  <h3>Deliver with evidence</h3>
-                  <p>
-                    Track progress, resolve issues early, and close with visible outputs
-                    that match the original commitment.
-                  </p>
-                </div>
-              </article>
+            <div class="process-item">
+              <i class="fas fa-clipboard-list"></i>
+              <div>
+                <h3>Planning</h3>
+                <p>Comprehensive project assessment and strategic planning for optimal outcomes.</p>
+              </div>
+            </div>
+            <div class="process-item">
+              <i class="fas fa-drafting-compass"></i>
+              <div>
+                <h3>Design</h3>
+                <p>Professional design and engineering services meeting all regulatory standards.</p>
+              </div>
+            </div>
+            <div class="process-item">
+              <i class="fas fa-tools"></i>
+              <div>
+                <h3>Execution</h3>
+                <p>Expert implementation with state-of-the-art equipment and skilled personnel.</p>
+              </div>
+            </div>
+            <div class="process-item">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <h3>Delivery</h3>
+                <p>Quality assurance and timely project completion with ongoing support.</p>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="about" id="about">
-        <div class="section-shell about-grid">
-          <div class="about-copy reveal">
-            <p class="eyebrow">Company</p>
-            <h2>A trusted partner for practical growth and serious delivery.</h2>
-            <p>
-              Azeem Emporium Limited provides integrated solutions across logistics,
-              construction, civil engineering, project management, consultancy, and
-              advertising. The company is built for clients who need a responsive partner
-              with the discipline to manage real-world complexity.
-            </p>
-            <p>
-              From emergency vehicle supply to civil infrastructure support, the business
-              combines local market understanding with international standards of
-              documentation, accountability, safety, and client service.
-            </p>
+    <section class="about" id="about">
+      <div class="section-shell">
+        <div class="about-grid">
+          <div class="about-copy">
+            <div class="eyebrow">About Azeem Emporium</div>
+            <h2>Building Ghana's Future</h2>
+            <p>With over 15 years of experience, Azeem Emporium Limited has established itself as a trusted partner in logistics, construction, engineering, and medical services. Our commitment to excellence and innovation has enabled us to deliver over 250 successful projects across Ghana.</p>
+            <p>We pride ourselves on our team of dedicated professionals, state-of-the-art equipment, and unwavering commitment to customer satisfaction. Every project we undertake is executed with precision, integrity, and a focus on sustainable development.</p>
           </div>
-
-          <aside class="leadership-card reveal">
-            <img src="azeem-emporium-logo-extracted.png" alt="Azeem Emporium crest" />
-            <h3>Mukaila Ahmed Akuamoah</h3>
-            <span>Chief Executive Officer</span>
-            <p>
-              Strategic leadership focused on dependable partnerships, client confidence,
-              operational discipline, and long-term value creation.
-            </p>
-          </aside>
+          <div class="leadership-card">
+            <img src="azeem_logo_full.png" alt="Azeem Emporium Logo" />
+            <h3>Our Vision</h3>
+            <span>Excellence & Integrity</span>
+            <p>To be Ghana's leading provider of integrated logistics, construction, and engineering solutions that drive national development and create lasting value for our stakeholders.</p>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="contact" id="contact">
-        <div class="section-shell contact-layout">
-          <div class="reveal">
-            <p class="eyebrow">Start the conversation</p>
-            <h2>Bring us the brief. We will bring the structure.</h2>
-            <p>
-              Whether you need supply coordination, construction support, roadworks,
-              ambulance procurement, or full project management, Azeem Emporium is ready
-              to help shape the next move.
-            </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="tel:+233244206000">
-                <i class="fas fa-phone"></i>
-                Call Now
-              </a>
-              <a class="button button-secondary" href="mailto:info@azeememporium.com">
-                <i class="fas fa-envelope"></i>
-                Email Us
-              </a>
-            </div>
+    <section class="contact" id="contact">
+      <div class="section-shell">
+        <div class="contact-layout">
+          <div>
+            <div class="eyebrow">Get in Touch</div>
+            <h2>Let's Build Something Great</h2>
+            <p>Ready to start your next project? Contact us today to discuss your requirements and how we can help bring your vision to life.</p>
           </div>
-
-          <div class="contact-list reveal">
+          <div class="contact-list">
             <div class="contact-item">
-              <i class="fas fa-location-dot"></i>
+              <i class="fas fa-map-marker-alt"></i>
               <div>
                 <strong>Location</strong>
-                <p>No. 47 Paradise Estate<br />Dome P.2, Accra, Ghana</p>
-              </div>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <div>
-                <strong>Email</strong>
-                <p>
-                  <a href="mailto:Ammar@azeememporium.com">Ammar@azeememporium.com</a><br />
-                  <a href="mailto:Ibra@azeememporium.com">Ibra@azeememporium.com</a><br />
-                  <a href="mailto:mira@azeememporium.com">mira@azeememporium.com</a><br />
-                  <a href="mailto:info@azeememporium.com">info@azeememporium.com</a>
-                </p>
+                <a href="#">Accra, Ghana</a>
               </div>
             </div>
             <div class="contact-item">
               <i class="fas fa-phone"></i>
               <div>
                 <strong>Phone</strong>
-                <p><a href="tel:+233244206000">+233 244 206 000</a></p>
+                <a href="tel:+233123456789">+233 (0) 123 456 789</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:info@azeememporium.com">info@azeememporium.com</a>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
     <footer>
-      <p>&copy; 2026 Azeem Emporium Limited. All rights reserved.</p>
-      <p>Logistics &middot; Construction &middot; Civil Engineering &middot; Project Management &middot; Consultancy</p>
+      <div>&copy; 2026 Azeem Emporium Limited. All rights reserved.</div>
+      <div>Crafted with excellence in Ghana.</div>
     </footer>
 
-    <script>
-      const splashScreen = document.querySelector("#splash-screen");
+    <div class="splash-screen" id="splash">
+      <div class="splash-adinkra-field" id="adinkraField"></div>
+      <div class="splash-brand">
+        <img src="azeem_emblem.png" alt="Logo" class="splash-logo" />
+        <div class="splash-name">
+          <strong>Azeem Emporium</strong>
+          <span>Limited</span>
+        </div>
+      </div>
+    </div>
 
-      if (splashScreen) {
-        window.setTimeout(() => {
-          splashScreen.classList.add("is-hidden");
-          document.body.classList.remove("splash-loading");
-        }, 1500);
+    <script>
+      // Splash screen handling
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const splash = document.getElementById('splash');
+          splash.classList.add('is-hidden');
+          document.body.classList.remove('splash-loading');
+        }, 3000);
+      });
+
+      // Adinkra field animation
+      const adinkraSymbols = [
+        'gye-nyame.png',
+        'sankofa.png',
+        'dwennimmen.png',
+        'aya.png',
+        'akoma.png',
+        'akoben.png',
+        'akoma.png',
+        'fihankra.png',
+        'ntease.png',
+        'adinkrahene.png'
+      ];
+
+      const adinkraField = document.getElementById('adinkraField');
+      for (let i = 0; i < 12; i++) {
+        const img = document.createElement('img');
+        img.src = adinkraSymbols[Math.floor(Math.random() * adinkraSymbols.length)];
+        img.style.setProperty('--x', Math.random() * 100 + '%');
+        img.style.setProperty('--y', Math.random() * 100 + '%');
+        img.style.setProperty('--size', Math.random() * 120 + 60 + 'px');
+        img.style.setProperty('--alpha', Math.random() * 0.5 + 0.3);
+        img.style.setProperty('--rotate', Math.random() * 360 + 'deg');
+        adinkraField.appendChild(img);
       }
 
-      const nav = document.querySelector("nav");
-      let lastScrollY = window.scrollY;
-      const retractAfter = 120;
+      // Reveal animation on scroll
+      const reveals = document.querySelectorAll('.reveal');
+      const revealOnScroll = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }, { threshold: 0.15 });
 
-      const handleScroll = () => {
-        const currentScrollY = window.scrollY;
+      reveals.forEach(el => revealOnScroll.observe(el));
 
-        if (currentScrollY > lastScrollY && currentScrollY > retractAfter) {
-          nav.classList.add("nav-hidden");
+      // Add reveal class to service cards
+      document.querySelectorAll('.service-card').forEach(card => {
+        card.classList.add('reveal');
+      });
+
+      // Navigation scroll hide/show
+      let lastScrollTop = 0;
+      const nav = document.querySelector('nav');
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+          nav.classList.add('nav-hidden');
         } else {
-          nav.classList.remove("nav-hidden");
+          nav.classList.remove('nav-hidden');
         }
-
-        lastScrollY = Math.max(currentScrollY, 0);
-      };
-
-      window.addEventListener("scroll", handleScroll, { passive: true });
-
-      const revealItems = document.querySelectorAll(".reveal");
-      const revealObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.15 }
-      );
-
-      revealItems.forEach((item) => revealObserver.observe(item));
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      });
     </script>
   </body>
 </html>
