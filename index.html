@@ -64,16 +64,24 @@
 
       html {
         scroll-behavior: smooth;
+        overflow-x: hidden;
       }
 
       body {
         font-family: "Inter", sans-serif;
         color: var(--ink);
-        background: var(--paper);
+        background:
+          radial-gradient(circle at 8% 12%, rgba(212, 175, 55, 0.08), transparent 24rem),
+          linear-gradient(180deg, var(--paper), var(--surface));
         line-height: 1.6;
+        overflow-x: hidden;
       }
 
       body.splash-loading {
+        overflow: hidden;
+      }
+
+      body.service-modal-open {
         overflow: hidden;
       }
 
@@ -85,6 +93,35 @@
       img {
         display: block;
         max-width: 100%;
+      }
+
+      img[src*="01-steel-framework"],
+      img[src*="06-roof-installation"],
+      img[src*="02-team-briefing"],
+      img[src*="05-female-pm-tablet"],
+      img[src*="04-female-consultant"],
+      img[src*="01-client-meeting"],
+      img[src*="01-bridge-inspection"],
+      img[src*="02-surveyor"],
+      img[src*="01-site-supervision"],
+      img[src*="03-site-advisor"],
+      img[src*="04-foreman-discussion"] {
+        object-position: center top;
+      }
+
+      img[src*="ambulance-road-ready"],
+      img[src*="ambulance-front"],
+      img[src*="ambulance-side"] {
+        object-position: center center;
+      }
+
+      img[src*="ambulance-open-rear"],
+      img[src*="ambulance-medical-bay"],
+      img[src*="ambulance-clinical-interior"],
+      img[src*="ambulance-stretcher-system"],
+      img[src*="ambulance-oxygen-system"],
+      img[src*="ambulance-gas-cylinders"] {
+        object-position: center center;
       }
 
       a {
@@ -137,8 +174,8 @@
         align-items: center;
         justify-content: space-between;
         gap: 2rem;
-        padding: 0.62rem clamp(1rem, 4vw, 3rem);
-        background: rgba(255, 255, 255, 0.94);
+        padding: 0.58rem clamp(1rem, 4vw, 3rem);
+        background: rgba(251, 250, 246, 0.94);
         border-bottom: 1px solid rgba(212, 175, 55, 0.32);
         box-shadow: 0 10px 35px rgba(17, 24, 39, 0.08);
         backdrop-filter: blur(18px);
@@ -204,6 +241,7 @@
         color: var(--charcoal);
         font-size: 0.84rem;
         font-weight: 700;
+        white-space: nowrap;
       }
 
       .nav-links a::after {
@@ -240,14 +278,15 @@
       }
 
       .hero {
-        min-height: 760px;
-        padding: 8rem clamp(1.25rem, 5vw, 4rem) 4.5rem;
+        min-height: clamp(720px, 92vh, 860px);
+        padding: clamp(7rem, 12vh, 9rem) clamp(1.25rem, 5vw, 4rem) clamp(3rem, 7vh, 5rem);
         display: flex;
         align-items: end;
         color: var(--white);
         background:
-          linear-gradient(90deg, rgba(9, 37, 27, 0.93), rgba(9, 37, 27, 0.74) 48%, rgba(9, 37, 27, 0.32)),
-          linear-gradient(0deg, rgba(9, 37, 27, 0.42), rgba(9, 37, 27, 0.1)),
+          radial-gradient(circle at 78% 25%, rgba(212, 175, 55, 0.22), transparent 28%),
+          linear-gradient(90deg, rgba(9, 37, 27, 0.96), rgba(9, 37, 27, 0.78) 48%, rgba(9, 37, 27, 0.38)),
+          linear-gradient(0deg, rgba(9, 37, 27, 0.54), rgba(9, 37, 27, 0.12)),
           url("completed-road-surface.jpg") center / cover;
         position: relative;
         overflow: hidden;
@@ -257,7 +296,7 @@
         content: "";
         position: absolute;
         inset: auto 0 0;
-        height: 38%;
+        height: 32%;
         background: linear-gradient(0deg, var(--paper), rgba(251, 250, 246, 0));
         pointer-events: none;
       }
@@ -268,18 +307,18 @@
         width: min(1180px, 100%);
         margin: 0 auto;
         display: grid;
-        grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.42fr);
-        gap: clamp(2rem, 6vw, 5rem);
+        grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.62fr);
+        gap: clamp(2rem, 5vw, 4.5rem);
         align-items: end;
       }
 
       .hero h1 {
-        max-width: 850px;
+        max-width: 650px;
         margin: 1rem 0 1.25rem;
         font-family: "Cormorant Garamond", serif;
-        font-size: clamp(3.1rem, 7vw, 5.9rem);
+        font-size: clamp(3rem, 5.7vw, 5rem);
         font-weight: 700;
-        line-height: 0.94;
+        line-height: 0.96;
         letter-spacing: 0;
       }
 
@@ -288,9 +327,26 @@
       }
 
       .hero-copy {
-        max-width: 720px;
+        max-width: 620px;
         color: rgba(255, 255, 255, 0.86);
         font-size: clamp(1rem, 1.7vw, 1.2rem);
+      }
+
+      .hero-service-strip {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin-top: 1.25rem;
+      }
+
+      .hero-service-strip span {
+        padding: 0.42rem 0.62rem;
+        border: 1px solid rgba(212, 175, 55, 0.38);
+        border-radius: 999px;
+        background: rgba(251, 250, 246, 0.08);
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 0.78rem;
+        font-weight: 800;
       }
 
       .hero-actions {
@@ -330,6 +386,74 @@
         border: 1px solid rgba(255, 255, 255, 0.4);
         color: var(--white);
         background: rgba(255, 255, 255, 0.08);
+      }
+
+      .hero-visual {
+        align-self: stretch;
+        display: grid;
+        grid-template-columns: 0.76fr 1fr;
+        grid-template-rows: minmax(170px, 0.9fr) minmax(220px, 1.1fr);
+        gap: 0.8rem;
+        min-height: 500px;
+        transform: translateY(0.8rem);
+      }
+
+      .hero-photo,
+      .hero-brief {
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 10px;
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+      }
+
+      .hero-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .hero-photo-main img {
+        object-position: 48% center;
+      }
+
+      .hero-photo:hover img {
+        transform: scale(1.045);
+      }
+
+      .hero-photo-main {
+        grid-row: 1 / span 2;
+      }
+
+      .hero-brief {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding: 1.15rem;
+        background:
+          linear-gradient(180deg, rgba(9, 37, 27, 0.2), rgba(9, 37, 27, 0.92)),
+          url("construction-images/project-management/02-team-briefing.jpg") center / cover;
+      }
+
+      .hero-brief img {
+        width: 58px;
+        height: 58px;
+        margin-bottom: 0.85rem;
+        object-fit: contain;
+        filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.25));
+      }
+
+      .hero-brief strong {
+        color: var(--gold);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.45rem, 2.4vw, 2rem);
+        line-height: 1;
+      }
+
+      .hero-brief p {
+        margin-top: 0.55rem;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 0.9rem;
       }
 
       .hero-panel {
@@ -484,8 +608,9 @@
         overflow: hidden;
         border: 1px solid rgba(212, 175, 55, 0.32);
         border-radius: 8px;
-        background: var(--white);
+        background: rgba(251, 250, 246, 0.96);
         box-shadow: var(--shadow);
+        backdrop-filter: blur(16px);
       }
 
       .proof-card {
@@ -574,12 +699,13 @@
 
       .services-grid {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(6, minmax(0, 1fr));
         gap: 1rem;
       }
 
       .service-card {
-        min-height: 380px;
+        grid-column: span 2;
+        min-height: 430px;
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -592,18 +718,35 @@
           box-shadow 0.25s ease;
       }
 
+      .service-card[role="button"] {
+        cursor: pointer;
+      }
+
+      .service-card:first-child {
+        grid-column: span 2;
+      }
+
       .service-card:hover {
         transform: translateY(-6px);
         box-shadow: 0 22px 55px rgba(17, 24, 39, 0.13);
       }
 
+      .service-card:focus-visible {
+        outline: 3px solid rgba(212, 175, 55, 0.7);
+        outline-offset: 4px;
+      }
+
       .service-card > img {
         width: calc(100% - 1rem);
-        height: clamp(120px, 12vw, 140px);
+        height: clamp(160px, 16vw, 220px);
         margin: 0.5rem 0.5rem 0;
         border-radius: 6px;
         object-fit: cover;
         flex: 0 0 auto;
+      }
+
+      .service-card[data-service="logistics"] > img {
+        object-position: center 58%;
       }
 
       .service-body {
@@ -625,6 +768,264 @@
         font-size: 0.9rem;
       }
 
+      .service-marquee {
+        position: relative;
+        margin: 0 0 1.35rem;
+        overflow: hidden;
+        border-block: 1px solid rgba(212, 175, 55, 0.38);
+        background:
+          linear-gradient(90deg, var(--paper), rgba(251, 250, 246, 0), var(--paper)),
+          rgba(21, 63, 43, 0.045);
+      }
+
+      .service-marquee::before,
+      .service-marquee::after {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        bottom: 0;
+        width: clamp(34px, 8vw, 120px);
+        pointer-events: none;
+      }
+
+      .service-marquee::before {
+        left: 0;
+        background: linear-gradient(90deg, var(--paper), rgba(251, 250, 246, 0));
+      }
+
+      .service-marquee::after {
+        right: 0;
+        background: linear-gradient(270deg, var(--paper), rgba(251, 250, 246, 0));
+      }
+
+      .service-marquee-track {
+        display: flex;
+        width: max-content;
+        animation: serviceTicker 34s linear infinite;
+      }
+
+      .service-marquee:hover .service-marquee-track,
+      .service-marquee:focus-within .service-marquee-track {
+        animation-play-state: paused;
+      }
+
+      .service-marquee-group {
+        display: inline-flex;
+        align-items: center;
+        flex: 0 0 auto;
+        padding: 0.75rem 0;
+      }
+
+      .service-pill {
+        border: 0;
+        background: transparent;
+        color: var(--forest);
+        font: inherit;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.38rem, 2.2vw, 2.05rem);
+        font-weight: 700;
+        line-height: 1;
+        white-space: nowrap;
+        cursor: pointer;
+        transition:
+          color 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .service-pill:hover,
+      .service-pill:focus-visible {
+        color: var(--gold);
+        transform: translateY(-1px);
+      }
+
+      .service-pill:focus-visible {
+        outline: 2px solid rgba(212, 175, 55, 0.65);
+        outline-offset: 6px;
+      }
+
+      .service-symbol {
+        width: 28px;
+        height: 28px;
+        margin: 0 clamp(1rem, 2.2vw, 1.7rem);
+        object-fit: contain;
+        opacity: 0.78;
+        filter:
+          brightness(0)
+          saturate(100%)
+          invert(23%)
+          sepia(33%)
+          saturate(858%)
+          hue-rotate(103deg)
+          brightness(84%)
+          contrast(88%);
+      }
+
+      .service-modal[hidden] {
+        display: none;
+      }
+
+      .service-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 120;
+        display: grid;
+        place-items: center;
+        padding: clamp(1rem, 3vw, 2rem);
+        background: rgba(9, 37, 27, 0.78);
+        backdrop-filter: blur(10px);
+      }
+
+      .service-modal-card {
+        position: relative;
+        width: min(1180px, 100%);
+        max-height: min(90vh, 820px);
+        overflow: auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.6fr);
+        gap: clamp(1rem, 3vw, 1.6rem);
+        padding: clamp(0.8rem, 2vw, 1.2rem);
+        border: 1px solid rgba(212, 175, 55, 0.35);
+        border-radius: 10px;
+        background: var(--paper);
+        box-shadow: 0 32px 90px rgba(0, 0, 0, 0.34);
+      }
+
+      .service-modal-media {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-rows: repeat(2, minmax(210px, 1fr));
+        gap: 0.65rem;
+        min-height: 500px;
+      }
+
+      .service-modal-media img {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        object-fit: cover;
+        border-radius: 7px;
+        background: var(--surface);
+      }
+
+      .service-modal-media img:first-child {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .service-modal-media img:nth-child(2) {
+        grid-column: auto;
+      }
+
+      .service-modal-media img:nth-child(3) {
+        grid-column: auto;
+      }
+
+      .service-modal-media img:nth-child(8) {
+        grid-column: auto;
+      }
+
+      .service-modal-media img[src*="ambulance"] {
+        object-position: center center;
+      }
+
+      .service-modal-media img[src*="female-pm"],
+      .service-modal-media img[src*="female-consultant"],
+      .service-modal-media img[src*="site-advisor"],
+      .service-modal-media img[src*="site-supervision"],
+      .service-modal-media img[src*="bridge-inspection"],
+      .service-modal-media img[src*="steel-framework"],
+      .service-modal-media img[src*="roof-installation"],
+      .service-modal-media img[src*="foreman-discussion"] {
+        object-position: center top;
+      }
+
+      .service-modal-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(0.4rem, 2vw, 1.4rem);
+      }
+
+      .service-modal-symbol {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 1rem;
+        object-fit: contain;
+        opacity: 0.82;
+      }
+
+      .service-modal-copy h3 {
+        color: var(--forest);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.3rem, 5vw, 4rem);
+        line-height: 0.92;
+      }
+
+      .service-modal-copy p {
+        margin-top: 1rem;
+        color: var(--muted);
+        font-size: 1rem;
+      }
+
+      .service-modal-list {
+        display: grid;
+        gap: 0.55rem;
+        margin: 1.35rem 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .service-modal-list li {
+        display: grid;
+        grid-template-columns: 22px 1fr;
+        gap: 0.55rem;
+        color: var(--ink);
+        font-size: 0.94rem;
+      }
+
+      .service-modal-list li::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        margin-top: 0.55rem;
+        border-radius: 50%;
+        background: var(--gold);
+      }
+
+      .service-modal-close {
+        position: absolute;
+        top: 0.9rem;
+        right: 0.9rem;
+        z-index: 3;
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(212, 175, 55, 0.42);
+        border-radius: 50%;
+        background: rgba(251, 250, 246, 0.94);
+        color: var(--forest);
+        cursor: pointer;
+        box-shadow: 0 12px 24px rgba(17, 24, 39, 0.16);
+      }
+
+      .service-modal-close:hover,
+      .service-modal-close:focus-visible {
+        background: var(--forest);
+        color: var(--gold-soft);
+      }
+
+      @keyframes serviceTicker {
+        from {
+          transform: translate3d(0, 0, 0);
+        }
+
+        to {
+          transform: translate3d(-50%, 0, 0);
+        }
+      }
+
       .work {
         padding: 5.5rem 0;
         background: var(--white);
@@ -632,7 +1033,7 @@
 
       .work-layout {
         display: grid;
-        grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.75fr);
+        grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
         gap: 1rem;
       }
 
@@ -650,11 +1051,17 @@
 
       .project-stack {
         display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 1rem;
       }
 
       .project-tile {
         min-height: 282px;
+      }
+
+      .project-tile:last-child {
+        grid-column: 1 / span 2;
+        min-height: 250px;
       }
 
       .feature-project img,
@@ -886,6 +1293,166 @@
         text-decoration: none;
       }
 
+      .proof-strip {
+        margin-top: -58px;
+      }
+
+      .proof-grid {
+        position: relative;
+        z-index: 4;
+      }
+
+      .executive-brief {
+        padding: 6.4rem 0 4rem;
+        background:
+          linear-gradient(180deg, rgba(251, 250, 246, 0.92), var(--paper) 38%),
+          url("adinkrahene.png") right 6vw top 48px / 230px no-repeat;
+      }
+
+      .brief-grid {
+        align-items: stretch;
+      }
+
+      .brief-card {
+        min-height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(246, 244, 238, 0.96)),
+          var(--white);
+      }
+
+      .services {
+        padding: 6.5rem 0;
+        background:
+          linear-gradient(180deg, var(--paper), rgba(246, 244, 238, 0.76)),
+          url("sankofa.png") left -42px top 80px / 180px no-repeat;
+      }
+
+      .services-grid {
+        align-items: stretch;
+      }
+
+      .service-card {
+        min-height: 420px;
+      }
+
+      .service-card:nth-child(2),
+      .service-card:nth-child(4) {
+        transform: translateY(18px);
+      }
+
+      .service-card:nth-child(2):hover,
+      .service-card:nth-child(4):hover {
+        transform: translateY(10px);
+      }
+
+      .service-body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .service-body::after {
+        content: "View details";
+        display: inline-flex;
+        width: fit-content;
+        margin-top: 1.15rem;
+        padding-top: 0.4rem;
+        border-top: 1px solid rgba(212, 175, 55, 0.46);
+        color: var(--forest);
+        font-size: 0.78rem;
+        font-weight: 800;
+      }
+
+      .work {
+        padding: 6.5rem 0;
+        background:
+          linear-gradient(180deg, var(--white), var(--surface));
+      }
+
+      .work-layout {
+        grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+        gap: 1rem;
+      }
+
+      .project-stack {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .project-tile {
+        min-height: 282px;
+      }
+
+      .project-tile:last-child {
+        grid-column: 1 / span 2;
+        min-height: 250px;
+      }
+
+      .capabilities {
+        padding: 6.8rem 0;
+        background: var(--forest-deep);
+      }
+
+      .capabilities .section-heading h2,
+      .capabilities .section-heading p {
+        color: var(--white);
+      }
+
+      .capabilities .section-heading p {
+        color: rgba(255, 255, 255, 0.74);
+      }
+
+      .capability-panel {
+        background:
+          linear-gradient(135deg, rgba(21, 63, 43, 0.94), rgba(9, 37, 27, 0.98)),
+          url("gye-nyame.png") right 34px bottom 28px / 150px no-repeat;
+      }
+
+      .process-list {
+        counter-reset: process;
+      }
+
+      .process-item {
+        position: relative;
+      }
+
+      .process-item::after {
+        counter-increment: process;
+        content: "0" counter(process);
+        position: absolute;
+        right: 1rem;
+        top: 0.75rem;
+        color: rgba(212, 175, 55, 0.28);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .about {
+        padding: 7rem 0;
+        background:
+          linear-gradient(90deg, var(--paper), var(--white));
+      }
+
+      .leadership-card {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .contact {
+        padding: 7rem 0;
+      }
+
+      .contact-layout {
+        align-items: center;
+      }
+
       footer {
         padding: 2rem clamp(1.25rem, 4vw, 3rem);
         display: flex;
@@ -910,9 +1477,12 @@
           linear-gradient(135deg, var(--forest-deep), var(--forest));
         opacity: 1;
         visibility: visible;
+        transform: scale(1);
+        will-change: opacity, transform, visibility;
         transition:
-          opacity 0.28s ease,
-          visibility 0.28s ease;
+          opacity 0.72s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.72s cubic-bezier(0.16, 1, 0.3, 1),
+          visibility 0s linear 0.72s;
       }
 
       .splash-adinkra-field {
@@ -954,6 +1524,7 @@
 
       .splash-screen.is-hidden {
         opacity: 0;
+        transform: scale(1.018);
         visibility: hidden;
         pointer-events: none;
       }
@@ -973,7 +1544,7 @@
         filter: drop-shadow(0 24px 44px rgba(0, 0, 0, 0.3));
         transform-origin: center;
         will-change: opacity, transform, filter;
-        animation: splashLogoIn 2s cubic-bezier(0.16, 1, 0.3, 1) both;
+        animation: splashLogoIn 2.1s cubic-bezier(0.16, 1, 0.3, 1) both;
       }
 
       .splash-name {
@@ -981,7 +1552,7 @@
         gap: 0.28rem;
         color: var(--white);
         will-change: opacity, transform;
-        animation: splashNameIn 2s cubic-bezier(0.16, 1, 0.3, 1) both;
+        animation: splashNameIn 2.1s cubic-bezier(0.16, 1, 0.3, 1) both;
       }
 
       .splash-name strong {
@@ -1001,6 +1572,39 @@
         font-weight: 700;
         letter-spacing: 0.34em;
         text-transform: uppercase;
+      }
+
+      .splash-status {
+        width: min(320px, 70vw);
+        margin-top: 0.55rem;
+      }
+
+      .splash-status span {
+        display: block;
+        margin-bottom: 0.65rem;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .splash-progress {
+        height: 3px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.16);
+      }
+
+      .splash-progress::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, rgba(243, 231, 191, 0.9), var(--gold));
+        transform-origin: left;
+        animation: splashProgress 2.1s cubic-bezier(0.16, 1, 0.3, 1) both;
       }
 
       @keyframes splashLogoIn {
@@ -1069,6 +1673,16 @@
         }
       }
 
+      @keyframes splashProgress {
+        from {
+          transform: scaleX(0);
+        }
+
+        to {
+          transform: scaleX(1);
+        }
+      }
+
       .reveal {
         opacity: 0;
         transform: translateY(18px);
@@ -1082,11 +1696,36 @@
         transform: translateY(0);
       }
 
+      section:target .reveal {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
       @media (max-width: 1080px) {
-        .services-grid {
-          grid-template-columns: repeat(3, 1fr);
+        .hero-grid {
+          grid-template-columns: minmax(0, 1fr) minmax(280px, 0.55fr);
         }
 
+        .hero-visual {
+          min-height: 430px;
+        }
+
+        .services-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .service-card,
+        .service-card:first-child {
+          grid-column: auto;
+        }
+
+        .service-modal-card {
+          grid-template-columns: 1fr;
+        }
+
+        .service-modal-media {
+          min-height: 360px;
+        }
       }
 
       @media (max-width: 860px) {
@@ -1099,20 +1738,26 @@
 
         .nav-links {
           width: 100%;
-          overflow-x: auto;
+          flex-wrap: wrap;
+          overflow: visible;
           padding-bottom: 0.2rem;
-          gap: 1rem;
+          gap: 0.85rem 1rem;
+        }
+
+        .nav-links a {
+          font-size: 0.8rem;
         }
 
         .nav-cta {
-          padding: 0;
-          background: transparent;
+          padding: 0.45rem 0.7rem;
+          border: 1px solid rgba(21, 63, 43, 0.16);
+          background: rgba(21, 63, 43, 0.08);
           color: var(--forest) !important;
           box-shadow: none;
         }
 
         .hero {
-          min-height: 820px;
+          min-height: auto;
           padding-top: 11rem;
           align-items: center;
         }
@@ -1124,6 +1769,18 @@
         .about-grid,
         .contact-layout {
           grid-template-columns: 1fr;
+        }
+
+        .hero-visual {
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 230px 190px;
+          min-height: 0;
+          transform: none;
+        }
+
+        .hero-photo-main {
+          grid-column: 1 / span 2;
+          grid-row: auto;
         }
 
         .proof-grid {
@@ -1145,6 +1802,15 @@
 
         .services-grid {
           grid-template-columns: repeat(2, 1fr);
+        }
+
+        .service-modal {
+          place-items: end center;
+          padding: 0.75rem;
+        }
+
+        .service-modal-card {
+          max-height: 92vh;
         }
 
         .feature-project {
@@ -1176,17 +1842,45 @@
         }
 
         .hero {
-          min-height: 760px;
-          padding-inline: 1rem;
+          padding: 12rem 1rem 3.2rem;
         }
 
         .hero h1 {
-          font-size: clamp(2.45rem, 10.5vw, 3.15rem);
-          line-height: 0.98;
+          max-width: 100%;
+          font-size: clamp(2.05rem, 9vw, 2.62rem);
+          line-height: 1;
+          overflow-wrap: anywhere;
         }
 
-        .hero-panel {
-          display: none;
+        .hero-copy {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .hero-service-strip {
+          gap: 0.38rem;
+        }
+
+        .hero-service-strip span {
+          font-size: 0.72rem;
+        }
+
+        .hero-actions {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+
+        .button {
+          width: 100%;
+        }
+
+        .hero-visual {
+          grid-template-rows: 210px 150px;
+          gap: 0.6rem;
+        }
+
+        .hero-brief {
+          padding: 0.95rem;
         }
 
         .services-grid {
@@ -1197,8 +1891,48 @@
           min-height: auto;
         }
 
+        .service-card:nth-child(2),
+        .service-card:nth-child(4),
+        .service-card:nth-child(2):hover,
+        .service-card:nth-child(4):hover {
+          transform: none;
+        }
+
+        .service-marquee-group {
+          padding: 0.65rem 0;
+        }
+
+        .service-modal-media {
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: repeat(4, 150px);
+          min-height: 0;
+        }
+
+        .service-modal-media img:first-child {
+          grid-column: auto;
+          grid-row: auto;
+        }
+
+        .service-modal-media img:nth-child(2),
+        .service-modal-media img:nth-child(3),
+        .service-modal-media img:nth-child(8) {
+          grid-column: auto;
+        }
+
+        .service-modal-copy h3 {
+          padding-right: 2.2rem;
+        }
+
         .project-tile {
           min-height: 220px;
+        }
+
+        .project-stack {
+          grid-template-columns: 1fr;
+        }
+
+        .project-tile:last-child {
+          grid-column: auto;
         }
 
         footer {
@@ -1218,6 +1952,25 @@
 
         .proof-card:last-child {
           border-bottom: 0;
+        }
+
+        .proof-strip {
+          margin-top: 0;
+        }
+
+        .service-card:nth-child(2),
+        .service-card:nth-child(4),
+        .service-card:nth-child(2):hover,
+        .service-card:nth-child(4):hover {
+          transform: none;
+        }
+
+        .project-stack {
+          grid-template-columns: 1fr;
+        }
+
+        .project-tile:last-child {
+          grid-column: auto;
         }
       }
 
@@ -1240,6 +1993,15 @@
         }
 
         .splash-name {
+          animation: none;
+        }
+
+        .splash-progress::after {
+          animation: none;
+          transform: scaleX(1);
+        }
+
+        .service-marquee-track {
           animation: none;
         }
       }
@@ -1274,6 +2036,10 @@
         <div class="splash-name" aria-hidden="true">
           <strong>Azeem Emporium</strong>
           <span>Limited</span>
+        </div>
+        <div class="splash-status" aria-hidden="true">
+          <span>Preparing field operations</span>
+          <div class="splash-progress"></div>
         </div>
       </div>
     </div>
@@ -1315,6 +2081,12 @@
               works, emergency vehicle supply, and project management through one
               accountable operating structure.
             </p>
+            <div class="hero-service-strip" aria-label="Service areas">
+              <span>Ambulance Supply</span>
+              <span>Construction</span>
+              <span>Civil Works</span>
+              <span>Project Control</span>
+            </div>
             <div class="hero-actions">
               <a class="button button-primary" href="#services">
                 <i class="fas fa-layer-group"></i>
@@ -1327,78 +2099,17 @@
             </div>
           </div>
 
-          <aside class="hero-panel" aria-label="Company promise">
-            <div class="panel-kicker">Operational brief</div>
-            <img src="azeem-emporium-logo-extracted.png" alt="Azeem Emporium crest" />
-            <strong>One partner for planning, sourcing, movement, and delivery.</strong>
-            <p>
-              Practical coordination for organizations that require reliable execution,
-              clear reporting, and disciplined handover.
-            </p>
-            <div class="adinkra-mini-row" aria-label="Adinkra symbols">
-              <span class="adinkra-symbol" tabindex="0" aria-label="Gye Nyame">
-                <img src="gye-nyame.png" alt="" />
-                <span class="adinkra-popover" aria-hidden="true">
-                  <img src="gye-nyame.png" alt="" />
-                  <span>Gye Nyame</span>
-                </span>
-              </span>
-              <span class="adinkra-symbol" tabindex="0" aria-label="Sankofa">
-                <img src="sankofa.png" alt="" />
-                <span class="adinkra-popover" aria-hidden="true">
-                  <img src="sankofa.png" alt="" />
-                  <span>Sankofa</span>
-                </span>
-              </span>
-              <span class="adinkra-symbol" tabindex="0" aria-label="Adinkrahene">
-                <img src="adinkrahene.png" alt="" />
-                <span class="adinkra-popover" aria-hidden="true">
-                  <img src="adinkrahene.png" alt="" />
-                  <span>Adinkrahene</span>
-                </span>
-              </span>
-              <span class="adinkra-symbol" tabindex="0" aria-label="Aya">
-                <img src="aya.png" alt="" />
-                <span class="adinkra-popover" aria-hidden="true">
-                  <img src="aya.png" alt="" />
-                  <span>Aya</span>
-                </span>
-              </span>
-              <span class="adinkra-symbol" tabindex="0" aria-label="Akoma">
-                <img src="akoma.png" alt="" />
-                <span class="adinkra-popover" aria-hidden="true">
-                  <img src="akoma.png" alt="" />
-                  <span>Akoma</span>
-                </span>
-              </span>
-              <span class="adinkra-symbol" tabindex="0" aria-label="Ntease">
-                <img src="ntease.png" alt="" />
-                <span class="adinkra-popover" aria-hidden="true">
-                  <img src="ntease.png" alt="" />
-                  <span>Ntease</span>
-                </span>
-              </span>
-              <span class="adinkra-symbol" tabindex="0" aria-label="Akoben">
-                <img src="akoben.png" alt="" />
-                <span class="adinkra-popover" aria-hidden="true">
-                  <img src="akoben.png" alt="" />
-                  <span>Akoben</span>
-                </span>
-              </span>
-              <span class="adinkra-symbol" tabindex="0" aria-label="Dwennimmen">
-                <img src="dwennimmen.png" alt="" />
-                <span class="adinkra-popover" aria-hidden="true">
-                  <img src="dwennimmen.png" alt="" />
-                  <span>Dwennimmen</span>
-                </span>
-              </span>
-              <span class="adinkra-symbol" tabindex="0" aria-label="Fihankra">
-                <img src="fihankra.png" alt="" />
-                <span class="adinkra-popover" aria-hidden="true">
-                  <img src="fihankra.png" alt="" />
-                  <span>Fihankra</span>
-                </span>
-              </span>
+          <aside class="hero-visual" aria-label="Azeem Emporium field work">
+            <figure class="hero-photo hero-photo-main">
+              <img src="ambulance-road-ready.jpg" alt="Azeem Emporium ambulance ready for deployment" />
+            </figure>
+            <figure class="hero-photo">
+              <img src="construction-images/construction/01-steel-framework.jpg" alt="Black construction workers handling steel framework on site" />
+            </figure>
+            <div class="hero-brief">
+              <img src="azeem-emporium-logo-extracted.png" alt="Azeem Emporium crest" />
+              <strong>One partner for planning, sourcing, movement, and delivery.</strong>
+              <p>Clear coordination from first brief to final handover.</p>
             </div>
           </aside>
         </div>
@@ -1469,9 +2180,58 @@
             </p>
           </div>
 
+          <div class="service-marquee reveal" aria-label="Click a service to view details">
+            <div class="service-marquee-track">
+              <div class="service-marquee-group" aria-hidden="false">
+                <button class="service-pill" type="button" data-service="logistics">
+                  Logistics &amp; Supplies
+                </button>
+                <img class="service-symbol" src="gye-nyame.png" alt="" />
+                <button class="service-pill" type="button" data-service="construction">
+                  Construction
+                </button>
+                <img class="service-symbol" src="akoben.png" alt="" />
+                <button class="service-pill" type="button" data-service="civil">
+                  Civil Engineering
+                </button>
+                <img class="service-symbol" src="adinkrahene.png" alt="" />
+                <button class="service-pill" type="button" data-service="project">
+                  Project Management
+                </button>
+                <img class="service-symbol" src="aya.png" alt="" />
+                <button class="service-pill" type="button" data-service="consultancy">
+                  Consultancy
+                </button>
+                <img class="service-symbol" src="sankofa.png" alt="" />
+              </div>
+              <div class="service-marquee-group" aria-hidden="true">
+                <button class="service-pill" type="button" tabindex="-1" data-service="logistics">
+                  Logistics &amp; Supplies
+                </button>
+                <img class="service-symbol" src="gye-nyame.png" alt="" />
+                <button class="service-pill" type="button" tabindex="-1" data-service="construction">
+                  Construction
+                </button>
+                <img class="service-symbol" src="akoben.png" alt="" />
+                <button class="service-pill" type="button" tabindex="-1" data-service="civil">
+                  Civil Engineering
+                </button>
+                <img class="service-symbol" src="adinkrahene.png" alt="" />
+                <button class="service-pill" type="button" tabindex="-1" data-service="project">
+                  Project Management
+                </button>
+                <img class="service-symbol" src="aya.png" alt="" />
+                <button class="service-pill" type="button" tabindex="-1" data-service="consultancy">
+                  Consultancy
+                </button>
+                <img class="service-symbol" src="sankofa.png" alt="" />
+              </div>
+            </div>
+          </div>
+
           <div class="services-grid">
-            <article class="service-card reveal">
-              <img src="ambulance-side.jpg" alt="Ambulance supply vehicle" />
+            <article class="service-card reveal" role="button" tabindex="0" data-service="logistics">
+              <img src="ambulance-road-ready.jpg" alt="Road-ready ambulance supply vehicle" />
               <div class="service-body">
                 <h3>Logistics & Supplies</h3>
                 <p>
@@ -1481,8 +2241,8 @@
               </div>
             </article>
 
-            <article class="service-card reveal">
-              <img src="construction-formwork.jpg" alt="Construction formwork" />
+            <article class="service-card reveal" role="button" tabindex="0" data-service="construction">
+              <img src="construction-images/construction/01-steel-framework.jpg" alt="Black construction workers handling steel framework on site" />
               <div class="service-body">
                 <h3>Construction</h3>
                 <p>
@@ -1492,8 +2252,8 @@
               </div>
             </article>
 
-            <article class="service-card reveal">
-              <img src="civil-double-culvert.jpg" alt="Civil engineering culvert work" />
+            <article class="service-card reveal" role="button" tabindex="0" data-service="civil">
+              <img src="construction-images/civil-engineering/02-surveyor.jpg" alt="Civil engineer surveying site levels" />
               <div class="service-body">
                 <h3>Civil Engineering</h3>
                 <p>
@@ -1503,8 +2263,8 @@
               </div>
             </article>
 
-            <article class="service-card reveal">
-              <img src="road-surfacing-team.jpg" alt="Road surfacing team" />
+            <article class="service-card reveal" role="button" tabindex="0" data-service="project">
+              <img src="construction-images/project-management/02-team-briefing.jpg" alt="Project team briefing on site" />
               <div class="service-body">
                 <h3>Project Management</h3>
                 <p>
@@ -1514,8 +2274,8 @@
               </div>
             </article>
 
-            <article class="service-card reveal">
-              <img src="ambulance-medical-bay.jpg" alt="Ambulance medical bay" />
+            <article class="service-card reveal" role="button" tabindex="0" data-service="consultancy">
+              <img src="construction-images/consultancy/04-female-consultant.jpg" alt="Consultant advising a client" />
               <div class="service-body">
                 <h3>Consultancy</h3>
                 <p>
@@ -1543,26 +2303,33 @@
 
           <div class="work-layout">
             <article class="feature-project reveal">
-              <img src="finished-roadway.jpg" alt="Finished roadway project" />
+              <img src="construction-images/civil-engineering/01-bridge-inspection.jpg" alt="Civil engineer reviewing bridge plans on site" />
               <div class="project-caption">
                 <span>Roadworks</span>
-                <h3>Surface delivery for commercial corridors and public access routes.</h3>
+                <h3>Site review, planning, and delivery for public access routes.</h3>
               </div>
             </article>
 
             <div class="project-stack">
               <article class="project-tile reveal">
-                <img src="drainage-channel.jpg" alt="Concrete drainage channel" />
+                <img src="construction-images/civil-engineering/10-team-collab.jpg" alt="Civil engineering team reviewing an infrastructure model" />
                 <div class="project-caption">
                   <span>Civil Works</span>
-                  <h3>Drainage and culvert structures.</h3>
+                  <h3>Engineering coordination for infrastructure works.</h3>
                 </div>
               </article>
               <article class="project-tile reveal">
-                <img src="ambulance-open-rear.jpg" alt="Open rear ambulance interior" />
+                <img src="construction-images/consultancy/01-client-meeting.jpg" alt="Consultants reviewing plans with a client" />
                 <div class="project-caption">
-                  <span>Supply</span>
-                  <h3>Emergency vehicle fit-out and deployment readiness.</h3>
+                  <span>Consultancy</span>
+                  <h3>Practical advisory for procurement and delivery choices.</h3>
+                </div>
+              </article>
+              <article class="project-tile reveal">
+                <img src="construction-images/project-management/05-female-pm-tablet.jpg" alt="Project manager reviewing work progress on a tablet" />
+                <div class="project-caption">
+                  <span>Management</span>
+                  <h3>Site supervision, reporting, and handover control.</h3>
                 </div>
               </article>
             </div>
@@ -1586,8 +2353,8 @@
           <div class="capability-panel reveal">
             <img
               class="capability-photo"
-              src="road-grader.jpg"
-              alt="Road grading equipment on site"
+              src="construction-images/project-management/01-site-supervision.jpg"
+              alt="Project supervisor reviewing site work on a tablet"
             />
             <div class="process-list">
               <article class="process-item">
@@ -1709,6 +2476,33 @@
       </section>
     </main>
 
+    <div class="service-modal" id="service-modal" role="dialog" aria-modal="true" aria-labelledby="service-modal-title" hidden>
+      <div class="service-modal-card">
+        <button class="service-modal-close" type="button" aria-label="Close service popup">
+          <i class="fas fa-xmark" aria-hidden="true"></i>
+        </button>
+        <div class="service-modal-media" aria-label="Service image gallery">
+          <img id="service-modal-image-1" src="ambulance-road-ready.jpg" alt="" />
+          <img id="service-modal-image-2" src="ambulance-open-rear.jpg" alt="" />
+          <img id="service-modal-image-3" src="ambulance-medical-bay.jpg" alt="" />
+          <img id="service-modal-image-4" src="ambulance-oxygen-system.jpg" alt="" />
+          <img id="service-modal-image-5" src="ambulance-stretcher-system.jpg" alt="" />
+          <img id="service-modal-image-6" src="ambulance-front.jpg" alt="" />
+          <img id="service-modal-image-7" src="ambulance-side.jpg" alt="" />
+          <img id="service-modal-image-8" src="ambulance-clinical-interior.jpg" alt="" />
+        </div>
+        <div class="service-modal-copy">
+          <img class="service-modal-symbol" id="service-modal-symbol" src="gye-nyame.png" alt="" />
+          <h3 id="service-modal-title">Logistics &amp; Supplies</h3>
+          <p id="service-modal-text">
+            Fleet coordination, sourcing, warehousing, inventory movement, and
+            operational delivery for time-sensitive requirements.
+          </p>
+          <ul class="service-modal-list" id="service-modal-list"></ul>
+        </div>
+      </div>
+    </div>
+
     <footer>
       <p>&copy; 2026 Azeem Emporium Limited. All rights reserved.</p>
       <p>Logistics &middot; Construction &middot; Civil Engineering &middot; Project Management &middot; Consultancy</p>
@@ -1718,11 +2512,332 @@
       const splashScreen = document.querySelector("#splash-screen");
 
       if (splashScreen) {
-        window.setTimeout(() => {
-          splashScreen.classList.add("is-hidden");
-          document.body.classList.remove("splash-loading");
-        }, 2500);
+        const closeSplash = () => {
+          window.requestAnimationFrame(() => {
+            splashScreen.classList.add("is-hidden");
+            document.body.classList.remove("splash-loading");
+            window.setTimeout(() => {
+              splashScreen.remove();
+            }, 800);
+          });
+        };
+
+        window.setTimeout(closeSplash, 2200);
       }
+
+      const serviceDetails = {
+        logistics: {
+          title: "Logistics & Supplies",
+          symbol: "gye-nyame.png",
+          text:
+            "Coordinated movement, reliable supply planning, and field-ready delivery for urgent operational requirements.",
+          images: [
+            {
+              src: "ambulance-road-ready.jpg",
+              alt: "Road-ready ambulance prepared for supply delivery",
+            },
+            {
+              src: "ambulance-open-rear.jpg",
+              alt: "Open ambulance rear showing medical logistics capacity",
+            },
+            {
+              src: "ambulance-medical-bay.jpg",
+              alt: "Ambulance medical bay ready for emergency service",
+            },
+            {
+              src: "ambulance-oxygen-system.jpg",
+              alt: "Ambulance oxygen system and clinical fittings",
+            },
+            {
+              src: "ambulance-stretcher-system.jpg",
+              alt: "Ambulance stretcher system for patient transport",
+            },
+            {
+              src: "ambulance-front.jpg",
+              alt: "Front view of ambulance supply vehicle",
+            },
+            {
+              src: "ambulance-side.jpg",
+              alt: "Side view of ambulance supply vehicle",
+            },
+            {
+              src: "ambulance-clinical-interior.jpg",
+              alt: "Clinical interior of an ambulance",
+            },
+          ],
+          points: [
+            "Sourcing, inventory movement, and delivery coordination",
+            "Emergency vehicle and specialist equipment support",
+            "Warehousing, dispatch planning, and documented handover",
+          ],
+        },
+        construction: {
+          title: "Construction",
+          symbol: "akoben.png",
+          text:
+            "Practical construction support for residential and commercial work, with site discipline from mobilization to finish.",
+          images: [
+            {
+              src: "construction-images/construction/01-steel-framework.jpg",
+              alt: "Black construction workers handling steel framework on site",
+            },
+            {
+              src: "construction-images/construction/03-concrete-crew.jpg",
+              alt: "Construction crew managing concrete work",
+            },
+            {
+              src: "construction-images/construction/10-heavy-machinery.jpg",
+              alt: "Heavy machinery supporting construction work",
+            },
+            {
+              src: "construction-images/construction/06-steel-beam-lift.jpg",
+              alt: "Steel beam lift during construction",
+            },
+            {
+              src: "construction-images/construction/09-interior-buildout.jpg",
+              alt: "Interior buildout work in progress",
+            },
+            {
+              src: "construction-images/construction/06-roof-installation.jpg",
+              alt: "Black construction workers installing a roof structure",
+            },
+            {
+              src: "construction-images/construction/04-excavator-operator.jpg",
+              alt: "Construction operator working with heavy equipment",
+            },
+            {
+              src: "construction-images/construction/10-completed-build.jpg",
+              alt: "Construction team in front of a completed building",
+            },
+          ],
+          points: [
+            "Contractor coordination and daily site execution",
+            "Quality control across materials, workmanship, and safety",
+            "Residential, commercial, and infrastructure build support",
+          ],
+        },
+        civil: {
+          title: "Civil Engineering",
+          symbol: "adinkrahene.png",
+          text:
+            "Infrastructure planning and engineering oversight for roadworks, drainage, structures, and public access routes.",
+          images: [
+            {
+              src: "construction-images/civil-engineering/02-surveyor.jpg",
+              alt: "Black surveyor taking measurements for civil engineering work",
+            },
+            {
+              src: "construction-images/civil-engineering/10-team-collab.jpg",
+              alt: "Civil engineering team collaborating over site drawings",
+            },
+            {
+              src: "construction-images/civil-engineering/08-road-paving.jpg",
+              alt: "Road paving work under civil engineering supervision",
+            },
+            {
+              src: "construction-images/civil-engineering/03-highway-planning.jpg",
+              alt: "Highway planning for civil works",
+            },
+            {
+              src: "construction-images/civil-engineering/07-rebar-inspection.jpg",
+              alt: "Rebar inspection for structural civil work",
+            },
+            {
+              src: "construction-images/civil-engineering/01-bridge-inspection.jpg",
+              alt: "Civil engineer reviewing bridge plans",
+            },
+            {
+              src: "construction-images/civil-engineering/05-concrete-pour.jpg",
+              alt: "Civil engineer supervising concrete works",
+            },
+            {
+              src: "construction-images/civil-engineering/08-water-infrastructure.jpg",
+              alt: "Civil engineer inspecting water infrastructure",
+            },
+          ],
+          points: [
+            "Drainage, culvert, and roadworks delivery",
+            "Survey coordination, structural checks, and field reporting",
+            "Infrastructure planning with practical construction oversight",
+          ],
+        },
+        project: {
+          title: "Project Management",
+          symbol: "aya.png",
+          text:
+            "A single point of control for schedules, budgets, vendors, reporting, and completion evidence.",
+          images: [
+            {
+              src: "construction-images/project-management/02-team-briefing.jpg",
+              alt: "Black project team reviewing plans during a site briefing",
+            },
+            {
+              src: "construction-images/project-management/05-female-pm-tablet.jpg",
+              alt: "Black female project manager checking work progress on a tablet",
+            },
+            {
+              src: "construction-images/project-management/10-project-handover.jpg",
+              alt: "Project team completing a formal handover",
+            },
+            {
+              src: "construction-images/project-management/04-safety-briefing.jpg",
+              alt: "Safety briefing during project management",
+            },
+            {
+              src: "construction-images/project-management/09-drone-inspection.jpg",
+              alt: "Drone inspection for project progress review",
+            },
+            {
+              src: "construction-images/project-management/01-site-supervision.jpg",
+              alt: "Project supervisor reviewing site work on a tablet",
+            },
+            {
+              src: "construction-images/project-management/04-foreman-discussion.jpg",
+              alt: "Foreman discussion with project team on site",
+            },
+            {
+              src: "construction-images/project-management/08-contract-signing.jpg",
+              alt: "Project contract signing meeting",
+            },
+          ],
+          points: [
+            "Scope control, scheduling, budgeting, and risk tracking",
+            "Vendor coordination with visible progress updates",
+            "Closeout records, completion checks, and client reporting",
+          ],
+        },
+        consultancy: {
+          title: "Consultancy",
+          symbol: "sankofa.png",
+          text:
+            "Advisory support for procurement, operations, growth planning, advertising coordination, and execution strategy.",
+          images: [
+            {
+              src: "construction-images/consultancy/04-female-consultant.jpg",
+              alt: "Black female consultant advising a client",
+            },
+            {
+              src: "construction-images/consultancy/01-client-meeting.jpg",
+              alt: "Consultancy client meeting around project documents",
+            },
+            {
+              src: "construction-images/consultancy/07-strategy-meeting.jpg",
+              alt: "Strategy meeting with a consultancy team",
+            },
+            {
+              src: "construction-images/consultancy/04-blueprint-discussion.jpg",
+              alt: "Blueprint discussion during consultancy planning",
+            },
+            {
+              src: "construction-images/consultancy/10-mentoring.jpg",
+              alt: "Mentoring session for practical business guidance",
+            },
+            {
+              src: "construction-images/consultancy/03-site-advisor.jpg",
+              alt: "Consultants advising on site with a tablet",
+            },
+            {
+              src: "construction-images/consultancy/08-cost-analysis.jpg",
+              alt: "Consultant presenting project cost analysis",
+            },
+            {
+              src: "construction-images/consultancy/09-document-review.jpg",
+              alt: "Consultant reviewing project documents",
+            },
+          ],
+          points: [
+            "Business advisory and procurement planning",
+            "Operational review, cost awareness, and decision support",
+            "Advertising coordination and practical growth planning",
+          ],
+        },
+      };
+
+      const serviceModal = document.querySelector("#service-modal");
+      const serviceModalTitle = document.querySelector("#service-modal-title");
+      const serviceModalText = document.querySelector("#service-modal-text");
+      const serviceModalSymbol = document.querySelector("#service-modal-symbol");
+      const serviceModalList = document.querySelector("#service-modal-list");
+      const serviceModalClose = document.querySelector(".service-modal-close");
+      const serviceModalImages = [
+        document.querySelector("#service-modal-image-1"),
+        document.querySelector("#service-modal-image-2"),
+        document.querySelector("#service-modal-image-3"),
+        document.querySelector("#service-modal-image-4"),
+        document.querySelector("#service-modal-image-5"),
+        document.querySelector("#service-modal-image-6"),
+        document.querySelector("#service-modal-image-7"),
+        document.querySelector("#service-modal-image-8"),
+      ];
+      let activeServiceTrigger = null;
+
+      const openServiceModal = (serviceKey, trigger) => {
+        const detail = serviceDetails[serviceKey];
+
+        if (!detail || !serviceModal) {
+          return;
+        }
+
+        activeServiceTrigger = trigger;
+        serviceModalTitle.textContent = detail.title;
+        serviceModalText.textContent = detail.text;
+        serviceModalSymbol.src = detail.symbol;
+        serviceModalSymbol.alt = "";
+        serviceModalList.innerHTML = detail.points.map((point) => `<li>${point}</li>`).join("");
+
+        detail.images.forEach((image, index) => {
+          serviceModalImages[index].src = image.src;
+          serviceModalImages[index].alt = image.alt;
+        });
+
+        serviceModal.hidden = false;
+        document.body.classList.add("service-modal-open");
+        serviceModalClose.focus();
+      };
+
+      const closeServiceModal = () => {
+        if (!serviceModal || serviceModal.hidden) {
+          return;
+        }
+
+        serviceModal.hidden = true;
+        document.body.classList.remove("service-modal-open");
+
+        if (activeServiceTrigger) {
+          activeServiceTrigger.focus();
+        }
+      };
+
+      document.querySelectorAll("[data-service]").forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          openServiceModal(trigger.dataset.service, trigger);
+        });
+
+        trigger.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openServiceModal(trigger.dataset.service, trigger);
+          }
+        });
+      });
+
+      if (serviceModal) {
+        serviceModal.addEventListener("click", (event) => {
+          if (event.target === serviceModal) {
+            closeServiceModal();
+          }
+        });
+      }
+
+      if (serviceModalClose) {
+        serviceModalClose.addEventListener("click", closeServiceModal);
+      }
+
+      window.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeServiceModal();
+        }
+      });
 
       const nav = document.querySelector("nav");
       let lastScrollY = window.scrollY;
