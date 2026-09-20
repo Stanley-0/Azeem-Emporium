@@ -98,14 +98,13 @@
       img[src*="01-steel-framework"],
       img[src*="06-roof-installation"],
       img[src*="02-team-briefing"],
-      img[src*="05-female-pm-tablet"],
-      img[src*="04-female-consultant"],
-      img[src*="01-client-meeting"],
+      img[src*="project-management-1"],
+      img[src*="consultancy-1"],
+      img[src*="consultation-1"],
       img[src*="01-bridge-inspection"],
-      img[src*="02-surveyor"],
+      img[src*="civil-engineering-1"],
       img[src*="01-site-supervision"],
-      img[src*="03-site-advisor"],
-      img[src*="04-foreman-discussion"] {
+      img[src*="consultation-4"] {
         object-position: center top;
       }
 
@@ -514,7 +513,7 @@
         padding: 1.15rem;
         background:
           linear-gradient(180deg, rgba(9, 37, 27, 0.2), rgba(9, 37, 27, 0.92)),
-          url("project-management-02-team-briefing.jpg") center / cover;
+          url("pm-site-model.jpg") center / cover;
       }
 
       .hero-brief img {
@@ -1245,15 +1244,18 @@
       }
 
       .about {
+        position: relative;
+        overflow: hidden;
         padding: 6rem 0;
-        background: var(--white);
+        background:
+          radial-gradient(circle at 88% 18%, rgba(212, 175, 55, 0.12), transparent 22rem),
+          linear-gradient(90deg, var(--paper), var(--white));
       }
 
       .about-grid {
         display: grid;
-        grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.55fr);
-        gap: clamp(2rem, 5vw, 4rem);
-        align-items: center;
+        gap: clamp(1.7rem, 4vw, 2.5rem);
+        max-width: 960px;
       }
 
       .about-copy h2 {
@@ -1267,47 +1269,49 @@
       .about-copy p {
         color: var(--muted);
         margin-bottom: 1rem;
+        max-width: 66ch;
       }
 
-      .leadership-card {
-        padding: 1.4rem;
-        border-radius: 10px;
-        background: var(--paper);
-        border: 1px solid var(--line);
-        box-shadow: 0 18px 45px rgba(17, 24, 39, 0.08);
+      .about-highlights {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1px;
+        overflow: hidden;
+        border-radius: 12px;
+        background: var(--line);
+        box-shadow: 0 22px 58px rgba(21, 63, 43, 0.09);
       }
 
-      .leadership-card img {
-        width: 150px;
-        height: 150px;
-        margin: 0 auto 1.3rem;
-        object-fit: contain;
-        filter: drop-shadow(0 15px 26px rgba(21, 63, 43, 0.18));
+      .about-highlight {
+        min-height: 150px;
+        padding: clamp(1.1rem, 3vw, 1.5rem);
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(251, 250, 246, 0.96));
       }
 
-      .leadership-card h3 {
+      .about-highlight span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        margin-bottom: 1rem;
+        border-radius: 50%;
         color: var(--forest);
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.8rem;
-        line-height: 1;
-        text-align: center;
+        background: var(--gold-soft);
       }
 
-      .leadership-card span {
-        display: block;
-        margin: 0.4rem 0 1rem;
-        color: var(--gold);
-        font-size: 0.78rem;
-        font-weight: 800;
-        letter-spacing: 0.16em;
-        text-align: center;
-        text-transform: uppercase;
+      .about-highlight h3 {
+        margin-bottom: 0.45rem;
+        color: var(--forest);
+        font-size: 1rem;
+        line-height: 1.2;
       }
 
-      .leadership-card p {
+      .about-highlight p {
         color: var(--muted);
         font-size: 0.92rem;
-        text-align: center;
+        line-height: 1.55;
       }
 
       .contact {
@@ -1518,13 +1522,6 @@
         padding: 7rem 0;
         background:
           linear-gradient(90deg, var(--paper), var(--white));
-      }
-
-      .leadership-card {
-        align-self: stretch;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
       }
 
       .contact {
@@ -1849,8 +1846,11 @@
         .section-heading,
         .work-layout,
         .capability-panel,
-        .about-grid,
         .contact-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .about-highlights {
           grid-template-columns: 1fr;
         }
 
@@ -2110,7 +2110,7 @@
         <img src="gye-nyame.png" alt="" style="--x: 9%; --y: 15%; --size: 112px; --rotate: -15deg; --alpha: 0.22" />
         <img src="sankofa.png" alt="" style="--x: 25%; --y: 10%; --size: 78px; --rotate: 12deg; --alpha: 0.18" />
         <img src="adinkrahene.png" alt="" style="--x: 44%; --y: 13%; --size: 118px; --rotate: 8deg; --alpha: 0.16" />
-        <img src="aya.png" alt="" style="--x: 67%; --y: 11%; --size: 92px; --rotate: -10deg; --alpha: 0.2" />
+        <img src="sankofa.png" alt="" style="--x: 67%; --y: 11%; --size: 92px; --rotate: -10deg; --alpha: 0.2" />
         <img src="akoma.png" alt="" style="--x: 88%; --y: 17%; --size: 106px; --rotate: 18deg; --alpha: 0.2" />
         <img src="ntease.png" alt="" style="--x: 15%; --y: 39%; --size: 88px; --rotate: 20deg; --alpha: 0.18" />
         <img src="akoben.png" alt="" style="--x: 34%; --y: 34%; --size: 72px; --rotate: -18deg; --alpha: 0.17" />
@@ -2119,7 +2119,7 @@
         <img src="gye-nyame.png" alt="" style="--x: 6%; --y: 68%; --size: 86px; --rotate: 10deg; --alpha: 0.19" />
         <img src="adinkrahene.png" alt="" style="--x: 24%; --y: 78%; --size: 104px; --rotate: -12deg; --alpha: 0.17" />
         <img src="sankofa.png" alt="" style="--x: 48%; --y: 74%; --size: 76px; --rotate: 17deg; --alpha: 0.16" />
-        <img src="aya.png" alt="" style="--x: 69%; --y: 79%; --size: 116px; --rotate: -18deg; --alpha: 0.18" />
+        <img src="sankofa.png" alt="" style="--x: 69%; --y: 79%; --size: 116px; --rotate: -18deg; --alpha: 0.18" />
         <img src="akoma.png" alt="" style="--x: 92%; --y: 72%; --size: 82px; --rotate: 9deg; --alpha: 0.2" />
         <img src="akoben.png" alt="" style="--x: 39%; --y: 58%; --size: 60px; --rotate: -6deg; --alpha: 0.13" />
         <img src="ntease.png" alt="" style="--x: 58%; --y: 62%; --size: 68px; --rotate: 11deg; --alpha: 0.13" />
@@ -2324,7 +2324,7 @@
                 <button class="service-pill" type="button" data-service="project">
                   Project Management
                 </button>
-                <img class="service-symbol" src="aya.png" alt="" />
+                <img class="service-symbol" src="sankofa.png" alt="" />
                 <button class="service-pill" type="button" data-service="consultancy">
                   Consultancy
                 </button>
@@ -2346,7 +2346,7 @@
                 <button class="service-pill" type="button" tabindex="-1" data-service="project">
                   Project Management
                 </button>
-                <img class="service-symbol" src="aya.png" alt="" />
+                <img class="service-symbol" src="sankofa.png" alt="" />
                 <button class="service-pill" type="button" tabindex="-1" data-service="consultancy">
                   Consultancy
                 </button>
@@ -2379,7 +2379,7 @@
             </article>
 
             <article class="service-card reveal" role="button" tabindex="0" data-service="civil">
-              <img src="civil-engineering-02-surveyor.jpg" alt="Civil engineer surveying site levels" />
+              <img src="civil-engineering-1.jpg" alt="Civil engineer surveying site levels" />
               <div class="service-body">
                 <h3>Civil Engineering</h3>
                 <p>
@@ -2390,7 +2390,7 @@
             </article>
 
             <article class="service-card reveal" role="button" tabindex="0" data-service="project">
-              <img src="project-management-02-team-briefing.jpg" alt="Project team briefing on site" />
+              <img src="pm-blueprint-review.jpg" alt="Project manager and site supervisor reviewing construction plans" />
               <div class="service-body">
                 <h3>Project Management</h3>
                 <p>
@@ -2401,7 +2401,7 @@
             </article>
 
             <article class="service-card reveal" role="button" tabindex="0" data-service="consultancy">
-              <img src="consultancy-04-female-consultant.jpg" alt="Consultant advising a client" />
+              <img src="consultancy-1.jpg" alt="Consultant advising a client" />
               <div class="service-body">
                 <h3>Consultancy</h3>
                 <p>
@@ -2438,21 +2438,21 @@
 
             <div class="project-stack">
               <article class="project-tile reveal">
-                <img src="civil-engineering-10-team-collab.jpg" alt="Civil engineering team reviewing an infrastructure model" />
+                  <img src="civil-engineering-2.jpg" alt="Civil engineering team reviewing an infrastructure model" />
                 <div class="project-caption">
                   <span>Civil Works</span>
                   <h3>Engineering coordination for infrastructure works.</h3>
                 </div>
               </article>
               <article class="project-tile reveal">
-                <img src="consultancy-01-client-meeting.jpg" alt="Consultants reviewing plans with a client" />
+                <img src="consultation-1.jpg" alt="Consultants reviewing plans with a client" />
                 <div class="project-caption">
                   <span>Consultancy</span>
                   <h3>Practical advisory for procurement and delivery choices.</h3>
                 </div>
               </article>
               <article class="project-tile reveal">
-                <img src="project-management-05-female-pm-tablet.jpg" alt="Project manager reviewing work progress on a tablet" />
+                <img src="project-management-1.jpg" alt="Project manager reviewing work progress on a tablet" />
                 <div class="project-caption">
                   <span>Management</span>
                   <h3>Site supervision, reporting, and handover control.</h3>
@@ -2479,8 +2479,8 @@
           <div class="capability-panel reveal">
             <img
               class="capability-photo"
-              src="project-management-01-site-supervision.jpg"
-              alt="Project supervisor reviewing site work on a tablet"
+              src="pm-gantt-chart.jpg"
+              alt="Project manager reviewing a construction schedule"
             />
             <div class="process-list">
               <article class="process-item">
@@ -2536,15 +2536,23 @@
             </p>
           </div>
 
-          <aside class="leadership-card reveal">
-            <img src="azeem-emporium-logo-extracted.png" alt="Azeem Emporium crest" />
-            <h3>Mukaila Ahmed Akuamoah</h3>
-            <span>Chief Executive Officer</span>
-            <p>
-              Strategic leadership focused on dependable partnerships, client confidence,
-              operational discipline, and long-term value creation.
-            </p>
-          </aside>
+          <div class="about-highlights reveal" aria-label="Company strengths">
+            <article class="about-highlight">
+              <span><i class="fas fa-clipboard-check" aria-hidden="true"></i></span>
+              <h3>Documented delivery</h3>
+              <p>Clear records, defined milestones, and practical handover support.</p>
+            </article>
+            <article class="about-highlight">
+              <span><i class="fas fa-route" aria-hidden="true"></i></span>
+              <h3>Coordinated operations</h3>
+              <p>Logistics, vendors, schedules, and site teams kept moving together.</p>
+            </article>
+            <article class="about-highlight">
+              <span><i class="fas fa-hard-hat" aria-hidden="true"></i></span>
+              <h3>Field-ready support</h3>
+              <p>Practical construction, civil works, consultancy, and supply capability.</p>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -2616,6 +2624,10 @@
           <img id="service-modal-image-6" src="ambulance-front.jpg" alt="" />
           <img id="service-modal-image-7" src="ambulance-side.jpg" alt="" />
           <img id="service-modal-image-8" src="ambulance-clinical-interior.jpg" alt="" />
+          <img id="service-modal-image-9" src="civil-engineering-2.jpg" alt="" />
+          <img id="service-modal-image-10" src="civil-engineering-3 (2).jpg" alt="" />
+          <img id="service-modal-image-11" src="civil-engineering-5.jpg" alt="" />
+          <img id="service-modal-image-12" src="civil-engineering-6 (2).jpg" alt="" />
         </div>
         <div class="service-modal-copy">
           <img class="service-modal-symbol" id="service-modal-symbol" src="gye-nyame.png" alt="" />
@@ -2704,16 +2716,20 @@
             "Practical construction support for residential and commercial work, with site discipline from mobilization to finish.",
           images: [
             {
+              src: "construction-steel-framework.jpg",
+              alt: "Site supervisor coordinating a tower-crane lift during structural construction",
+            },
+            {
+              src: "construction-concrete-work.jpg",
+              alt: "Construction crew placing and finishing concrete on site",
+            },
+            {
               src: "construction-01-steel-framework.jpg",
               alt: "Black construction workers handling steel framework on site",
             },
             {
               src: "construction-03-concrete-crew.jpg",
               alt: "Construction crew managing concrete work",
-            },
-            {
-              src: "construction-10-heavy-machinery.jpg",
-              alt: "Heavy machinery supporting construction work",
             },
             {
               src: "construction-06-steel-beam-lift.jpg",
@@ -2724,16 +2740,12 @@
               alt: "Interior buildout work in progress",
             },
             {
-              src: "construction-06-roof-installation.jpg",
+              src: "construction-6.jpg",
               alt: "Black construction workers installing a roof structure",
             },
             {
-              src: "construction-04-excavator-operator.jpg",
+              src: "construction-4.jpg",
               alt: "Construction operator working with heavy equipment",
-            },
-            {
-              src: "construction-10-completed-build.jpg",
-              alt: "Construction team in front of a completed building",
             },
           ],
           points: [
@@ -2749,19 +2761,19 @@
             "Infrastructure planning and engineering oversight for roadworks, drainage, structures, and public access routes.",
           images: [
             {
-              src: "civil-engineering-02-surveyor.jpg",
+              src: "civil-engineering-1.jpg",
               alt: "Black surveyor taking measurements for civil engineering work",
             },
             {
-              src: "civil-engineering-10-team-collab.jpg",
+              src: "civil-engineering-2.jpg",
               alt: "Civil engineering team collaborating over site drawings",
             },
             {
-              src: "civil-engineering-08-road-paving.jpg",
+              src: "completed-road-surface.jpg",
               alt: "Road paving work under civil engineering supervision",
             },
             {
-              src: "civil-engineering-03-highway-planning.jpg",
+              src: "civil-engineering-3.jpg",
               alt: "Highway planning for civil works",
             },
             {
@@ -2773,12 +2785,24 @@
               alt: "Civil engineer reviewing bridge plans",
             },
             {
-              src: "civil-engineering-05-concrete-pour.jpg",
+              src: "civil-engineering-4.jpg",
               alt: "Civil engineer supervising concrete works",
             },
             {
-              src: "civil-engineering-08-water-infrastructure.jpg",
+              src: "civil-engineering-6.jpg",
               alt: "Civil engineer inspecting water infrastructure",
+            },
+            {
+              src: "civil-engineering-3 (2).jpg",
+              alt: "Civil engineering field team reviewing site conditions",
+            },
+            {
+              src: "civil-engineering-5.jpg",
+              alt: "Civil works team coordinating infrastructure plans",
+            },
+            {
+              src: "civil-engineering-6 (2).jpg",
+              alt: "Civil engineering work progressing on site",
             },
           ],
           points: [
@@ -2789,16 +2813,28 @@
         },
         project: {
           title: "Project Management",
-          symbol: "aya.png",
+          symbol: "sankofa.png",
           text:
             "A single point of control for schedules, budgets, vendors, reporting, and completion evidence.",
           images: [
             {
-              src: "project-management-02-team-briefing.jpg",
-              alt: "Black project team reviewing plans during a site briefing",
+              src: "pm-gantt-chart.jpg",
+              alt: "Project manager reviewing a construction schedule",
             },
             {
-              src: "project-management-05-female-pm-tablet.jpg",
+              src: "pm-blueprint-review.jpg",
+              alt: "Project manager and site supervisor reviewing construction plans",
+            },
+            {
+              src: "pm-site-model.jpg",
+              alt: "Project team reviewing an architectural site model",
+            },
+            {
+              src: "pm-presentation.jpg",
+              alt: "Project manager presenting a project timeline to stakeholders",
+            },
+            {
+              src: "project-management-1.jpg",
               alt: "Black female project manager checking work progress on a tablet",
             },
             {
@@ -2806,20 +2842,8 @@
               alt: "Project team completing a formal handover",
             },
             {
-              src: "project-management-04-safety-briefing.jpg",
+              src: "project-management-2.jpg",
               alt: "Safety briefing during project management",
-            },
-            {
-              src: "project-management-09-drone-inspection.jpg",
-              alt: "Drone inspection for project progress review",
-            },
-            {
-              src: "project-management-01-site-supervision.jpg",
-              alt: "Project supervisor reviewing site work on a tablet",
-            },
-            {
-              src: "project-management-04-foreman-discussion.jpg",
-              alt: "Foreman discussion with project team on site",
             },
             {
               src: "project-management-08-contract-signing.jpg",
@@ -2839,36 +2863,44 @@
             "Advisory support for procurement, operations, growth planning, advertising coordination, and execution strategy.",
           images: [
             {
-              src: "consultancy-04-female-consultant.jpg",
+              src: "consultancy-1.jpg",
               alt: "Black female consultant advising a client",
             },
             {
-              src: "consultancy-01-client-meeting.jpg",
+              src: "consultation-1.jpg",
               alt: "Consultancy client meeting around project documents",
             },
             {
-              src: "consultancy-07-strategy-meeting.jpg",
+              src: "consultation-2.jpg",
               alt: "Strategy meeting with a consultancy team",
             },
             {
-              src: "consultancy-04-blueprint-discussion.jpg",
+              src: "consultation-3.jpg",
               alt: "Blueprint discussion during consultancy planning",
             },
             {
-              src: "consultancy-10-mentoring.jpg",
+              src: "consultancy-6.jpg",
               alt: "Mentoring session for practical business guidance",
             },
             {
-              src: "consultancy-03-site-advisor.jpg",
+              src: "consultation-4.jpg",
               alt: "Consultants advising on site with a tablet",
             },
             {
-              src: "consultancy-08-cost-analysis.jpg",
+              src: "consultancy-2.jpg",
               alt: "Consultant presenting project cost analysis",
             },
             {
-              src: "consultancy-09-document-review.jpg",
+              src: "consultation-5.jpg",
               alt: "Consultant reviewing project documents",
+            },
+            {
+              src: "consultation-6.jpg",
+              alt: "Consultancy team coordinating operational plans",
+            },
+            {
+              src: "consultation-7.jpg",
+              alt: "Consultants reviewing strategy with a client",
             },
           ],
           points: [
@@ -2885,16 +2917,7 @@
       const serviceModalSymbol = document.querySelector("#service-modal-symbol");
       const serviceModalList = document.querySelector("#service-modal-list");
       const serviceModalClose = document.querySelector(".service-modal-close");
-      const serviceModalImages = [
-        document.querySelector("#service-modal-image-1"),
-        document.querySelector("#service-modal-image-2"),
-        document.querySelector("#service-modal-image-3"),
-        document.querySelector("#service-modal-image-4"),
-        document.querySelector("#service-modal-image-5"),
-        document.querySelector("#service-modal-image-6"),
-        document.querySelector("#service-modal-image-7"),
-        document.querySelector("#service-modal-image-8"),
-      ];
+      const serviceModalImages = Array.from(document.querySelectorAll(".service-modal-media img"));
       let activeServiceTrigger = null;
 
       const openServiceModal = (serviceKey, trigger) => {
@@ -2911,9 +2934,19 @@
         serviceModalSymbol.alt = "";
         serviceModalList.innerHTML = detail.points.map((point) => `<li>${point}</li>`).join("");
 
-        detail.images.forEach((image, index) => {
-          serviceModalImages[index].src = image.src;
-          serviceModalImages[index].alt = image.alt;
+        serviceModalImages.forEach((modalImage, index) => {
+          const image = detail.images[index];
+
+          if (!image) {
+            modalImage.style.display = "none";
+            modalImage.removeAttribute("src");
+            modalImage.alt = "";
+            return;
+          }
+
+          modalImage.style.display = "";
+          modalImage.src = image.src;
+          modalImage.alt = image.alt;
         });
 
         serviceModal.hidden = false;
