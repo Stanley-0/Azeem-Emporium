@@ -3072,6 +3072,8 @@
       </p>
     </footer>
 
+    <!-- Chatbot temporarily disconnected from the public website. -->
+    <!--
     <button class="chat-launcher" id="chat-launcher" type="button" aria-controls="chat-panel" aria-expanded="false" aria-label="Open Azeem Emporium chat"><i class="fas fa-comments" aria-hidden="true"></i></button>
     <section class="chat-panel" id="chat-panel" aria-label="Azeem Emporium chat" hidden>
       <div class="chat-header"><div><strong>Azeem Emporium Assistant</strong><span>Practical answers for your next project.</span></div><button class="chat-close" id="chat-close" type="button" aria-label="Close chat"><i class="fas fa-xmark" aria-hidden="true"></i></button></div>
@@ -3079,8 +3081,10 @@
       <div class="chat-messages" id="chat-messages" aria-live="polite"></div>
       <form class="chat-form" id="chat-form"><div class="chat-input-wrap"><label class="chat-input-label" for="chat-input">Your message</label><input id="chat-input" name="message" autocomplete="off" placeholder="Type your message" required /></div><button id="chat-send" type="submit">Send</button></form>
     </section>
+    -->
 
     <script>
+      const chatEnabled = false;
       const chatLauncher = document.querySelector("#chat-launcher");
       const chatPanel = document.querySelector("#chat-panel");
       const chatClose = document.querySelector("#chat-close");
@@ -3091,6 +3095,12 @@
       const chatServiceButtons = Array.from(document.querySelectorAll(".chat-service-button"));
       let chatSessionId = "";
       let hasWelcomedChatVisitor = false;
+
+      if (!chatEnabled) {
+        // The chatbot can be restored by setting chatEnabled to true and
+        // removing the HTML comment around the chat panel above.
+        console.info("The Azeem Emporium chatbot is temporarily disconnected.");
+      } else {
 
       const addChatMessage = (message, sender) => {
         const item = document.createElement("div");
@@ -3156,6 +3166,7 @@
           sendChatMessage(selectedService || button.dataset.chatPrompt, selectedService);
         });
       });
+      }
 
       const splashScreen = document.querySelector("#splash-screen");
 
