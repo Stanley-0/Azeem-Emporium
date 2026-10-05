@@ -1,5 +1,10 @@
 from customer import CustomerEnquiry
+from enquiry_email import EnquiryEmailSender
 from enquiry_storage import EnquiryStorage
+import logging
+
+
+logger = logging.getLogger(__name__)
 
 
 class EnquiryHandler:
@@ -7,10 +12,11 @@ class EnquiryHandler:
     Handles collection and storage of customer project enquiries.
     """
 
-    def __init__(self):
+    def __init__(self, email_sender=None):
         self.customer = CustomerEnquiry()
 
         self.storage = EnquiryStorage()
+        self.email_sender = email_sender or EnquiryEmailSender()
 
         self.current_step = 0
 
@@ -48,6 +54,8 @@ class EnquiryHandler:
             ]
             return (
                 f"Great — you've selected {service}.\n\n"
+                "By continuing, you agree that Azeem Emporium may use these "
+                "details to respond to your enquiry.\n\n"
                 "First, what is your name?"
             )
 
@@ -64,7 +72,9 @@ class EnquiryHandler:
         ]
 
         return (
-            "I'd be happy to help you start a project enquiry.\n\n"
+            "I'd be happy to help you start a project enquiry. By continuing, "
+            "you agree that Azeem Emporium may use these details to respond "
+            "to your enquiry.\n\n"
             "First, what is your name?"
         )
 
@@ -144,9 +154,15 @@ class EnquiryHandler:
         return a confirmation message.
         """
 
-        self.storage.save_enquiry(
-            self.customer
-        )
+        self.storage.save_enquiry(self.customer)
+        try:
+            delivery = self.email_sender.send(self.customer)
+            if not delivery.sent:
+                logger.warning("Enquiry email was not sent: %s", delivery.detail)
+        except Exception:
+            # The enquiry is already safely recorded. A notification fault must
+            # never make the customer think their submission was lost.
+            logger.exception("Enquiry email delivery failed")
 
         return (
             "Thank you! Your project enquiry has been recorded.\n\n"

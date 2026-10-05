@@ -5,11 +5,29 @@ import unittest
 from pathlib import Path
 
 from customer import CustomerEnquiry
+from enquiry_email import EnquiryEmailSender, build_enquiry_pdf
 from enquiry_storage import EnquiryStorage
 from enquiry import EnquiryHandler
 
 
 class EnquiryStorageTests(unittest.TestCase):
+    def test_enquiry_pdf_contains_a_valid_pdf_document(self):
+        pdf = build_enquiry_pdf(CustomerEnquiry(
+            name="Ama Mensah", phone="123", email="ama@example.com",
+            service="Construction", project_type="House", location="Accra",
+            project_description="A family home", budget="100000", timeline="June"
+        ))
+
+        self.assertTrue(pdf.startswith(b"%PDF"))
+        self.assertGreater(len(pdf), 1000)
+
+    def test_email_is_not_sent_without_private_email_credentials(self):
+        sender = EnquiryEmailSender(api_key="", sender="")
+        result = sender.send(CustomerEnquiry(name="Ama", service="Construction"))
+
+        self.assertFalse(result.sent)
+        self.assertEqual(result.detail, "Email delivery is not configured.")
+
     def test_save_enquiry_creates_and_appends_to_json_storage(self):
         with tempfile.TemporaryDirectory() as directory:
             storage = EnquiryStorage(Path(directory) / "enquiries.json")
