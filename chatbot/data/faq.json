@@ -1,0 +1,125 @@
+{
+    "faqs": [
+        {
+            "id": "company",
+            "questions": [
+                "who are you",
+                "who is azeem emporium",
+                "tell me about azeem emporium",
+                "what is azeem emporium",
+                "about the company"
+            ],
+            "answer": "Azeem Emporium Limited provides integrated solutions across logistics, construction, civil engineering, project management and consultancy."
+        },
+
+        {
+            "id": "construction",
+            "questions": [
+                "do you do construction",
+                "do you build houses",
+                "do you construct buildings",
+                "construction services",
+                "i want to build a house",
+                "i want to construct a building"
+            ],
+            "answer": "Yes. Azeem Emporium provides construction support, including coordinated project execution, contractor management, quality control and site activities."
+        },
+
+        {
+            "id": "civil_engineering",
+            "questions": [
+                "do you do civil engineering",
+                "civil engineering services",
+                "do you do road construction",
+                "do you do drainage",
+                "engineering services"
+            ],
+            "answer": "Yes. Azeem Emporium provides civil engineering support for infrastructure and construction-related requirements."
+        },
+
+        {
+            "id": "project_management",
+            "questions": [
+                "do you manage construction projects",
+                "project management",
+                "can you manage my project",
+                "i need a project manager",
+                "can you manage my building project"
+            ],
+            "answer": "Yes. Azeem Emporium provides project management support including scope control, scheduling, budget coordination, vendor coordination and project monitoring."
+        },
+
+        {
+            "id": "logistics",
+            "questions": [
+                "do you provide logistics",
+                "do you supply materials",
+                "logistics services",
+                "do you deliver materials",
+                "can you source materials"
+            ],
+            "answer": "Yes. Azeem Emporium provides logistics and supply support including sourcing, fleet coordination, warehousing and delivery."
+        },
+
+        {
+            "id": "consultancy",
+            "questions": [
+                "do you provide consultancy",
+                "consultancy services",
+                "can you provide business advice",
+                "do you provide consulting",
+                "i need consultancy"
+            ],
+            "answer": "Yes. Azeem Emporium provides consultancy and advisory support for organizations that need assistance with planning, procurement and business-related requirements."
+        },
+
+        {
+            "id": "location",
+            "questions": [
+                "where are you located",
+                "where is your office",
+                "your location",
+                "where are you based",
+                "address"
+            ],
+            "answer": "Azeem Emporium Limited is located at No. 47 Paradise Estate, Dome P.2, Accra, Ghana."
+        },
+
+        {
+            "id": "contact",
+            "questions": [
+                "how can i contact you",
+                "contact azeem emporium",
+                "phone number",
+                "telephone number",
+                "how do i reach you"
+            ],
+            "answer": "You can contact Azeem Emporium on +233 244 206 000."
+        },
+
+        {
+            "id": "quotation",
+            "questions": [
+                "i need a quotation",
+                "can i get a quote",
+                "how much will my project cost",
+                "project estimate",
+                "construction estimate",
+                "how much does construction cost"
+            ],
+            "answer": "We can help you start a project enquiry. The chatbot will collect some basic project information before connecting you with the appropriate Azeem Emporium team member for a quotation."
+        },
+
+        {
+            "id": "consultation",
+            "questions": [
+                "i want a consultation",
+                "can i speak to someone",
+                "i need to speak to an expert",
+                "book a consultation",
+                "schedule a consultation"
+            ],
+            "answer": "Certainly. I can collect your project details and contact information so that the appropriate Azeem Emporium team member can follow up with you."
+        }
+    ]
+}

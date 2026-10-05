@@ -1,0 +1,74 @@
+{
+    "services": [
+        {
+            "id": "construction",
+            "name": "Construction",
+            "description": "Azeem Emporium provides construction support with a focus on coordinated project execution, contractor management, quality control and site activities.",
+            "keywords": [
+                "construction",
+                "building",
+                "house",
+                "commercial building",
+                "residential building",
+                "contractor",
+                "building project"
+            ]
+        },
+        {
+            "id": "civil_engineering",
+            "name": "Civil Engineering",
+            "description": "Azeem Emporium provides civil engineering support for infrastructure and construction-related requirements.",
+            "keywords": [
+                "civil engineering",
+                "engineering",
+                "drainage",
+                "road",
+                "roadworks",
+                "infrastructure",
+                "structural"
+            ]
+        },
+        {
+            "id": "project_management",
+            "name": "Project Management",
+            "description": "Azeem Emporium provides project management support including scope control, scheduling, budget coordination, vendor coordination and project monitoring.",
+            "keywords": [
+                "project management",
+                "manage project",
+                "project manager",
+                "budget",
+                "schedule",
+                "vendor",
+                "project monitoring"
+            ]
+        },
+        {
+            "id": "logistics",
+            "name": "Logistics & Supplies",
+            "description": "Azeem Emporium provides logistics and supply support including sourcing, fleet coordination, warehousing and delivery.",
+            "keywords": [
+                "logistics",
+                "supplies",
+                "supply",
+                "delivery",
+                "fleet",
+                "warehouse",
+                "sourcing",
+                "materials"
+            ]
+        },
+        {
+            "id": "consultancy",
+            "name": "Consultancy",
+            "description": "Azeem Emporium provides consultancy and advisory support for organizations that need assistance with planning, procurement and business-related requirements.",
+            "keywords": [
+                "consultancy",
+                "consulting",
+                "advice",
+                "business advice",
+                "procurement",
+                "planning"
+            ]
+        }
+    ]
+}

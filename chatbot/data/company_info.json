@@ -1,0 +1,52 @@
+{
+    "company_name": "Azeem Emporium Limited",
+
+    "description": "Azeem Emporium Limited provides integrated solutions across logistics, construction, civil engineering, project management, consultancy, and advertising.",
+
+    "location": {
+        "address": "No. 47 Paradise Estate, Dome P.2, Accra, Ghana"
+    },
+
+    "contact": {
+        "phone": "+233 244 206 000",
+        "emails": [
+            "ammar@azeememporium.com",
+            "ibra@azeememporium.com",
+            "mira@azeememporium.com",
+            "info@azeememporium.com"
+        ]
+    },
+
+    "services": {
+        "logistics_and_supplies": {
+            "name": "Logistics & Supplies",
+            "description": "Fleet coordination, sourcing, warehousing, inventory movement, and operational delivery for time-sensitive requirements."
+        },
+
+        "construction": {
+            "name": "Construction",
+            "description": "Coordinated construction support, contractor management, quality control, and site execution for residential and commercial work."
+        },
+
+        "civil_engineering": {
+            "name": "Civil Engineering",
+            "description": "Drainage, roadworks, structural support, infrastructure planning, and practical engineering oversight."
+        },
+
+        "project_management": {
+            "name": "Project Management",
+            "description": "Scope control, schedules, budgets, vendor coordination, risk tracking, and clear reporting from start to finish."
+        },
+
+        "consultancy": {
+            "name": "Consultancy",
+            "description": "Business advisory, procurement support, advertising coordination, and practical planning for growing organizations."
+        }
+    },
+
+    "approach": {
+        "scope_discipline": "Requirements, vendors, schedules, and site conditions are clarified before work begins.",
+        "single_point_coordination": "Procurement, transport, field teams, documentation, and reporting are organized around a clear point of accountability.",
+        "visible_handover": "Progress is tracked against the brief, with completion checks and client-facing communication."
+    }
+}
