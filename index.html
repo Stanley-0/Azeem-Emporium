@@ -3129,7 +3129,7 @@
         chatMessages.append(loadingMessage);
         chatMessages.scrollTop = chatMessages.scrollHeight;
         try {
-          const response = await fetch("/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ message, session_id: chatSessionId, selected_service: selectedService }) });
+          const response = await fetch("https://azeem-emporium.onrender.com/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ message, session_id: chatSessionId, selected_service: selectedService }) });
           const data = await response.json();
           if (!response.ok) throw new Error(data.message || "The chat service could not respond.");
           chatSessionId = data.session_id;
