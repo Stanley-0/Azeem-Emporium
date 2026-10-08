@@ -16,6 +16,18 @@
       href="azeem-emporium-logo-extracted.png"
     />
     <link rel="apple-touch-icon" href="azeem-emporium-logo-extracted.png" />
+    <link
+      rel="preload"
+      as="image"
+      href="azeem-emporium-logo-extracted.png"
+      fetchpriority="high"
+    />
+    <noscript>
+      <style>
+        body.splash-loading { overflow: auto !important; }
+        #splash-screen { display: none !important; }
+      </style>
+    </noscript>
     <meta property="og:site_name" content="Azeem Emporium Limited" />
     <meta property="og:title" content="Azeem Emporium | Integrated Project Delivery in Ghana" />
     <meta
@@ -49,7 +61,7 @@
         --gold-soft: #f3e7bf;
         --charcoal: #111827;
         --ink: #27313f;
-        --muted: #667085;
+        --muted: #4c5b52;
         --line: #e6e2d5;
         --paper: #fbfaf6;
         --white: #ffffff;
@@ -168,7 +180,7 @@
         letter-spacing: 0;
       }
 
-      .section-heading p {
+      .section-heading > p {
         color: var(--muted);
         font-size: 1rem;
       }
@@ -2174,7 +2186,7 @@
         --gold: #c69a2e;
         --gold-soft: #f5ead0;
         --ink: #17251f;
-        --muted: #62726a;
+        --muted: #4c5b52;
         --line: #dce3dd;
         --paper: #f7f7f3;
         --surface: #edf1ec;
@@ -2353,7 +2365,7 @@
         --gold-soft: #f4ead4;
         --charcoal: #13231c;
         --ink: #24342d;
-        --muted: #66756d;
+        --muted: #4c5b52;
         --line: #dfe4dc;
         --paper: #f7f6f0;
         --white: #ffffff;
@@ -2376,11 +2388,7 @@
       }
 
       body.splash-loading {
-        overflow-y: auto;
-      }
-
-      #splash-screen {
-        display: none !important;
+        overflow: hidden;
       }
 
       .skip-link {
@@ -2572,7 +2580,7 @@
         display: inline-flex;
         align-items: center;
         gap: 0.6rem;
-        color: var(--leaf);
+        color: var(--forest);
         font-size: 0.69rem;
         font-weight: 800;
         letter-spacing: 0.16em;
@@ -2874,7 +2882,7 @@
       }
 
       .brief-card > span {
-        color: #b78b42;
+        color: #8c6a33;
         font-family: "Cormorant Garamond", Georgia, serif;
         font-size: 1.8rem;
         font-weight: 700;
@@ -2985,7 +2993,7 @@
       }
 
       .service-tab-index {
-        color: #a78448;
+        color: #725722;
         font-size: 0.65rem;
         font-weight: 800;
         letter-spacing: 0.14em;
@@ -3385,6 +3393,10 @@
       .contact h2 {
         max-width: 12ch;
         margin: 0.8rem 0 1rem;
+      }
+
+      .contact .eyebrow {
+        color: var(--forest);
       }
 
       .contact-layout > div:first-child > p:not(.eyebrow) {
@@ -3847,12 +3859,13 @@
       }
     </style>
   </head>
-  <body>
+  <body class="splash-loading">
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <div
       class="splash-screen"
       id="splash-screen"
-      aria-label="Azeem Emporium loading"
+      role="status"
+      aria-label="Loading Azeem Emporium Limited"
     >
       <div class="splash-adinkra-field" aria-hidden="true">
         <img
@@ -4030,7 +4043,9 @@
         <img
           class="splash-logo"
           src="azeem-emporium-logo-extracted.png"
-          alt="Azeem Emporium Limited"
+          alt=""
+          decoding="async"
+          fetchpriority="high"
         />
         <div class="splash-name" aria-hidden="true">
           <strong>Azeem Emporium</strong>
@@ -4756,7 +4771,10 @@
           });
         };
 
-        window.setTimeout(closeSplash, 2200);
+        const splashDelay = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? 450
+          : 2200;
+        window.setTimeout(closeSplash, splashDelay);
       }
 
       const serviceDetails = {
