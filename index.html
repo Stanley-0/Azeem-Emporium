@@ -3,12 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Azeem Emporium Limited | Logistics, Construction & Engineering
-    </title>
+    <title>Azeem Emporium | Integrated Project Delivery in Ghana</title>
     <meta
       name="description"
-      content="Azeem Emporium Limited delivers logistics, construction, civil engineering, project management, consultancy, and ambulance supply solutions in Ghana."
+      content="Azeem Emporium Limited brings logistics, construction, civil engineering, project management, consultancy, and ambulance supply together for dependable project delivery across Ghana."
     />
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="shortcut icon" href="favicon.ico" />
@@ -19,15 +17,15 @@
     />
     <link rel="apple-touch-icon" href="azeem-emporium-logo-extracted.png" />
     <meta property="og:site_name" content="Azeem Emporium Limited" />
-    <meta property="og:title" content="Azeem Emporium Limited" />
+    <meta property="og:title" content="Azeem Emporium | Integrated Project Delivery in Ghana" />
     <meta
       property="og:description"
-      content="Logistics, construction, civil engineering, project management, consultancy, and ambulance supply solutions in Ghana."
+      content="Logistics, construction, civil engineering, project management, consultancy, and ambulance supply coordinated for dependable delivery across Ghana."
     />
-    <meta property="og:image" content="azeem-emporium-logo-extracted.png" />
+    <meta property="og:image" content="azeem-field-team.png" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:image" content="azeem-emporium-logo-extracted.png" />
+    <meta name="twitter:image" content="azeem-field-team.png" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet"
@@ -1898,7 +1896,7 @@
           padding: 0.45rem 0.7rem;
           border: 1px solid rgba(21, 63, 43, 0.16);
           background: rgba(21, 63, 43, 0.08);
-          color: var(--forest) !important;
+          color: var(--white) !important;
           box-shadow: none;
         }
 
@@ -2347,9 +2345,1510 @@
         .section-heading > p { max-width: 42ch; }
         .proof-grid { border-radius: 0.55rem; }
       }
+      :root {
+        --forest: #174536;
+        --forest-deep: #082a21;
+        --leaf: #4e8769;
+        --gold: #d4ad67;
+        --gold-soft: #f4ead4;
+        --charcoal: #13231c;
+        --ink: #24342d;
+        --muted: #66756d;
+        --line: #dfe4dc;
+        --paper: #f7f6f0;
+        --white: #ffffff;
+        --surface: #eef1e9;
+        --shadow: 0 24px 70px rgba(8, 42, 33, 0.12);
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 112px;
+      }
+
+      body {
+        overflow-x: hidden;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Manrope", sans-serif;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body.splash-loading {
+        overflow-y: auto;
+      }
+
+      #splash-screen {
+        display: none !important;
+      }
+
+      .skip-link {
+        position: fixed;
+        top: 0.75rem;
+        left: 0.75rem;
+        z-index: 1200;
+        transform: translateY(-160%);
+        border-radius: 999px;
+        padding: 0.7rem 1rem;
+        background: var(--gold);
+        color: var(--forest-deep);
+        font-weight: 800;
+        text-decoration: none;
+        transition: transform 180ms ease;
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      nav {
+        position: fixed;
+        top: 0.9rem;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        z-index: 100;
+        display: flex;
+        width: min(1220px, calc(100% - 32px));
+        min-height: 76px;
+        margin: 0;
+        transform: translateX(-50%);
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.65rem 0.8rem 0.65rem 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.68);
+        border-radius: 1.2rem;
+        background: rgba(250, 250, 246, 0.92);
+        box-shadow: 0 14px 38px rgba(8, 42, 33, 0.13);
+        backdrop-filter: blur(18px);
+        transition: transform 280ms ease, background 220ms ease;
+      }
+
+      nav.nav-hidden {
+        transform: translate(-50%, calc(-100% - 1.25rem));
+      }
+
+      .logo-nav {
+        display: flex;
+        min-width: 0;
+        align-items: center;
+        gap: 0.72rem;
+        color: var(--forest-deep);
+        text-decoration: none;
+      }
+
+      .brand-crest {
+        width: 42px;
+        height: 42px;
+        border-radius: 0.8rem;
+        object-fit: contain;
+        background: #f0ead8;
+      }
+
+      .brand-text {
+        display: grid;
+        gap: 0;
+      }
+
+      .brand-wordmark {
+        color: var(--forest-deep);
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 1.48rem;
+        font-weight: 700;
+        letter-spacing: -0.035em;
+        line-height: 1;
+      }
+
+      .brand-limited {
+        margin-top: 0.22rem;
+        color: #748078;
+        font-size: 0.55rem;
+        font-weight: 800;
+        letter-spacing: 0.25em;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        padding: 0.65rem 0.9rem;
+        border-radius: 999px;
+        color: #46584d;
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+      }
+
+      .nav-links a:not(.nav-cta):hover {
+        background: #edf0e8;
+        color: var(--forest);
+      }
+
+      .nav-links .nav-cta {
+        min-height: 48px;
+        padding-inline: 1.1rem;
+        background: var(--forest);
+        color: var(--white);
+      }
+
+      .nav-links .nav-cta:hover {
+        transform: translateY(-2px);
+        background: var(--forest-deep);
+      }
+
+      .nav-cta i {
+        color: var(--gold);
+        font-size: 0.78rem;
+      }
+
+      .hero {
+        position: relative;
+        display: flex;
+        min-height: max(720px, 100svh);
+        align-items: center;
+        overflow: hidden;
+        padding: 7.75rem 24px 5.4rem;
+        background:
+          radial-gradient(circle at 13% 95%, rgba(78, 135, 105, 0.2), transparent 31%),
+          linear-gradient(135deg, #0c3026 0%, #123f31 52%, #174937 100%);
+        color: var(--white);
+      }
+
+      .hero::before {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+        background-size: 78px 78px;
+        content: "";
+        mask-image: linear-gradient(90deg, #000 0%, transparent 83%);
+        pointer-events: none;
+      }
+
+      .hero::after {
+        position: absolute;
+        right: -11rem;
+        bottom: -25rem;
+        width: 43rem;
+        height: 43rem;
+        border: 1px solid rgba(212, 173, 103, 0.19);
+        border-radius: 50%;
+        box-shadow:
+          0 0 0 3.2rem rgba(212, 173, 103, 0.035),
+          0 0 0 6.8rem rgba(212, 173, 103, 0.025);
+        content: "";
+        pointer-events: none;
+      }
+
+      .hero-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        width: min(1220px, 100%);
+        align-items: center;
+        gap: clamp(2rem, 5vw, 5rem);
+        margin-inline: auto;
+        grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+      }
+
+      .hero-grid > div:first-child {
+        animation: hero-copy-arrive 750ms 100ms both;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        color: var(--leaf);
+        font-size: 0.69rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        line-height: 1.5;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        width: 1.35rem;
+        height: 2px;
+        flex: 0 0 auto;
+        background: var(--gold);
+        content: "";
+      }
+
+      .hero .eyebrow {
+        color: #e8cd9a;
+      }
+
+      .hero h1 {
+        max-width: 11.5ch;
+        margin: 1.1rem 0 1.2rem;
+        color: #fffdf8;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(3.5rem, 6.1vw, 6.25rem);
+        font-weight: 600;
+        letter-spacing: -0.045em;
+        line-height: 0.91;
+      }
+
+      .hero h1 span {
+        color: #dfbd7d;
+        font-style: italic;
+        font-weight: 500;
+      }
+
+      .hero-copy {
+        max-width: 48ch;
+        color: rgba(245, 248, 241, 0.78);
+        font-size: clamp(0.94rem, 1.2vw, 1.06rem);
+        line-height: 1.85;
+      }
+
+      .hero-service-strip {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1.55rem;
+      }
+
+      .hero-service-strip span {
+        padding: 0.46rem 0.73rem;
+        border: 1px solid rgba(231, 221, 194, 0.22);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.055);
+        color: rgba(255, 255, 255, 0.86);
+        font-size: 0.69rem;
+        font-weight: 700;
+        letter-spacing: 0.015em;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.8rem;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 52px;
+        align-items: center;
+        justify-content: center;
+        gap: 0.68rem;
+        padding: 0.8rem 1.18rem;
+        border: 1px solid transparent;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 800;
+        text-decoration: none;
+        transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-3px);
+      }
+
+      .button-primary {
+        background: var(--gold);
+        color: var(--forest-deep);
+        box-shadow: 0 10px 24px rgba(2, 21, 15, 0.2);
+      }
+
+      .button-primary:hover {
+        background: #e0be7c;
+        box-shadow: 0 15px 28px rgba(2, 21, 15, 0.26);
+      }
+
+      .button-secondary {
+        border-color: rgba(255, 255, 255, 0.31);
+        background: rgba(255, 255, 255, 0.06);
+        color: #fff;
+      }
+
+      .button-secondary:hover {
+        background: rgba(255, 255, 255, 0.14);
+      }
+
+      .hero-visual {
+        position: relative;
+        display: block;
+        min-height: 500px;
+        align-self: center;
+        isolation: isolate;
+        transform: none;
+        animation: hero-image-arrive 850ms 180ms both;
+      }
+
+      .hero-photo-main {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 1.5rem;
+        background: #203a30;
+        box-shadow: 0 32px 80px rgba(3, 19, 14, 0.35);
+      }
+
+      .hero-photo-main::after {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(7, 29, 22, 0.03) 38%, rgba(7, 29, 22, 0.44) 100%);
+        content: "";
+        pointer-events: none;
+      }
+
+      .hero-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 800ms cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+
+      .hero-photo-main img {
+        object-position: 67% center;
+      }
+
+      .hero-visual:hover .hero-photo-main img {
+        transform: scale(1.035);
+      }
+
+      .hero-photo:not(.hero-photo-main) {
+        position: absolute;
+        z-index: 2;
+        bottom: 1.65rem;
+        left: -1rem;
+        width: 40%;
+        height: 178px;
+        overflow: hidden;
+        border: 6px solid #123d30;
+        border-radius: 1.15rem;
+        background: #244638;
+        box-shadow: 0 18px 44px rgba(0, 0, 0, 0.25);
+      }
+
+      .hero-photo:not(.hero-photo-main) img {
+        object-position: center 40%;
+      }
+
+      .hero-brief {
+        position: absolute;
+        z-index: 3;
+        right: -0.75rem;
+        bottom: 1rem;
+        display: grid;
+        width: min(58%, 310px);
+        align-items: center;
+        gap: 0.45rem 0.72rem;
+        padding: 1.05rem 1.15rem;
+        border: 1px solid rgba(212, 173, 103, 0.42);
+        border-radius: 1.1rem;
+        background: rgba(8, 42, 33, 0.94);
+        box-shadow: 0 20px 42px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(14px);
+        animation: callout-float 6s ease-in-out infinite;
+        grid-template-columns: 38px minmax(0, 1fr);
+      }
+
+      .hero-brief img {
+        grid-column: 1;
+        grid-row: 1;
+        width: 38px;
+        height: 38px;
+        padding: 0.28rem;
+        border-radius: 0.7rem;
+        background: #f2ead8;
+        object-fit: contain;
+      }
+
+      .hero-brief strong {
+        grid-column: 2;
+        grid-row: 1;
+        color: #fffdf8;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 1.18rem;
+        font-weight: 700;
+        line-height: 1.08;
+      }
+
+      .hero-brief p {
+        grid-column: 1 / -1;
+        color: rgba(255, 255, 255, 0.69);
+        font-size: 0.72rem;
+        line-height: 1.55;
+      }
+
+      .proof-strip {
+        position: relative;
+        z-index: 2;
+        margin-top: -1.7rem;
+        padding: 0 24px;
+      }
+
+      .proof-grid {
+        display: grid;
+        width: min(1220px, 100%);
+        overflow: hidden;
+        margin-inline: auto;
+        border: 1px solid rgba(222, 226, 217, 0.9);
+        border-radius: 1.1rem;
+        background: rgba(255, 255, 252, 0.94);
+        box-shadow: 0 20px 54px rgba(24, 53, 39, 0.1);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .proof-card {
+        display: grid;
+        min-height: 118px;
+        align-content: center;
+        gap: 0.18rem;
+        padding: 1.1rem 1.45rem;
+        border-right: 1px solid var(--line);
+        background: transparent;
+      }
+
+      .proof-card:last-child {
+        border-right: 0;
+      }
+
+      .proof-card strong {
+        color: var(--forest);
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(2.15rem, 3vw, 2.8rem);
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .proof-card span {
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 700;
+      }
+
+      .executive-brief {
+        padding: 5.5rem 24px 4rem;
+      }
+
+      .section-shell {
+        width: min(1220px, calc(100% - 48px));
+        margin-inline: auto;
+      }
+
+      .brief-grid {
+        display: grid;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 1.05rem;
+        background: #fff;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .brief-card {
+        min-height: 210px;
+        padding: 1.65rem 1.7rem;
+        border: 0;
+        border-right: 1px solid var(--line);
+        border-radius: 0;
+        background: #fff;
+        transition: background 200ms ease, transform 200ms ease;
+      }
+
+      .brief-card:last-child {
+        border-right: 0;
+      }
+
+      .brief-card:hover {
+        transform: translateY(-3px);
+        background: #fbfaf4;
+      }
+
+      .brief-card > span {
+        color: #b78b42;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+
+      .brief-card h3 {
+        margin: 0.5rem 0 0.4rem;
+        color: var(--forest-deep);
+        font-size: 1.03rem;
+        letter-spacing: -0.035em;
+      }
+
+      .brief-card p {
+        max-width: 36ch;
+        color: var(--muted);
+        font-size: 0.82rem;
+        line-height: 1.75;
+      }
+
+      .services,
+      .work,
+      .capabilities,
+      .about {
+        padding: clamp(5rem, 9vw, 8rem) 0;
+      }
+
+      .services {
+        background: #eff1ea;
+      }
+
+      .section-heading {
+        display: grid;
+        align-items: end;
+        gap: 2rem;
+        margin-bottom: 2.5rem;
+        grid-template-columns: minmax(0, 1.1fr) minmax(240px, 0.7fr);
+      }
+
+      .section-heading h2,
+      .about h2,
+      .contact h2 {
+        max-width: 16ch;
+        margin-top: 0.65rem;
+        color: var(--forest-deep);
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(2.8rem, 5.2vw, 4.35rem);
+        font-weight: 600;
+        letter-spacing: -0.045em;
+        line-height: 0.98;
+      }
+
+      .section-heading > p {
+        max-width: 42ch;
+        margin-bottom: 0.3rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.8;
+      }
+
+      .service-tabs-wrap {
+        overflow-x: auto;
+        margin-bottom: 1rem;
+        scrollbar-width: thin;
+        scrollbar-color: #bdc9bc transparent;
+      }
+
+      .service-tabs {
+        display: grid;
+        gap: 0.55rem;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+
+      .service-tab {
+        position: relative;
+        display: grid;
+        min-height: 104px;
+        align-content: space-between;
+        gap: 0.5rem;
+        padding: 0.85rem 0.9rem 0.8rem;
+        border: 1px solid #d9dfd5;
+        border-radius: 0.9rem;
+        background: rgba(255, 255, 255, 0.72);
+        color: #33493d;
+        cursor: pointer;
+        text-align: left;
+        transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease, box-shadow 180ms ease;
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-rows: auto 1fr;
+      }
+
+      .service-tab:hover {
+        transform: translateY(-3px);
+        border-color: #9bad9b;
+        box-shadow: 0 12px 24px rgba(12, 56, 41, 0.08);
+      }
+
+      .service-tab.is-active {
+        border-color: var(--forest);
+        background: var(--forest);
+        color: #fff;
+        box-shadow: 0 12px 28px rgba(12, 56, 41, 0.16);
+      }
+
+      .service-tab:focus-visible,
+      .service-tab-panel:focus-visible {
+        outline: 3px solid #d5ad67;
+        outline-offset: 3px;
+      }
+
+      .service-tab-index {
+        color: #a78448;
+        font-size: 0.65rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+      }
+
+      .service-tab.is-active .service-tab-index {
+        color: #e4c989;
+      }
+
+      .service-tab-label {
+        align-self: end;
+        color: inherit;
+        font-size: 0.78rem;
+        font-weight: 800;
+        line-height: 1.35;
+      }
+
+      .service-tab > i {
+        align-self: start;
+        color: #9aa99a;
+        font-size: 0.76rem;
+        transition: transform 180ms ease, color 180ms ease;
+      }
+
+      .service-tab:hover > i,
+      .service-tab.is-active > i {
+        transform: translate(2px, -2px);
+        color: var(--gold);
+      }
+
+      .service-tab-panel {
+        display: grid;
+        min-height: 430px;
+        overflow: hidden;
+        border: 1px solid rgba(217, 223, 213, 0.8);
+        border-radius: 1.35rem;
+        background: #fff;
+        box-shadow: 0 20px 52px rgba(20, 53, 39, 0.08);
+        grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+      }
+
+      .service-tab-media {
+        position: relative;
+        min-height: 430px;
+        overflow: hidden;
+        background: #d5ded2;
+      }
+
+      .service-tab-media::after {
+        position: absolute;
+        inset: 45% 0 0;
+        background: linear-gradient(180deg, transparent, rgba(6, 32, 24, 0.56));
+        content: "";
+        pointer-events: none;
+      }
+
+      .service-tab-media img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        inset: 0;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1), opacity 220ms ease;
+      }
+
+      .service-tab-panel:hover .service-tab-media img {
+        transform: scale(1.035);
+      }
+
+      .service-tab-photo-label {
+        position: absolute;
+        z-index: 1;
+        bottom: 1.2rem;
+        left: 1.2rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.58rem;
+        padding: 0.63rem 0.86rem;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 999px;
+        background: rgba(7, 39, 30, 0.76);
+        color: #fff;
+        font-size: 0.7rem;
+        font-weight: 700;
+        backdrop-filter: blur(10px);
+      }
+
+      .service-tab-photo-dot {
+        width: 0.48rem;
+        height: 0.48rem;
+        border-radius: 50%;
+        background: #d6b46f;
+        box-shadow: 0 0 0 4px rgba(214, 180, 111, 0.17);
+      }
+
+      .service-tab-copy {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: clamp(2rem, 4vw, 3.4rem);
+      }
+
+      .service-tab-copy h3 {
+        margin: 0.75rem 0 0.75rem;
+        color: var(--forest-deep);
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(2.4rem, 4vw, 3.45rem);
+        font-weight: 600;
+        letter-spacing: -0.045em;
+        line-height: 0.98;
+      }
+
+      .service-tab-copy > p:not(.eyebrow) {
+        max-width: 46ch;
+        color: var(--muted);
+        font-size: 0.86rem;
+        line-height: 1.8;
+      }
+
+      .service-tab-list {
+        display: grid;
+        width: 100%;
+        gap: 0.65rem;
+        margin: 1.35rem 0 1.5rem;
+        list-style: none;
+      }
+
+      .service-tab-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.7rem;
+        color: #405148;
+        font-size: 0.77rem;
+        line-height: 1.55;
+      }
+
+      .service-tab-list li::before {
+        width: 0.43rem;
+        height: 0.43rem;
+        flex: 0 0 auto;
+        margin-top: 0.38rem;
+        border-radius: 50%;
+        background: #c7a05a;
+        content: "";
+      }
+
+      .service-tab-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
+        color: var(--forest);
+        font-size: 0.79rem;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .service-tab-cta i {
+        color: #b98f48;
+        transition: transform 180ms ease;
+      }
+
+      .service-tab-cta:hover i {
+        transform: translateX(4px);
+      }
+
+      .service-tab-panel.is-changing .service-tab-copy > * {
+        animation: service-tab-enter 420ms both;
+      }
+
+      .work {
+        background: var(--paper);
+      }
+
+      .feature-project,
+      .project-tile {
+        overflow: hidden;
+        border: 1px solid rgba(20, 53, 39, 0.06);
+        border-radius: 1.15rem;
+        background: #203c30;
+        box-shadow: 0 18px 48px rgba(17, 43, 32, 0.09);
+      }
+
+      .feature-project img,
+      .project-tile img {
+        transition: transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+
+      .feature-project:hover img,
+      .project-tile:hover img {
+        transform: scale(1.035);
+      }
+
+      .project-caption {
+        padding: 1.5rem;
+        background: linear-gradient(0deg, rgba(5, 28, 21, 0.94), rgba(5, 28, 21, 0.03));
+      }
+
+      .project-caption span {
+        color: #e5c987;
+        font-size: 0.65rem;
+        font-weight: 800;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      .project-caption h3 {
+        max-width: 24ch;
+        margin-top: 0.45rem;
+        color: #fff;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        line-height: 1.08;
+      }
+
+      .capabilities {
+        background: #eff1ea;
+      }
+
+      .capability-panel {
+        display: grid;
+        overflow: hidden;
+        border: 1px solid rgba(217, 223, 213, 0.8);
+        border-radius: 1.3rem;
+        background: #fff;
+        box-shadow: 0 20px 52px rgba(20, 53, 39, 0.08);
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      }
+
+      .capability-photo {
+        min-height: 480px;
+        object-position: 42% center;
+      }
+
+      .process-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.6rem;
+        padding: clamp(1.5rem, 4vw, 3rem);
+      }
+
+      .process-item {
+        display: flex;
+        gap: 1rem;
+        padding: 1rem;
+        border: 1px solid transparent;
+        border-radius: 0.8rem;
+        transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+      }
+
+      .process-item:hover {
+        transform: translateX(4px);
+        border-color: #e6e9e2;
+        background: #fafaf7;
+      }
+
+      .process-item i {
+        display: grid;
+        width: 42px;
+        height: 42px;
+        flex: 0 0 auto;
+        place-items: center;
+        border-radius: 0.78rem;
+        background: #f3ead8;
+        color: #a7803d;
+      }
+
+      .process-item h3 {
+        margin: 0.1rem 0 0.35rem;
+        color: var(--forest-deep);
+        font-size: 0.95rem;
+        letter-spacing: -0.025em;
+      }
+
+      .process-item p {
+        color: var(--muted);
+        font-size: 0.77rem;
+        line-height: 1.7;
+      }
+
+      .about {
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 100% 0%, rgba(88, 139, 105, 0.2), transparent 33%),
+          var(--forest-deep);
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .about-grid {
+        display: grid;
+        align-items: center;
+        gap: clamp(2.5rem, 8vw, 7rem);
+        grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+      }
+
+      .about .eyebrow,
+      .about h2,
+      .about h3 {
+        color: #fff;
+      }
+
+      .about .eyebrow::before {
+        background: var(--gold);
+      }
+
+      .about h2 {
+        max-width: 13ch;
+        margin: 0.8rem 0 1.15rem;
+      }
+
+      .about-copy p:not(.eyebrow) {
+        max-width: 59ch;
+        margin-top: 0.85rem;
+        color: rgba(255, 255, 255, 0.69);
+        font-size: 0.88rem;
+        line-height: 1.85;
+      }
+
+      .about-highlights {
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .about-highlight {
+        padding: 1.15rem 1.2rem;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 0.95rem;
+        background: rgba(255, 255, 255, 0.055);
+        transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+      }
+
+      .about-highlight:hover {
+        transform: translateX(5px);
+        border-color: rgba(212, 173, 103, 0.42);
+        background: rgba(255, 255, 255, 0.09);
+      }
+
+      .about-highlight > span {
+        display: grid;
+        width: 39px;
+        height: 39px;
+        margin-bottom: 0.7rem;
+        place-items: center;
+        border: 1px solid rgba(212, 173, 103, 0.24);
+        border-radius: 0.7rem;
+        background: rgba(212, 173, 103, 0.1);
+        color: #e3c37e;
+      }
+
+      .about-highlight h3 {
+        margin-bottom: 0.25rem;
+        font-size: 0.91rem;
+      }
+
+      .about-highlight p {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 0.76rem;
+        line-height: 1.7;
+      }
+
+      .contact {
+        position: relative;
+        overflow: hidden;
+        padding: clamp(5rem, 9vw, 8rem) 0;
+        background: #f7f6f0;
+      }
+
+      .contact::before {
+        position: absolute;
+        top: -20rem;
+        right: -14rem;
+        width: 35rem;
+        height: 35rem;
+        border: 1px solid rgba(198, 154, 46, 0.2);
+        border-radius: 50%;
+        box-shadow:
+          0 0 0 3.5rem rgba(198, 154, 46, 0.035),
+          0 0 0 7rem rgba(198, 154, 46, 0.025);
+        content: "";
+      }
+
+      .contact .section-shell {
+        position: relative;
+      }
+
+      .contact-layout {
+        display: grid;
+        align-items: center;
+        gap: clamp(2.5rem, 8vw, 7rem);
+        grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.75fr);
+      }
+
+      .contact h2 {
+        max-width: 12ch;
+        margin: 0.8rem 0 1rem;
+      }
+
+      .contact-layout > div:first-child > p:not(.eyebrow) {
+        max-width: 53ch;
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.8;
+      }
+
+      .contact .button-secondary {
+        border-color: #d7ded6;
+        background: #fff;
+        color: var(--forest);
+      }
+
+      .contact .button-secondary:hover {
+        background: #edf1ea;
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 0.65rem;
+        padding: 1.3rem;
+        border: 1px solid #e3e6de;
+        border-radius: 1.1rem;
+        background: rgba(255, 255, 255, 0.82);
+        box-shadow: 0 18px 42px rgba(24, 53, 39, 0.06);
+      }
+
+      .contact-item {
+        display: flex;
+        gap: 0.9rem;
+        padding: 0.85rem;
+        border-radius: 0.72rem;
+        transition: background 180ms ease;
+      }
+
+      .contact-item:hover {
+        background: #f5f6f1;
+      }
+
+      .contact-item > i {
+        display: grid;
+        width: 38px;
+        height: 38px;
+        flex: 0 0 auto;
+        place-items: center;
+        border-radius: 0.7rem;
+        background: #f3ead8;
+        color: #a7803d;
+      }
+
+      .contact-item strong {
+        color: var(--forest-deep);
+        font-size: 0.78rem;
+      }
+
+      .contact-item p,
+      .contact-item a {
+        color: var(--muted);
+        font-size: 0.76rem;
+        line-height: 1.7;
+        text-decoration: none;
+      }
+
+      .contact-item a:hover {
+        color: var(--forest);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      footer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.8rem 2rem;
+        padding: 1.5rem max(24px, calc((100% - 1220px) / 2));
+        background: #061f19;
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 0.71rem;
+      }
+
+      footer p:last-child {
+        color: rgba(255, 255, 255, 0.48);
+        text-align: right;
+      }
+
+      .service-modal {
+        background: rgba(5, 24, 18, 0.72);
+        backdrop-filter: blur(10px);
+      }
+
+      .service-modal-card {
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        border-radius: 1.25rem;
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity 650ms ease, transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      :focus-visible {
+        outline: 3px solid #c89d54;
+        outline-offset: 3px;
+      }
+
+      @keyframes hero-copy-arrive {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes hero-image-arrive {
+        from {
+          opacity: 0;
+          transform: translateY(18px) scale(0.985);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes callout-float {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-7px);
+        }
+      }
+
+      @keyframes service-tab-enter {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 900px) {
+        .hero-grid {
+          gap: 1.75rem;
+          grid-template-columns: minmax(0, 1.05fr) minmax(270px, 0.95fr);
+        }
+
+        .hero h1 {
+          font-size: clamp(3.3rem, 7.1vw, 4.4rem);
+        }
+
+        .hero-visual {
+          min-height: 450px;
+        }
+
+        .hero-brief {
+          right: -0.4rem;
+          width: 62%;
+        }
+
+        .proof-card {
+          padding-inline: 1.05rem;
+        }
+      }
+
+      @media (max-width: 680px) {
+        html {
+          scroll-padding-top: 88px;
+        }
+
+        nav {
+          top: 0.55rem;
+          width: calc(100% - 20px);
+          min-height: 64px;
+          padding: 0.5rem 0.55rem 0.5rem 0.7rem;
+          border-radius: 1rem;
+        }
+
+        .brand-crest {
+          width: 36px;
+          height: 36px;
+        }
+
+        .brand-wordmark {
+          font-size: 1.28rem;
+        }
+
+        .nav-links {
+          gap: 0;
+        }
+
+        .nav-links a {
+          min-height: 40px;
+          padding: 0.55rem 0.6rem;
+          font-size: 0.72rem;
+        }
+
+        .nav-links .nav-cta {
+          min-height: 42px;
+          padding-inline: 0.8rem;
+        }
+
+        .hero {
+          min-height: auto;
+          padding: 7.4rem 18px 4rem;
+        }
+
+        .hero-grid {
+          width: min(100%, 540px);
+          gap: 2rem;
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .hero h1 {
+          max-width: 10.5ch;
+          font-size: clamp(3.35rem, 12vw, 4.8rem);
+        }
+
+        .hero-copy {
+          max-width: 47ch;
+        }
+
+        .hero-visual {
+          min-height: 370px;
+          margin-left: 0.65rem;
+        }
+
+        .hero-photo:not(.hero-photo-main) {
+          bottom: 1rem;
+          left: -0.65rem;
+          height: 132px;
+          border-width: 4px;
+        }
+
+        .hero-brief {
+          right: -0.25rem;
+          bottom: 0.65rem;
+          width: 67%;
+          padding: 0.85rem;
+        }
+
+        .hero-brief strong {
+          font-size: 1.03rem;
+        }
+
+        .hero-brief p {
+          font-size: 0.66rem;
+        }
+
+        .proof-strip {
+          margin-top: 0;
+          padding: 1.25rem 18px 0;
+        }
+
+        .proof-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .proof-card {
+          min-height: 100px;
+          padding: 0.9rem 1rem;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .proof-card:nth-child(2) {
+          border-right: 0;
+        }
+
+        .proof-card:nth-child(3),
+        .proof-card:nth-child(4) {
+          border-bottom: 0;
+        }
+
+        .executive-brief {
+          padding: 3.5rem 0;
+        }
+
+        .section-shell {
+          width: min(100% - 36px, 540px);
+        }
+
+        .brief-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .brief-card {
+          min-height: 0;
+          padding: 1.25rem 1.3rem;
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .brief-card:last-child {
+          border-bottom: 0;
+        }
+
+        .services,
+        .work,
+        .capabilities,
+        .about,
+        .contact {
+          padding-block: 4.5rem;
+        }
+
+        .section-heading {
+          align-items: start;
+          gap: 0.8rem;
+          margin-bottom: 1.6rem;
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .section-heading h2,
+        .about h2,
+        .contact h2 {
+          font-size: clamp(2.65rem, 10vw, 3.5rem);
+        }
+
+        .section-heading > p {
+          max-width: 49ch;
+          font-size: 0.82rem;
+        }
+
+        .service-tabs {
+          width: max-content;
+          grid-template-columns: repeat(5, 138px);
+        }
+
+        .service-tab {
+          min-height: 92px;
+          padding: 0.72rem;
+        }
+
+        .service-tab-panel {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .service-tab-media {
+          min-height: 310px;
+        }
+
+        .service-tab-copy {
+          padding: 1.7rem 1.35rem 1.85rem;
+        }
+
+        .service-tab-copy h3 {
+          font-size: 2.75rem;
+        }
+
+        .work-layout,
+        .capability-panel,
+        .about-grid,
+        .contact-layout {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .feature-project {
+          min-height: 390px;
+        }
+
+        .project-stack {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .project-tile {
+          min-height: 250px;
+        }
+
+        .capability-photo {
+          min-height: 320px;
+        }
+
+        .about-grid,
+        .contact-layout {
+          gap: 2rem;
+        }
+
+        .contact-list {
+          padding: 0.8rem;
+        }
+
+        footer {
+          align-items: flex-start;
+          flex-direction: column;
+          padding: 1.4rem 18px;
+        }
+
+        footer p:last-child {
+          text-align: left;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .brand-wordmark {
+          font-size: 1.16rem;
+        }
+
+        .brand-limited {
+          font-size: 0.48rem;
+        }
+
+        .nav-links li:nth-child(2),
+        .nav-links li:nth-child(3) {
+          display: none;
+        }
+
+        .hero-actions {
+          gap: 0.6rem;
+        }
+
+        .hero-actions .button {
+          min-height: 48px;
+          padding-inline: 0.9rem;
+          font-size: 0.74rem;
+        }
+
+        .hero-visual {
+          min-height: 320px;
+        }
+
+        .service-tab-media {
+          min-height: 260px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
     </style>
   </head>
-  <body class="splash-loading">
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div
       class="splash-screen"
       id="splash-screen"
@@ -2570,53 +4069,24 @@
     </nav>
 
     <main id="top">
-      <section class="hero">
+          <section class="hero" id="main-content">
         <div class="hero-grid">
           <div>
             <p class="eyebrow">Integrated project delivery in Ghana</p>
             <h1>
-              Logistics, construction, and engineering support for serious work.
+              One trusted partner for <span>complex delivery.</span>
             </h1>
             <p class="hero-copy">
-              Azeem Emporium Limited coordinates procurement, field operations,
-              civil works, emergency vehicle supply, and project management
-              through one accountable operating structure.
+              Azeem Emporium connects procurement, field operations, specialist
+              teams, and project oversight so good plans move from brief to
+              completion with clarity.
             </p>
             <div class="hero-service-strip" aria-label="Service areas">
-              <span>Ambulance Supply</span>
               <span>Construction</span>
-              <span>Civil Works</span>
-              <span>Project Control</span>
-            </div>
-            <div class="hero-route-grid" aria-label="Primary page destinations">
-              <a class="hero-route-card" href="#services">
-                <i class="fas fa-layer-group" aria-hidden="true"></i>
-                <div>
-                  <strong>Services</strong>
-                  <span>Open capabilities</span>
-                </div>
-              </a>
-              <a class="hero-route-card" href="#work">
-                <i class="fas fa-images" aria-hidden="true"></i>
-                <div>
-                  <strong>Projects</strong>
-                  <span>View field evidence</span>
-                </div>
-              </a>
-              <a class="hero-route-card" href="#method">
-                <i class="fas fa-route" aria-hidden="true"></i>
-                <div>
-                  <strong>Approach</strong>
-                  <span>See the process</span>
-                </div>
-              </a>
-              <a class="hero-route-card" href="#contact">
-                <i class="fas fa-phone" aria-hidden="true"></i>
-                <div>
-                  <strong>Contact</strong>
-                  <span>Start a brief</span>
-                </div>
-              </a>
+              <span>Civil Engineering</span>
+              <span>Logistics &amp; Supplies</span>
+              <span>Project Management</span>
+              <span>Consultancy</span>
             </div>
             <div class="hero-actions">
               <a class="button button-primary" href="#services">
@@ -2633,14 +4103,14 @@
           <aside class="hero-visual" aria-label="Azeem Emporium field work">
             <figure class="hero-photo hero-photo-main">
               <img
-                src="ambulance-road-ready.jpg"
-                alt="Azeem Emporium ambulance ready for deployment"
+                src="azeem-field-team.png"
+                alt="Black Ghanaian project professionals reviewing plans at a construction site in Accra"
               />
             </figure>
             <figure class="hero-photo">
               <img
-                src="construction-01-steel-framework.jpg"
-                alt="Black construction workers handling steel framework on site"
+                src="construction-03-concrete-crew.jpg"
+                alt="Black Ghanaian construction workers coordinating concrete work on site"
               />
             </figure>
             <div class="hero-brief">
@@ -2648,11 +4118,8 @@
                 src="azeem-emporium-logo-extracted.png"
                 alt="Azeem Emporium crest"
               />
-              <strong
-                >One partner for planning, sourcing, movement, and
-                delivery.</strong
-              >
-              <p>Clear coordination from first brief to final handover.</p>
+              <strong>From first brief to final handover.</strong>
+              <p>One coordinated team across Ghana.</p>
             </div>
           </aside>
         </div>
@@ -2716,202 +4183,131 @@
           <div class="section-heading reveal">
             <div>
               <p class="eyebrow">Core capabilities</p>
-              <h2>Services structured around accountable delivery.</h2>
+              <h2>Five capabilities. One accountable delivery partner.</h2>
             </div>
             <p>
-              Each service line supports the same operating promise: clear
-              planning, dependable coordination, practical execution, and
-              professional handover.
+              Bring us a brief and we will coordinate the people, procurement,
+              and on-site detail needed to move it forward with confidence.
             </p>
           </div>
 
-          <div
-            class="service-marquee reveal"
-            aria-label="Click a service to view details"
-          >
-            <div class="service-marquee-track">
-              <div class="service-marquee-group" aria-hidden="false">
-                <button
-                  class="service-pill"
-                  type="button"
-                  data-service="logistics"
-                >
-                  Logistics &amp; Supplies
-                </button>
-                <img class="service-symbol" src="gye-nyame.png" alt="" />
-                <button
-                  class="service-pill"
-                  type="button"
-                  data-service="construction"
-                >
-                  Construction
-                </button>
-                <img class="service-symbol" src="akoben.png" alt="" />
-                <button class="service-pill" type="button" data-service="civil">
-                  Civil Engineering
-                </button>
-                <img class="service-symbol" src="adinkrahene.png" alt="" />
-                <button
-                  class="service-pill"
-                  type="button"
-                  data-service="project"
-                >
-                  Project Management
-                </button>
-                <img class="service-symbol" src="sankofa.png" alt="" />
-                <button
-                  class="service-pill"
-                  type="button"
-                  data-service="consultancy"
-                >
-                  Consultancy
-                </button>
-                <img class="service-symbol" src="sankofa.png" alt="" />
-              </div>
-              <div class="service-marquee-group" aria-hidden="true">
-                <button
-                  class="service-pill"
-                  type="button"
-                  tabindex="-1"
-                  data-service="logistics"
-                >
-                  Logistics &amp; Supplies
-                </button>
-                <img class="service-symbol" src="gye-nyame.png" alt="" />
-                <button
-                  class="service-pill"
-                  type="button"
-                  tabindex="-1"
-                  data-service="construction"
-                >
-                  Construction
-                </button>
-                <img class="service-symbol" src="akoben.png" alt="" />
-                <button
-                  class="service-pill"
-                  type="button"
-                  tabindex="-1"
-                  data-service="civil"
-                >
-                  Civil Engineering
-                </button>
-                <img class="service-symbol" src="adinkrahene.png" alt="" />
-                <button
-                  class="service-pill"
-                  type="button"
-                  tabindex="-1"
-                  data-service="project"
-                >
-                  Project Management
-                </button>
-                <img class="service-symbol" src="sankofa.png" alt="" />
-                <button
-                  class="service-pill"
-                  type="button"
-                  tabindex="-1"
-                  data-service="consultancy"
-                >
-                  Consultancy
-                </button>
-                <img class="service-symbol" src="sankofa.png" alt="" />
-              </div>
+          <div class="service-tabs-wrap reveal">
+            <div
+              class="service-tabs"
+              role="tablist"
+              aria-label="Explore our service areas"
+              aria-orientation="horizontal"
+            >
+              <button
+                class="service-tab is-active"
+                id="service-tab-logistics"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-controls="service-tab-panel"
+                tabindex="0"
+                data-service-tab="logistics"
+              >
+                <span class="service-tab-index" aria-hidden="true">01</span>
+                <span class="service-tab-label">Logistics &amp; Supplies</span>
+                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+              </button>
+              <button
+                class="service-tab"
+                id="service-tab-construction"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="service-tab-panel"
+                tabindex="-1"
+                data-service-tab="construction"
+              >
+                <span class="service-tab-index" aria-hidden="true">02</span>
+                <span class="service-tab-label">Construction</span>
+                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+              </button>
+              <button
+                class="service-tab"
+                id="service-tab-civil"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="service-tab-panel"
+                tabindex="-1"
+                data-service-tab="civil"
+              >
+                <span class="service-tab-index" aria-hidden="true">03</span>
+                <span class="service-tab-label">Civil Engineering</span>
+                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+              </button>
+              <button
+                class="service-tab"
+                id="service-tab-project"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="service-tab-panel"
+                tabindex="-1"
+                data-service-tab="project"
+              >
+                <span class="service-tab-index" aria-hidden="true">04</span>
+                <span class="service-tab-label">Project Management</span>
+                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+              </button>
+              <button
+                class="service-tab"
+                id="service-tab-consultancy"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="service-tab-panel"
+                tabindex="-1"
+                data-service-tab="consultancy"
+              >
+                <span class="service-tab-index" aria-hidden="true">05</span>
+                <span class="service-tab-label">Consultancy</span>
+                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+              </button>
             </div>
           </div>
 
-          <div class="services-grid">
-            <article
-              class="service-card reveal"
-              role="button"
-              tabindex="0"
-              data-service="logistics"
-            >
+          <div
+            class="service-tab-panel reveal"
+            id="service-tab-panel"
+            role="tabpanel"
+            aria-labelledby="service-tab-logistics"
+            tabindex="0"
+          >
+            <div class="service-tab-media">
               <img
+                id="service-tab-image"
                 src="ambulance-road-ready.jpg"
-                alt="Road-ready ambulance supply vehicle"
+                alt="Road-ready ambulance prepared for deployment in Ghana"
+                loading="lazy"
+                decoding="async"
               />
-              <div class="service-body">
-                <h3>Logistics & Supplies</h3>
-                <p>
-                  Fleet coordination, sourcing, warehousing, inventory movement,
-                  and operational delivery for time-sensitive requirements.
-                </p>
-              </div>
-            </article>
-
-            <article
-              class="service-card reveal"
-              role="button"
-              tabindex="0"
-              data-service="construction"
-            >
-              <img
-                src="construction-01-steel-framework.jpg"
-                alt="Black construction workers handling steel framework on site"
-              />
-              <div class="service-body">
-                <h3>Construction</h3>
-                <p>
-                  Coordinated construction support, contractor management,
-                  quality control, and site execution for residential and
-                  commercial work.
-                </p>
-              </div>
-            </article>
-
-            <article
-              class="service-card reveal"
-              role="button"
-              tabindex="0"
-              data-service="civil"
-            >
-              <img
-                src="civil-engineering-1.jpg"
-                alt="Civil engineer surveying site levels"
-              />
-              <div class="service-body">
-                <h3>Civil Engineering</h3>
-                <p>
-                  Drainage, roadworks, structural support, infrastructure
-                  planning, and practical engineering oversight.
-                </p>
-              </div>
-            </article>
-
-            <article
-              class="service-card reveal"
-              role="button"
-              tabindex="0"
-              data-service="project"
-            >
-              <img
-                src="pm-blueprint-review.jpg"
-                alt="Project manager and site supervisor reviewing construction plans"
-              />
-              <div class="service-body">
-                <h3>Project Management</h3>
-                <p>
-                  Scope control, schedules, budgets, vendor coordination, risk
-                  tracking, and clear reporting from start to finish.
-                </p>
-              </div>
-            </article>
-
-            <article
-              class="service-card reveal"
-              role="button"
-              tabindex="0"
-              data-service="consultancy"
-            >
-              <img src="consultancy-1.jpg" alt="Consultant advising a client" />
-              <div class="service-body">
-                <h3>Consultancy</h3>
-                <p>
-                  Business advisory, procurement support, advertising
-                  coordination, and practical planning for growing
-                  organizations.
-                </p>
-              </div>
-            </article>
+              <span class="service-tab-photo-label">
+                <span class="service-tab-photo-dot" aria-hidden="true"></span>
+                Field-ready support across Ghana
+              </span>
+            </div>
+            <div class="service-tab-copy">
+              <p class="eyebrow" id="service-tab-kicker">01 / Operations</p>
+              <h3 id="service-tab-title">Logistics &amp; Supplies</h3>
+              <p id="service-tab-text">
+                Coordinated movement, reliable supply planning, and field-ready
+                delivery for urgent operational requirements.
+              </p>
+              <ul class="service-tab-list" id="service-tab-list">
+                <li>Sourcing, inventory movement, and delivery coordination</li>
+                <li>Emergency vehicle and specialist equipment support</li>
+                <li>Warehousing, dispatch planning, and documented handover</li>
+              </ul>
+              <a class="service-tab-cta" href="#contact">
+                Talk to our team
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -3414,8 +4810,8 @@
           text: "Practical construction support for residential and commercial work, with site discipline from mobilization to finish.",
           images: [
             {
-              src: "construction-steel-framework.jpg",
-              alt: "Site supervisor coordinating a tower-crane lift during structural construction",
+              src: "construction-01-steel-framework.jpg",
+              alt: "Black Ghanaian construction workers handling steel framework on site",
             },
             {
               src: "construction-concrete-work.jpg",
@@ -3514,8 +4910,8 @@
           text: "A single point of control for schedules, budgets, vendors, reporting, and completion evidence.",
           images: [
             {
-              src: "pm-gantt-chart.jpg",
-              alt: "Project manager reviewing a construction schedule",
+              src: "project-management-1.jpg",
+              alt: "Black Ghanaian female project manager checking work progress on a tablet",
             },
             {
               src: "pm-blueprint-review.jpg",
@@ -3605,6 +5001,81 @@
           ],
         },
       };
+
+      const serviceTabButtons = Array.from(
+        document.querySelectorAll("[data-service-tab]"),
+      );
+      const serviceTabPanel = document.querySelector("#service-tab-panel");
+      const serviceTabImage = document.querySelector("#service-tab-image");
+      const serviceTabKicker = document.querySelector("#service-tab-kicker");
+      const serviceTabTitle = document.querySelector("#service-tab-title");
+      const serviceTabText = document.querySelector("#service-tab-text");
+      const serviceTabList = document.querySelector("#service-tab-list");
+
+      const activateServiceTab = (button, shouldFocus = false) => {
+        const serviceKey = button.dataset.serviceTab;
+        const detail = serviceDetails[serviceKey];
+        const firstImage = detail?.images?.[0];
+
+        if (!detail || !firstImage || !serviceTabPanel) {
+          return;
+        }
+
+        serviceTabButtons.forEach((tab) => {
+          const isSelected = tab === button;
+          tab.setAttribute("aria-selected", String(isSelected));
+          tab.tabIndex = isSelected ? 0 : -1;
+          tab.classList.toggle("is-active", isSelected);
+        });
+
+        serviceTabPanel.setAttribute("aria-labelledby", button.id);
+        serviceTabPanel.classList.remove("is-changing");
+        void serviceTabPanel.offsetWidth;
+        serviceTabPanel.classList.add("is-changing");
+        serviceTabKicker.textContent = `${String(
+          serviceTabButtons.indexOf(button) + 1,
+        ).padStart(2, "0")} / ${detail.title}`;
+        serviceTabTitle.textContent = detail.title;
+        serviceTabText.textContent = detail.text;
+        serviceTabImage.src = firstImage.src;
+        serviceTabImage.alt = firstImage.alt;
+        serviceTabList.replaceChildren(
+          ...detail.points.map((point) => {
+            const item = document.createElement("li");
+            item.textContent = point;
+            return item;
+          }),
+        );
+
+        if (shouldFocus) {
+          button.focus();
+        }
+      };
+
+      serviceTabButtons.forEach((button) => {
+        button.addEventListener("click", () => activateServiceTab(button));
+        button.addEventListener("keydown", (event) => {
+          const currentIndex = serviceTabButtons.indexOf(button);
+          let nextIndex = currentIndex;
+
+          if (event.key === "ArrowRight") {
+            nextIndex = (currentIndex + 1) % serviceTabButtons.length;
+          } else if (event.key === "ArrowLeft") {
+            nextIndex =
+              (currentIndex - 1 + serviceTabButtons.length) %
+              serviceTabButtons.length;
+          } else if (event.key === "Home") {
+            nextIndex = 0;
+          } else if (event.key === "End") {
+            nextIndex = serviceTabButtons.length - 1;
+          } else {
+            return;
+          }
+
+          event.preventDefault();
+          activateServiceTab(serviceTabButtons[nextIndex], true);
+        });
+      });
 
       const serviceModal = document.querySelector("#service-modal");
       const serviceModalTitle = document.querySelector("#service-modal-title");
